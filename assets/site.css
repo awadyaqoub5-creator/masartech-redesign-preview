@@ -294,7 +294,7 @@ footer a:hover{color:#fff}
 .field .hint{font-size:14px;color:var(--muted)}
 .field input,.field select,.field textarea{font:inherit;font-size:16px;min-height:48px;padding:10px 14px;border:1px solid #CBD5E1;border-radius:12px;background:#fff;color:var(--ink);width:100%}
 .field textarea{min-height:120px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(7,147,208,.35);outline-offset:0;border-color:var(--brand-strong)}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:3px solid rgba(7,147,208,.35);outline-offset:0;border-color:var(--brand-strong)}
 .field input:user-invalid,.field select:user-invalid,.field textarea:user-invalid{border-color:#D92D20}
 .req{color:#B42318}
 .check{display:flex;gap:10px;align-items:flex-start;font-size:15px}

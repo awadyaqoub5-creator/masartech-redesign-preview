@@ -173,6 +173,13 @@ document.querySelectorAll('form[data-demo]').forEach((f) => f.addEventListener('
       : k === 'price-desc' ? (num(y, 'price') === Infinity ? -1 : num(x, 'price') === Infinity ? 1 : num(y, 'price') - num(x, 'price'))
       : num(x, 'date') - num(y, 'date'));
     sorted.forEach((it) => list.appendChild(it));
+    // the URL reflects the filters, search and sort, so a result can be shared or bookmarked
+    const u = new URLSearchParams();
+    groups.forEach((g) => { if (s[g].length) u.set(g, s[g].join(',')); });
+    if (search.value.trim()) u.set('q', search.value.trim());
+    if (sort.selectedIndex > 0) u.set('sort', sort.value);
+    const qs = u.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
   };
   form.addEventListener('change', apply);
   search.addEventListener('input', apply);
@@ -184,7 +191,8 @@ document.querySelectorAll('form[data-demo]').forEach((f) => f.addEventListener('
   // deep links: ?cat=pm and/or ?level=b (from the menu and the homepage career paths)
   const params = new URLSearchParams(location.search);
   let preBox = null;
-  ['cat', 'level'].forEach((g) => { const v = params.get(g); const b = v && form.querySelector('input[name="' + g + '"][value="' + v + '"]'); if (b) { b.checked = true; preBox = b; } });
+  groups.forEach((g) => (params.get(g) || '').split(',').filter(Boolean).forEach((v) => { const b = form.querySelector('input[name="' + g + '"][value="' + CSS.escape(v) + '"]'); if (b) { b.checked = true; preBox = preBox || b; } }));
+  if (params.get('sort') && sort.querySelector('option[value="' + CSS.escape(params.get('sort')) + '"]')) sort.value = params.get('sort');
   if (params.get('q')) { search.value = params.get('q'); setTimeout(apply); }   // ?q= from the homepage search
   // Mobile (<=1100px): filters open as a full-screen sheet from the "تصفية" button (Bakkah-style), with close + apply buttons.
   const mq = matchMedia('(max-width:1100px)');
@@ -264,9 +272,9 @@ document.querySelectorAll('ul[data-marquee]').forEach((ul) => {
   const base = [...ul.children];
   let guard = 0;
   while (ul.scrollWidth < wrap.clientWidth * 1.1 && guard++ < 10) {
-    base.forEach((li) => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.querySelectorAll('img').forEach((i) => i.setAttribute('alt', '')); ul.appendChild(c); });
+    base.forEach((li) => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.inert = true; c.querySelectorAll('a,button').forEach((x) => x.setAttribute('tabindex', '-1')); c.querySelectorAll('img').forEach((i) => i.setAttribute('alt', '')); ul.appendChild(c); });
   }
-  const copy = ul.cloneNode(true); copy.setAttribute('aria-hidden', 'true');
+  const copy = ul.cloneNode(true); copy.setAttribute('aria-hidden', 'true'); copy.inert = true;
   copy.querySelectorAll('a,button').forEach((a) => a.setAttribute('tabindex', '-1'));
   copy.querySelectorAll('img').forEach((i) => i.setAttribute('alt', ''));
   track.appendChild(copy);
@@ -276,3 +284,17 @@ document.querySelectorAll('ul[data-marquee]').forEach((ul) => {
   btn.addEventListener('click', () => { const p = wrap.classList.toggle('paused'); btn.setAttribute('aria-pressed', String(p)); btn.textContent = p ? 'تشغيل الحركة' : 'إيقاف الحركة'; });
   wrap.after(btn);
 });
+
+// Unsaved form data: warn before leaving a page with a filled-in form (not search, filters, newsletter or sign-in).
+(function () {
+  const forms = [...document.querySelectorAll('form')].filter((f) => !f.matches('[role=search], [data-catalog], .news form') && !f.closest('.news') && !f.querySelector('input[type=password]'));
+  if (!forms.length) return;
+  let dirty = false;
+  forms.forEach((f) => {
+    f.addEventListener('input', () => { dirty = true; });
+    f.addEventListener('submit', () => { if (f.checkValidity()) dirty = false; });
+    f.addEventListener('reset', () => { dirty = false; });
+  });
+  window.addEventListener('beforeunload', (e) => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+  document.addEventListener('masartech:sent', () => { dirty = false; });
+})();
