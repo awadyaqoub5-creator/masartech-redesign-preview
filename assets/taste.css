@@ -1,0 +1,100 @@
+/* taste.css: site-wide quality pass (design-taste-frontend). Loaded last on every page.
+   Content shows at rest, one primary + one secondary button, one heading size per level,
+   readable contrast, visible focus, hover micro-animations and a single hero entrance. */
+
+/* 1. No fade-in on scroll: everything is visible at rest, with or without scripts */
+.reveal,.reveal.in{opacity:1!important;transform:none!important;transition:none!important}
+
+/* 2. Buttons: one primary (brand fill) and one secondary (outline) on light grounds; on dark grounds the secondary is a white outline */
+.btn,.cp-btn-light,.cp-btn-ghost{transition:background-color .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .14s ease}
+.btn:hover,.cp-btn-light:hover,.cp-btn-ghost:hover{transform:translateY(-1px)}
+.btn:active,.cp-btn-light:active,.cp-btn-ghost:active{transform:translateY(1px) scale(.985);transition-duration:.06s}
+.btn-outline{background:#fff;color:var(--navy);border-color:#CBD5E1}
+.header-actions .btn-outline{background:transparent;border-color:transparent;padding-inline:10px;color:var(--navy)}
+.header-actions .btn-outline:hover{background:transparent;color:var(--brand-strong);text-decoration:underline;text-underline-offset:6px}
+.news .btn,.news .btn:hover{background:var(--brand-strong);color:#fff}
+.news .btn:hover{background:var(--navy)}
+.cp-btn-light{background:var(--brand-strong);border-color:var(--brand-strong);color:#fff}
+.cp-btn-light:hover{background:#085d8c;border-color:#085d8c;color:#fff}
+.cp-pair .cp-btn-light{background:transparent;border-color:rgba(255,255,255,.7);color:#fff}
+.cp-pair .cp-btn-light:hover{background:rgba(255,255,255,.12)}
+.cp-options .opt .btn-primary,.cp-nav-cta.btn-primary{background:var(--brand-strong);border-color:var(--brand-strong)}
+.cp-options .opt .btn-primary:hover{background:#085d8c;border-color:#085d8c}
+.cp-reviews .btn-outline,.g-summary .btn-outline{background:#fff;border-color:#CBD5E1;color:var(--navy)}
+
+/* 3. One size per heading level: every section h2 the same, every card h3 below it */
+.section-head h2,.logos h2,.bk-corp h2,#corp-title,.news h2,.cp-sec h2,.cp-band h2,.cp-final h2,.page-hero h2{font-size:clamp(26px,3vw,34px);line-height:1.3}
+.logos h2{color:var(--navy);font-weight:700}
+.why4 h3,.why6 h3,.hc h3,.cc h3,.post h3,.path b{font-size:18px}
+
+/* 4. Contrast */
+.path.p5{background:linear-gradient(155deg,#0670A8,#0B1B33)}
+.path.p5 span,.path.p5 b{color:#fff}
+.cp-facts small{color:#D5DEEA}
+
+/* 5. Focus stays visible */
+.cart-page h1:focus{outline:2px solid var(--brand-strong);outline-offset:4px}
+:focus-visible{outline:2px solid var(--brand-strong);outline-offset:3px}
+.bk-hero :focus-visible,.cp-hero :focus-visible,.cp-band :focus-visible,.cp-final :focus-visible,.ps-hero :focus-visible{outline-color:#7DD3F5}
+html.menu-open .fab-wa,html.menu-open .to-top{display:none}
+
+/* 6. Pictures: never blown up past their file */
+.post-thumb{aspect-ratio:6/5!important;height:auto!important}
+.post-thumb img{width:100%;height:100%;object-fit:cover}
+
+/* 7. Hover: linked cards lift 2px, photos zoom inside their frame, links draw their underline */
+.card,.cc,.hc,.path,.opt,.bk-hero-art a,.sc-grid a,.fd-grid li{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background-color .2s ease}
+.card:hover,.cc:hover,.hc:hover,.opt:hover,.sc-grid a:hover{transform:translateY(-2px)}
+.post-thumb img,.path-photo,.cc-media img,.hc-top img{transition:transform .35s ease}
+.card:hover .post-thumb img,.path:hover .path-photo{transform:scale(1.03)}
+.foot-grid ul a,.crumbs a,.cr-rich a:not(.btn){text-decoration-line:underline;text-decoration-color:transparent;text-underline-offset:5px;transition:text-decoration-color .2s ease,color .2s ease}
+.foot-grid ul a:hover,.crumbs a:hover,.cr-rich a:not(.btn):hover{text-decoration-color:currentColor}
+
+/* 8. The hero enters once on load (CSS only: it ends visible even when scripts fail) */
+@keyframes tasteEnter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.bk-hero-copy>*,.cp-hero-copy>*,.ps-hero .container>*,.page-hero .container>*{animation:tasteEnter .6s cubic-bezier(.2,.7,.2,1) both}
+.bk-hero-copy>:nth-child(2),.cp-hero-copy>:nth-child(2){animation-delay:.06s}
+.bk-hero-copy>:nth-child(3),.cp-hero-copy>:nth-child(3){animation-delay:.12s}
+.bk-hero-copy>:nth-child(4),.cp-hero-copy>:nth-child(4){animation-delay:.18s}
+.bk-hero-copy>:nth-child(n+5),.cp-hero-copy>:nth-child(n+5){animation-delay:.24s}
+@keyframes tasteFade{from{opacity:0}to{opacity:1}}
+.bk-hero-art li,.cp-hero-art{animation:tasteFade .7s .2s ease both}   /* opacity only: keeps the tiles' offset */
+.bk-hero-art li:nth-child(2){animation-delay:.28s}.bk-hero-art li:nth-child(3){animation-delay:.36s}.bk-hero-art li:nth-child(4){animation-delay:.44s}
+
+/* 9. The home hero fills the first screen on desktop */
+@media (min-width:1101px) and (min-height:700px){
+  .bk-hero{min-height:calc(100svh - 117px);display:flex;flex-direction:column;justify-content:center;padding-top:40px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .btn,.cp-btn-light,.cp-btn-ghost,.card,.cc,.hc,.path,.opt,.bk-hero-art a,.post-thumb img,.path-photo{transition:none!important}
+  .btn:hover,.btn:active,.card:hover,.cc:hover,.hc:hover,.opt:hover,.card:hover .post-thumb img,.path:hover .path-photo{transform:none!important}
+  .bk-hero-copy>*,.cp-hero-copy>*,.ps-hero .container>*,.page-hero .container>*,.bk-hero-art li,.cp-hero-art{animation:none!important}
+}
+
+/* 10. Recommendation banner on course pages: a darker blue so its text reads at 4.5:1+, and a visible focus ring */
+.cp-pair{background:radial-gradient(500px 220px at 85% 0%,rgba(125,211,245,.18),transparent 70%),linear-gradient(110deg,#0B2240,#075E8F)}
+.cp-pair p{color:#E6EEF7}
+.cp-pair-tag{background:rgba(255,255,255,.16);color:#fff}
+.cp-pair :focus-visible,.cp-options .opt-head :focus-visible{outline-color:#7DD3F5}
+.btn-primary{border-color:var(--brand-strong)}
+
+/* 11. Very small phones (320-360px): nothing runs past the screen */
+@media (max-width:380px){
+  .header .container{gap:8px;padding-inline:12px}
+  .header .logo img{height:32px}
+  .header-actions{gap:2px}
+  .topbar .container{padding-inline:12px}
+  .topbar .contacts{gap:10px;font-size:13px}
+  .bk-hero-art{gap:6px}
+  .bk-hero-art a{padding:10px 4px;border-radius:14px}
+  .bk-hero-art img{width:44px;height:44px;padding:4px}
+  .bk-hero-art span{font-size:12.5px}
+}
+.news>div{min-width:0}
+.news h2{white-space:normal;overflow-wrap:break-word}
+@media (max-width:900px){.news{grid-template-columns:minmax(0,1fr)}}
+.news form>*,.news label{min-width:0}
+.news input{min-width:0;max-width:100%}
+.page-hero,.camp-hero{overflow:hidden}
+main{overflow-x:clip}

@@ -17,7 +17,7 @@
 .wl-actions{display:flex;gap:10px;flex-wrap:wrap}
 .wl-actions .btn{flex:1}
 .wl-done{text-align:center;padding:32px 24px 28px}
-.wl-done:focus{outline:none}
+.wl-done:focus{outline:2px solid var(--brand-strong);outline-offset:4px}
 .wl-done .ok{width:64px;height:64px;border-radius:50%;background:#ECFDF3;color:#067647;display:grid;place-items:center;margin:0 auto 14px}
 .wl-done .ok svg{width:32px;height:32px}
 .wl-done h2{margin:0 0 8px;font-size:21px;color:var(--navy)}
