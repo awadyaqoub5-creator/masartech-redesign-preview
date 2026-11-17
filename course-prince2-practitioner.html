@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="assets/site.css?v=66">
 <link rel="stylesheet" href="assets/catalog.css?v=55">
 <link rel="stylesheet" href="assets/waitlist.css?v=49">
-<link rel="stylesheet" href="assets/course-pmi.css?v=2">
+<link rel="stylesheet" href="assets/course-pmi.css?v=3">
 <link rel="canonical" href="https://masartech.com.sa/product/PRINCE2-Practitioner">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_SA">
@@ -268,6 +268,25 @@
         <button type="button" class="rv-nav next" aria-label="الرأي التالي"><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></button>
       </div>
       <div class="rv-dots" aria-hidden="true"></div>
+      <div class="rf-wrap">
+        <button type="button" class="btn btn-primary rf-open" aria-expanded="false" aria-controls="rf-form"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>أضف تقييمك للدورة</button>
+        <form class="rf" id="rf-form" hidden novalidate data-course="PRINCE2-Practitioner" data-course-name="دورة PRINCE2 Practitioner" data-endpoint="">
+          <h3 class="rf-title">قيّم دورة PRINCE2 Practitioner</h3>
+          <p class="rf-sub">يظهر تقييمك باسمك بعد مراجعته. رقم الجوال للتحقق فقط ولا يُنشر.</p>
+          <fieldset class="rf-field rf-stars-field">
+            <legend>تقييمك <span aria-hidden="true">*</span></legend>
+            <div class="rf-stars"><input type="radio" id="rf-s5" name="rating" value="5" required><label for="rf-s5" title="5 من 5"><span class="sr-only">5 من 5</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.6l-5.8 3.1 1.1-6.5L2.6 9.6l6.5-.9z"/></svg></label><input type="radio" id="rf-s4" name="rating" value="4" required><label for="rf-s4" title="4 من 5"><span class="sr-only">4 من 5</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.6l-5.8 3.1 1.1-6.5L2.6 9.6l6.5-.9z"/></svg></label><input type="radio" id="rf-s3" name="rating" value="3" required><label for="rf-s3" title="3 من 5"><span class="sr-only">3 من 5</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.6l-5.8 3.1 1.1-6.5L2.6 9.6l6.5-.9z"/></svg></label><input type="radio" id="rf-s2" name="rating" value="2" required><label for="rf-s2" title="2 من 5"><span class="sr-only">2 من 5</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.6l-5.8 3.1 1.1-6.5L2.6 9.6l6.5-.9z"/></svg></label><input type="radio" id="rf-s1" name="rating" value="1" required><label for="rf-s1" title="1 من 5"><span class="sr-only">1 من 5</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 17.6l-5.8 3.1 1.1-6.5L2.6 9.6l6.5-.9z"/></svg></label></div>
+            <p class="rf-err" id="rf-e-rating" hidden>اختر عدد النجوم.</p>
+          </fieldset>
+          <div class="rf-row">
+            <div class="rf-field"><label for="rf-name">الاسم <span aria-hidden="true">*</span></label><input id="rf-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="rf-e-name"><p class="rf-err" id="rf-e-name" hidden>اكتب اسمك (حرفان على الأقل).</p></div>
+            <div class="rf-field"><label for="rf-phone">رقم الجوال <span aria-hidden="true">*</span></label><input id="rf-phone" name="phone" type="tel" dir="ltr" inputmode="tel" autocomplete="tel" required placeholder="05XXXXXXXX" aria-describedby="rf-h-phone rf-e-phone"><p class="rf-hint" id="rf-h-phone">رقم سعودي يبدأ بـ 05، لا يظهر للآخرين.</p><p class="rf-err" id="rf-e-phone" hidden>اكتب رقم جوال سعودي صحيح، مثل 0512345678.</p></div>
+          </div>
+          <div class="rf-field"><label for="rf-comment">تعليقك <span aria-hidden="true">*</span></label><textarea id="rf-comment" name="comment" rows="4" required minlength="10" maxlength="1000" aria-describedby="rf-c-count rf-e-comment"></textarea><p class="rf-hint" id="rf-c-count">0 / 1000</p><p class="rf-err" id="rf-e-comment" hidden>اكتب تعليقًا من 10 أحرف على الأقل.</p></div>
+          <div class="rf-actions"><button class="btn btn-primary" type="submit">إرسال التقييم</button><button class="btn btn-outline rf-cancel" type="button">إلغاء</button></div>
+          <p class="rf-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -574,6 +593,7 @@
 <script src="assets/site.js?v=56" defer></script>
 <script src="assets/cart.js?v=3" defer></script>
 <script src="assets/waitlist.js?v=49" defer></script>
+<script src="assets/review-form.js?v=2" defer></script>
 <script src="assets/mobile.js?v=10" defer></script>
 </body>
 </html>
