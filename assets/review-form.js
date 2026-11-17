@@ -1,7 +1,7 @@
 /* Course review form (course-*.html, #reviews): stars + name + Saudi mobile + comment.
    - The mobile number is for verification only: it is sent to the server and never shown on the page.
    - Set data-endpoint on <form class="rf"> to a URL that accepts POST JSON:
-       { course, courseName, rating (1-5), name, phone (+9665XXXXXXXX), comment, website (honeypot, must be empty) }
+       { course, courseName, rating (1-5), name, phone (+9665XXXXXXXX or null: optional), comment, website (honeypot, must be empty) }
      and answers 2xx. Reviews should be published only after moderation.
    - With no endpoint (this static prototype) nothing is sent: the review is kept in this browser only
      (localStorage "mt_reviews_pending") and the page says so plainly. */
@@ -56,7 +56,7 @@
     var name = form.querySelector('#rf-name');
     if (err('name', name.value.trim().length < 2)) bad.push(name);
     var phone = form.querySelector('#rf-phone');
-    if (err('phone', !phoneOf(phone.value))) bad.push(phone);
+    if (err('phone', phone.value.trim() !== '' && !phoneOf(phone.value))) bad.push(phone);   // optional; checked only when filled
     if (err('comment', comment.value.trim().length < 10)) bad.push(comment);
     return bad;
   }
@@ -92,7 +92,7 @@
       course: form.dataset.course, courseName: form.dataset.courseName,
       rating: +form.querySelector('.rf-stars input:checked').value,
       name: form.querySelector('#rf-name').value.trim(),
-      phone: phoneOf(form.querySelector('#rf-phone').value),
+      phone: phoneOf(form.querySelector('#rf-phone').value) || null,
       comment: comment.value.trim(), website: ''
     };
     var endpoint = form.dataset.endpoint;

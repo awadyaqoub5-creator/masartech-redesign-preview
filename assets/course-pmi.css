@@ -217,3 +217,4 @@
 .rf-pending-stars{color:#F5A623;letter-spacing:2px}
 @media (max-width:640px){.rf{padding:20px}.rf-row{grid-template-columns:1fr}.rf-actions .btn{flex:1 1 100%}.rf-open{width:100%}}
 @media (prefers-reduced-motion:reduce){.rf-stars label{transition:none}.rf-stars label:hover{transform:none}}
+.rf-opt{font-weight:500;color:var(--muted);font-size:13.5px}
