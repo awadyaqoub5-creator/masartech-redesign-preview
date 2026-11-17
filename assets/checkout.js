@@ -65,6 +65,9 @@
     return !bad;
   }
   form.querySelectorAll('input[required]').forEach((i) => i.addEventListener('blur', () => { if (i.value || i.type === 'checkbox') check(i); }));
+  // once a field is marked invalid, re-check it while typing, so its error clears before the field loses focus
+  // (clearing on blur shifts the layout under the pointer and the click on the pay button misses)
+  form.querySelectorAll('input[required], #co-org input').forEach((i) => i.addEventListener(i.type === 'checkbox' ? 'change' : 'input', () => { if (i.getAttribute('aria-invalid') === 'true') check(i); }));
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     let first = null;

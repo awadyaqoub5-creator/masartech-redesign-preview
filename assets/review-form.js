@@ -60,8 +60,12 @@
     if (err('comment', comment.value.trim().length < 10)) bad.push(comment);
     return bad;
   }
-  ['#rf-name', '#rf-phone', '#rf-comment'].forEach(function (s) {
-    form.querySelector(s).addEventListener('blur', function () { if (this.getAttribute('aria-invalid')) validate(); });
+  // re-check a field marked invalid while typing (not on blur: a late layout shift makes the submit click miss)
+  [['#rf-name', function (v) { return v.trim().length < 2; }, 'name'],
+   ['#rf-phone', function (v) { return v.trim() !== '' && !phoneOf(v); }, 'phone'],
+   ['#rf-comment', function (v) { return v.trim().length < 10; }, 'comment']].forEach(function (x) {
+    var el = form.querySelector(x[0]);
+    el.addEventListener('input', function () { if (el.getAttribute('aria-invalid')) err(x[2], x[1](el.value)); });
   });
   form.querySelectorAll('.rf-stars input').forEach(function (r) { r.addEventListener('change', function () { err('rating', false); }); });
 

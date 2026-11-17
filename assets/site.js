@@ -285,16 +285,18 @@ document.querySelectorAll('ul[data-marquee]').forEach((ul) => {
   wrap.after(btn);
 });
 
-// Unsaved form data: warn before leaving a page with a filled-in form (not search, filters, newsletter or sign-in).
+// Unsaved form data: warn before leaving a page with a filled-in form that is still on screen
+// (not search, filters, newsletter or sign-in; a form hidden after a successful send never warns).
 (function () {
-  const forms = [...document.querySelectorAll('form')].filter((f) => !f.matches('[role=search], [data-catalog], .news form') && !f.closest('.news') && !f.querySelector('input[type=password]'));
+  const forms = [...document.querySelectorAll('form')].filter((f) => !f.matches('[role=search], [data-catalog]') && !f.closest('.news') && !f.querySelector('input[type=password]'));
   if (!forms.length) return;
-  let dirty = false;
+  const dirty = new Set();
   forms.forEach((f) => {
-    f.addEventListener('input', () => { dirty = true; });
-    f.addEventListener('submit', () => { if (f.checkValidity()) dirty = false; });
-    f.addEventListener('reset', () => { dirty = false; });
+    f.addEventListener('input', () => dirty.add(f));
+    f.addEventListener('submit', () => { if (f.checkValidity()) dirty.delete(f); });
+    f.addEventListener('reset', () => dirty.delete(f));
   });
-  window.addEventListener('beforeunload', (e) => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
-  document.addEventListener('masartech:sent', () => { dirty = false; });
+  window.addEventListener('beforeunload', (e) => {
+    if ([...dirty].some((f) => !f.hidden && f.getClientRects().length)) { e.preventDefault(); e.returnValue = ''; }
+  });
 })();
