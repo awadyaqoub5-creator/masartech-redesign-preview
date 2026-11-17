@@ -1,0 +1,89 @@
+/* Masartech redesign — page-specific styles for: corporate, about, contact, faqs,
+   testimonials, partners, be-partner. Loaded after site.css on those pages only. */
+
+/* Page hero with a side image */
+.page-hero.has-media .container{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center}
+.hero-media{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+.hero-media img{width:100%;height:100%;max-height:360px;object-fit:cover}
+.hero-media.contain img{object-fit:contain;padding:16px}
+
+/* Text + image split */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.split.flip>:first-child{order:2}
+.split h2{font-size:clamp(24px,3vw,32px);line-height:1.35;margin:0 0 12px;color:var(--navy)}
+.split p{margin:0 0 14px;color:#344054}
+.media-img{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.media-img img{width:100%;height:auto;max-height:340px;object-fit:contain;margin-inline:auto}
+.tagline{font-weight:600;color:var(--navy);border-inline-start:4px solid var(--brand);padding-inline-start:14px;margin-top:20px}
+
+/* Auto-fit benefit grid (for 3 or 5 items) */
+.benefits.auto{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.benefits.three{grid-template-columns:repeat(3,1fr)}
+
+/* Training option cards */
+.options{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;list-style:none;margin:0;padding:0}
+.option{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.option img{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--bg-soft)}
+.option .body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.option h3{font-size:22px;margin:0;color:var(--navy)}
+.option p{margin:0;color:var(--muted)}
+.option .btn{align-self:flex-start;margin-top:auto}
+
+/* Field tags (non-interactive) */
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.tags li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:500;font-size:15px;color:#344054;display:inline-flex;align-items:center;gap:8px}
+.tags li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand);flex:none}
+
+/* Organisation testimonials with image */
+.org-quote{padding:0;overflow:hidden;gap:0}
+.org-quote img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.org-quote .q-body{padding:24px;display:flex;flex-direction:column;gap:14px}
+
+/* Larger logo grid with names */
+.logo-grid.lg{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.logo-grid.lg li{height:auto;min-height:120px;padding:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;text-align:center}
+.logo-grid.lg img{max-height:64px;max-width:100%}
+.logo-grid.lg.seven{grid-template-columns:repeat(7,1fr)}
+.logo-grid.lg span{font-size:14px;color:var(--muted);line-height:1.4}
+
+/* Contact cards */
+.contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;list-style:none;margin:0;padding:0}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:14px;align-items:flex-start}
+.contact-card .ico{width:44px;height:44px;border-radius:12px;background:var(--brand-tint);color:var(--brand-strong);display:grid;place-items:center;flex:none}
+.contact-card>div{min-width:0}
+.contact-card a{overflow-wrap:anywhere}
+.contact-card h3{font-size:16px;margin:0 0 4px;color:var(--navy)}
+.contact-card p{margin:0;color:#344054;font-size:15px}
+.contact-card a{font-weight:600;display:inline-flex;align-items:center;min-height:44px}
+.hours-list{list-style:none;margin:0;padding:0;font-size:15px;color:#344054}
+
+/* Quote list as masonry (long, uneven reviews) */
+.quotes.masonry{display:block;columns:3 300px;column-gap:20px}
+.quotes.masonry>li{break-inside:avoid;margin-bottom:20px}
+.quote time{font-size:14px;color:var(--muted)}
+.quote .q-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.avatar img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.quote blockquote{white-space:pre-line}
+
+/* Social links row (light background) */
+.social-row{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+
+/* Side panel */
+.aside-note h2{font-size:20px;margin:0 0 8px}
+.aside-note p{margin:0 0 14px;color:var(--muted)}
+.aside-note .btn{width:100%;margin-top:8px}
+
+@media (max-width:1100px){
+  .logo-grid.lg.seven{grid-template-columns:repeat(4,1fr)}
+  .benefits.three{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .page-hero.has-media .container,.split{grid-template-columns:1fr;gap:28px}
+  .split.flip>:first-child{order:0}
+  .options{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .hero-media img{max-height:220px}
+  .option .btn{align-self:stretch}
+  .logo-grid.lg,.logo-grid.lg.seven{grid-template-columns:repeat(2,1fr)}
+}

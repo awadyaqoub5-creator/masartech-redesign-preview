@@ -1,0 +1,178 @@
+/* Masartech redesign — Bakkah-style layer (loaded on every page after the other stylesheets).
+   Applies at ALL sizes (the owner asked for the phone design on desktop too):
+   - Floating WhatsApp button + back-to-top button (replace the old bottom action bar).
+   - Centered section headings; «لأن وقتك…» cards with the icon beside the title; footer links as rows with arrows.
+   - Carousels: arrows centered under the cards instead of dots.
+   - Course page: rounded logo tile, horizontal pill tabs with a scroll bar for «عن هذه الدورة» and «محتويات البرنامج»
+     (module tabs built by mobile.js from the outline table), dark reviews band with gradient-border cards.
+   Phone-only extras sit in the media queries at the end (2x2 facts box, short breadcrumb, full-screen menu, blog swipe). */
+
+/* ---------- Floating buttons ---------- */
+.action-bar{display:none!important}
+body{padding-bottom:0!important}
+.fab-wa,.to-top{position:fixed;z-index:60;bottom:calc(18px + env(safe-area-inset-bottom));display:grid;place-items:center;border:0;cursor:pointer;transition:transform .2s,opacity .2s,visibility .2s}
+.fab-wa{inset-inline-end:18px;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 8px 22px rgba(18,140,75,.38)}
+.fab-wa svg{width:32px;height:32px}
+.fab-wa:hover{transform:scale(1.06)}
+.fab-wa:focus-visible,.to-top:focus-visible{outline:3px solid #7DD3F5;outline-offset:3px}
+.to-top{inset-inline-start:18px;width:48px;height:48px;border-radius:12px;background:var(--brand-strong);color:#fff;box-shadow:0 8px 20px rgba(7,98,140,.3);opacity:0;visibility:hidden;transform:translateY(10px)}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top svg{width:22px;height:22px;transform:rotate(-90deg)}
+html.menu-open .fab-wa,html.menu-open .to-top{display:none}
+@media (prefers-reduced-motion:reduce){.fab-wa,.to-top{transition:none}}
+@media print{.fab-wa,.to-top{display:none!important}}
+
+/* ---------- Centered section titles ---------- */
+.section-head{flex-direction:column;align-items:center;text-align:center}
+.section-head>div{width:100%}
+.section-head p{margin-inline:auto}
+.section-head .btn{align-self:center}
+
+/* ---------- «لأن وقتك…» cards: icon beside the title ---------- */
+.why4{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.why4 li{display:grid;grid-template-columns:auto 1fr;column-gap:18px;align-items:start;text-align:start;padding:24px 22px;border-radius:24px}
+.why4 .why-ico{grid-row:span 2;width:60px;height:60px;margin:0;border-radius:16px}
+.why4 .why-ico svg{width:28px;height:28px}
+.why4 h3{font-size:19px;margin:2px 0 4px}
+.why4 p{font-size:15.5px;line-height:1.7}
+
+/* ---------- Carousels: arrows centered under the cards ---------- */
+.rv{padding-bottom:64px}
+.rv-dots{display:none}
+.rv .rv-nav{display:grid;top:auto;bottom:0;margin:0;width:46px;height:46px;box-shadow:none}
+.rv .rv-nav.prev{inset-inline-start:calc(50% - 56px)}
+.rv .rv-nav.next{inset-inline-end:calc(50% - 56px)}
+.rv+.marquee-toggle,.rv-dots+.marquee-toggle{margin-top:6px}
+
+/* ---------- Footer: link columns as rows with arrows ---------- */
+footer .foot-grid>div:not(.foot-brand) ul{gap:0}
+footer .foot-grid>div:not(.foot-brand) li a{display:flex;min-height:42px;border-bottom:1px solid rgba(255,255,255,.08)}
+footer .foot-grid>div:not(.foot-brand) li a::before{content:"";flex:none;width:7px;height:7px;border-left:2px solid #7DD3F5;border-bottom:2px solid #7DD3F5;transform:rotate(45deg);margin-inline-end:4px}
+
+/* ---------- Course hero: rounded logo tile ---------- */
+.cr-hero .cr-logo img{border-radius:32px;box-shadow:0 14px 34px rgba(0,0,0,.28)}
+
+/* ---------- Tabs: horizontal pills on a dark bar (about box + module tabs) ---------- */
+.about-box{grid-template-columns:1fr}
+.about-tabs{flex-direction:row;overflow-x:auto;gap:6px;padding:12px;scrollbar-width:none}
+.about-tabs::-webkit-scrollbar{display:none}
+.about-tabs [role=tab]{flex:none;min-height:46px;padding:0 18px;border:1.5px solid transparent;border-radius:999px}
+.about-tabs [role=tab] svg{display:none}
+.about-tabs [role=tab][aria-selected=true]{background:rgba(255,255,255,.1);border-color:#7DD3F5}
+
+.ol-m{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;margin-top:6px}
+.outline-box .table-wrap.has-olm{display:none}
+.outline-box:has(.ol-m){border:0;padding:0;background:none}
+.outline-box>p:first-child{margin-bottom:14px}
+.ol-tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:12px;background:var(--navy)}
+.ol-tabs::-webkit-scrollbar{display:none}
+.ol-tabs [role=tab]{flex:none;max-width:78%;min-height:46px;padding:0 18px;border:1.5px solid transparent;border-radius:999px;background:none;color:#D0D5DD;font:inherit;font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.ol-tabs [role=tab]:hover{color:#fff}
+.ol-tabs [role=tab][aria-selected=true]{color:#fff;background:rgba(255,255,255,.1);border-color:#7DD3F5}
+.ol-tabs [role=tab]:focus-visible{outline:3px solid #7DD3F5;outline-offset:-3px}
+.ol-panel{padding:24px 28px 26px}
+.ol-panel[hidden]{display:none}
+.ol-panel h3{margin:0 0 4px;font-size:20px;color:var(--brand-strong)}
+.ol-panel .ol-num{display:block;font-size:13.5px;color:var(--muted);margin-bottom:12px}
+.ol-panel ul{margin:0;padding-inline-start:20px;display:grid;gap:8px;color:#344054}
+.ol-panel p{margin:0 0 8px;color:#344054}
+.ol-panel p b{color:var(--navy)}
+
+/* Scroll bar + arrows under sideways-scrolling tabs (built by mobile.js, shown only when the tabs overflow) */
+.tab-scroll{display:flex;align-items:center;gap:6px;padding:0 10px 10px;background:var(--navy)}
+.tab-scroll[hidden]{display:none}
+.ts-track{position:relative;flex:1;height:8px;border-radius:999px;background:rgba(255,255,255,.14);cursor:pointer}
+.ts-thumb{position:absolute;top:0;bottom:0;border-radius:999px;background:#C4CDD8;transition:inset-inline-start .15s}
+.ts-btn{flex:none;display:grid;place-items:center;width:28px;height:28px;border:0;border-radius:50%;background:none;color:#C4CDD8;cursor:pointer}
+.ts-btn:hover:not(:disabled){color:#fff}
+.ts-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.ts-btn:disabled{opacity:.3;cursor:default}
+.ts-btn:focus-visible{outline:2px solid #7DD3F5}
+@media (prefers-reduced-motion:reduce){.ts-thumb{transition:none}}
+
+/* ---------- Reviews: dark band, gradient-border cards, arrows ---------- */
+.reviews-band{background:#0B1B33!important;color:#E4E7EC}
+.reviews-band .section-head h2,.reviews-band .section-head p,.reviews-band .section-head .kicker{color:#fff}
+.reviews-band .review-head{justify-content:center}
+.reviews-band .g-summary{background:transparent;border:0;padding:0;justify-content:center;text-align:center;gap:10px 14px}
+.reviews-band .g-summary .g-logo{width:44px;height:44px;background:#fff;border-radius:12px;padding:6px}
+.reviews-band .g-summary .score{color:#fff}
+.reviews-band .g-summary .meta{color:#D0D5DD;align-items:center}
+.reviews-band .g-line,.reviews-band .g-line *{color:#E4E7EC}
+.reviews-band .g-line b{color:#fff}
+.reviews-band .g-line .g-logo{background:#fff;border-radius:6px;padding:2px}
+.reviews-band .rv-nav{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff}
+.reviews-band .rv-nav:hover{background:rgba(255,255,255,.16);color:#fff;border-color:#7DD3F5}
+.reviews-band .rv-nav:disabled{opacity:.3}
+.reviews-band .rv-slide .quote{border:2px solid transparent;background:linear-gradient(#13243F,#13243F) padding-box,linear-gradient(120deg,#0793D0,#7DD3F5 45%,#475467) border-box;border-radius:22px;padding:24px 22px}
+.reviews-band .rv-slide .quote::before{content:"\201D";display:block;font:700 64px/0.6 Georgia,serif;color:#fff;margin-top:14px}
+.reviews-band .quote blockquote{color:#E4E7EC;font-size:16px;line-height:1.8}
+.reviews-band .quote figcaption b{color:#fff}
+.reviews-band .quote figcaption time,.reviews-band .quote figcaption span:not(.avatar){color:#98A2B3}
+.reviews-band .marquee-toggle{background:transparent;color:#D0D5DD;border-color:rgba(255,255,255,.25)}
+.reviews-band .rv-more,.reviews-band .quote a{color:#7DD3F5}
+.reviews-band .btn-outline{color:#fff;border-color:rgba(255,255,255,.4);background:transparent}
+.reviews-band .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ---------- Mobile menu: full-screen white panel, big rows with arrows ---------- */
+@media (max-width:1100px){
+  .header .mobile-nav:not([hidden]){min-height:calc(100dvh - 72px);max-height:calc(100dvh - 72px)}
+  .mobile-nav>.container>ul>li>a,.mobile-nav .m-courses>details>summary{min-height:58px;font-size:16.5px;font-weight:600;color:var(--navy)}
+  .mobile-nav>.container>ul>li>a::after{content:"";flex:none;width:9px;height:9px;margin-inline-start:auto;margin-inline-end:6px;border-left:2px solid #98A2B3;border-bottom:2px solid #98A2B3;transform:rotate(45deg)}
+  .mobile-nav>.container>ul>li>a[aria-current=page]{color:var(--brand-strong)}
+  html.menu-open,html.menu-open body{overflow:hidden}
+}
+
+/* ---------- Phones ---------- */
+@media (max-width:640px){
+  .why4{grid-template-columns:1fr;gap:14px}
+  .why4 li{padding:20px 18px}
+  .why4 .why-ico{width:56px;height:56px}
+
+  /* course hero: logo tile on top at the side, short breadcrumb, 2x2 facts box */
+  .cr-hero{padding-top:22px}
+  .cr-hero .crumbs li:first-child,.cr-hero .crumbs li:last-child{display:none}
+  .cr-hero .crumbs li:nth-child(2)::before{display:none}
+  .cr-hero .crumbs{margin-bottom:10px}
+  .cr-hero .cr-logo{display:flex;justify-content:flex-start;order:-1;margin-bottom:-6px}
+  .cr-hero .cr-logo img{width:84px;height:84px;padding:10px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  .cr-hero h1{font-size:25px;line-height:1.45}
+  .cr-hero .lead{font-size:15.5px}
+  .cr-facts{grid-template-columns:repeat(2,minmax(0,1fr));padding:4px 0;row-gap:0}
+  .cr-facts li{flex-direction:column;gap:6px;padding:14px 12px;border-top:0;border-inline-start:1px solid rgba(255,255,255,.16)}
+  .cr-facts li:nth-child(odd){border-inline-start:0}
+  .cr-facts li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}
+  .cr-facts li:first-child{border-top:0}
+  .cr-facts b{font-size:14.5px;line-height:1.5}
+
+  .ol-tabs [role=tab],.about-tabs [role=tab]{min-height:44px;padding:0 16px;font-size:14.5px}
+  .ol-panel{padding:20px 18px 22px}
+  .ol-panel h3{font-size:18px}
+
+  .reviews-band .rv-track{grid-auto-columns:100%}
+  .reviews-band .rv-slide .quote{padding:24px 20px}
+
+  /* home blog: one article at a time, swipe sideways */
+  .home-blog{display:grid!important;grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:86%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:6px;margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}
+  .home-blog::-webkit-scrollbar{display:none}
+  .home-blog>li{scroll-snap-align:start;display:flex!important}
+  .home-blog>li>*{flex:1}
+  .m-dots{display:flex;justify-content:center;gap:6px;margin:14px 0 0}
+  .m-dots span{width:22px;height:6px;border-radius:999px;background:#D0D5DD;transition:background .2s,width .2s}
+  .m-dots span.on{width:30px;background:var(--brand-strong)}
+
+  footer .foot-grid{gap:26px}
+  footer .foot-grid>div:not(.foot-brand) h2{font-size:18px;margin-bottom:8px}
+  footer .foot-grid>div:not(.foot-brand) li a{min-height:44px}
+}
+
+/* Newsletter: its section had padding-top:0 (it sat under a light band); with the dark reviews band above it needs its own space */
+section:has(> .container > .news){padding-top:64px!important}
+@media (max-width:640px){section:has(> .container > .news){padding-top:40px!important}}
+
+/* Course page: direct answer box («باختصار») — featured-snippet / AI-answer friendly summary under «عن الدورة» */
+.cr-answer{position:relative;margin:0 0 22px;padding:20px 22px;border-radius:20px;background:linear-gradient(135deg,#F0F9FF,#fff);border:1px solid #B9E6FA;border-inline-start:5px solid var(--brand-strong)}
+.cr-answer h3{margin:0 0 8px;font-size:18px;color:var(--navy)}
+.cr-answer p{margin:0;color:#344054;line-height:1.85;font-size:16px}
+.cr-answer .cr-updated{margin-top:10px;font-size:13px;color:var(--muted)}
+@media (max-width:640px){.cr-answer{padding:16px 16px;border-radius:18px}.cr-answer p{font-size:15px}}

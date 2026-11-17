@@ -1,0 +1,38 @@
+/* Waitlist dialog (native <dialog>, opened by any [data-waitlist] trigger — see waitlist.js) */
+.wl-dialog{width:min(100% - 32px,520px);max-height:calc(100dvh - 32px);border:0;border-radius:20px;padding:0;color:var(--ink);box-shadow:0 24px 60px rgba(16,24,40,.25);overflow:auto}
+.wl-dialog::backdrop{background:rgba(11,27,51,.55)}
+.wl-dialog[open]{animation:wl-in .22s var(--ease)}
+@keyframes wl-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.wl-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:22px 24px 0}
+.wl-head h2{margin:0;font-size:21px;color:var(--navy);line-height:1.4}
+.wl-head p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.wl-course{display:inline-flex;margin-top:10px;white-space:normal}
+.wl-body{padding:18px 24px 24px}
+.wl-close{flex:none}
+.wl-modes{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.wl-modes label{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:15px;font-weight:500;background:#fff}
+.wl-modes input{width:18px;height:18px;accent-color:var(--brand-strong)}
+.wl-modes label:has(input:checked){border-color:var(--brand-strong);background:var(--brand-tint)}
+.wl-modes label:has(input:focus-visible){outline:3px solid var(--brand);outline-offset:2px}
+.wl-actions{display:flex;gap:10px;flex-wrap:wrap}
+.wl-actions .btn{flex:1}
+.wl-done{text-align:center;padding:32px 24px 28px}
+.wl-done:focus{outline:none}
+.wl-done .ok{width:64px;height:64px;border-radius:50%;background:#ECFDF3;color:#067647;display:grid;place-items:center;margin:0 auto 14px}
+.wl-done .ok svg{width:32px;height:32px}
+.wl-done h2{margin:0 0 8px;font-size:21px;color:var(--navy)}
+.wl-done p{margin:0 0 6px;color:var(--muted)}
+.btn[aria-busy="true"]{opacity:.75;cursor:progress}
+
+/* Triggers */
+.link-btn{font:inherit;font-size:15px;font-weight:600;background:none;border:0;color:var(--brand-strong);cursor:pointer;min-height:44px;padding:0;display:inline-flex;align-items:center;gap:6px;text-decoration:underline;text-underline-offset:3px}
+.link-btn:hover{color:var(--brand-deep)}
+.wl-callout{background:var(--brand-tint);border:1px solid #B9E6FE;border-radius:12px;padding:14px;font-size:15px;color:#065986}
+.wl-callout b{display:block;color:var(--navy);margin-bottom:2px}
+
+@media (max-width:640px){
+  .wl-dialog{width:100%;max-width:none;margin:auto 0 0;border-radius:20px 20px 0 0;max-height:92dvh}
+  .wl-dialog[open]{animation:wl-up .25s var(--ease)}
+  @keyframes wl-up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){.wl-dialog[open]{animation:none}}
