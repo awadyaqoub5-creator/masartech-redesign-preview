@@ -1,0 +1,62 @@
+/* corp.css: corporate services v2 (tools/corp_v2.py). Shares hero / trust / partners with home.css, crumbs / icons with about.css. */
+section.cp2-private{padding:96px 0}
+.cp2-private-in{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+.cp2-private h2{margin:0 0 14px;color:var(--navy)}
+.cp2-private .ab-lead{margin:0 0 24px;font-size:19px;color:#344054;line-height:1.8}
+.cp2-modes{display:grid;gap:14px;margin-bottom:28px}
+.cp2-modes li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.cp2-modes .ab-ico{margin:0;flex:none}
+.cp2-modes h3{margin:2px 0 4px;font-size:17px;color:var(--navy)}
+.cp2-modes p{margin:0;font-size:15px;color:#475467;line-height:1.7}
+.cp2-private-img img{width:100%;height:auto;aspect-ratio:520/380;object-fit:cover;border-radius:26px;box-shadow:0 30px 60px rgba(11,27,51,.16)}
+
+section.cp2-steps{padding:96px 0;background:#0B1B33;color:#fff;background-image:radial-gradient(600px 300px at 85% 0%,rgba(7,147,208,.3),transparent 70%)}
+.cp2-steps .h3-kicker{justify-content:center;color:#7DD3F5}
+.cp2-steps h2{color:#fff}
+.cp2-steps-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.cp2-steps-list li{position:relative;padding:28px;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}
+.cp2-steps-list b{display:block;font-size:44px;line-height:1;font-weight:300;color:#7DD3F5;margin-bottom:16px;font-variant-numeric:tabular-nums}
+.cp2-steps-list h3{margin:0 0 8px;font-size:19px;color:#fff}
+.cp2-steps-list p{margin:0;color:#C9D6E5;font-size:15.5px;line-height:1.8}
+
+section.cp2-areas{padding:96px 0}
+section.cp2-quotes{padding:96px 0;background:#F4F7FA}
+.cp2-quotes-list{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cp2-quotes-list .org-quote{height:100%;margin:0;display:grid;grid-template-columns:44% 1fr;border-radius:24px;overflow:hidden;background:#fff;border:1px solid var(--line);padding:0}
+.cp2-quotes-list .org-quote img{width:100%;height:100%!important;object-fit:cover;aspect-ratio:auto}
+.cp2-quotes-list .q-body{display:flex;flex-direction:column;gap:12px;padding:26px}
+.cp2-qtag{align-self:flex-start;padding:4px 12px;border-radius:999px;background:#E0F2FE;color:#0670A8;font-weight:700;font-size:13px}
+.cp2-quotes-list blockquote{margin:0;font-size:17px;line-height:1.85;color:#1D2939}
+.cp2-quotes-list blockquote::before{content:"\201D";display:block;font-family:Georgia,serif;font-size:56px;line-height:.6;color:#0670A8;margin-bottom:6px}
+
+section.cp2-request{padding:96px 0;background:#F8FAFC}
+.cp2-request-in{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;align-items:start}
+.cp2-form-card{padding:34px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:0 20px 40px rgba(11,27,51,.06)}
+.cp2-form-card h2{margin:0 0 6px;color:var(--navy)}
+.cp2-muted{margin:0 0 22px;color:var(--muted)}
+.cp2-help{position:sticky;top:110px;padding:30px;border-radius:24px;color:#fff;background:radial-gradient(400px 220px at 85% 0%,rgba(125,211,245,.25),transparent 70%),linear-gradient(135deg,#0B1B33,#0670A8)}
+.cp2-help h2{margin:0 0 10px;color:#fff;font-size:24px!important}
+.cp2-help p{margin:0 0 22px;color:#DCE6F2;line-height:1.8}
+.cp2-help .btn{width:100%;margin-bottom:12px}
+.cp2-phone{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;border:1px solid rgba(255,255,255,.4);color:#fff;font-weight:700;font-size:18px}
+.cp2-phone:hover{background:rgba(255,255,255,.1);color:#fff}
+.cp2-phone .i{width:20px;height:20px}
+
+@media (max-width:1100px){
+  .cp2-private-in,.cp2-request-in{grid-template-columns:1fr}
+  .cp2-private-img{order:-1}
+  .cp2-quotes-list{grid-template-columns:1fr}
+  .cp2-help{position:static}
+}
+@media (max-width:640px){
+  section.cp2-private,section.cp2-steps,section.cp2-areas,section.cp2-quotes,section.cp2-request{padding:64px 0}
+  .cp2-private-in{gap:32px}
+  .cp2-steps-list{grid-template-columns:1fr}
+  .cp2-quotes-list .org-quote{grid-template-columns:1fr}
+  .cp2-quotes-list .org-quote img{aspect-ratio:16/9}
+  .cp2-form-card,.cp2-help{padding:22px}
+}
+/* desktop hero: mirror the wide photo so the people sit opposite the text; tighter headline */
+@media (min-width:641px){.cp2-hero .h3-hero-bg{transform:scaleX(-1);object-position:left center}}
+.cp2-hero h1{font-size:clamp(34px,4.6vw,58px)}
+body:has(.cp2-request) footer{margin-top:0}

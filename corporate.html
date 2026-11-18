@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="assets/site.css?v=67">
 <link rel="stylesheet" href="assets/company.css?v=49">
 <link rel="stylesheet" href="assets/mobile.css?v=15">
+<link rel="stylesheet" href="assets/home.css?v=15">
+<link rel="stylesheet" href="assets/about.css?v=2">
+<link rel="stylesheet" href="assets/corp.css?v=2">
 <link rel="stylesheet" href="assets/taste.css?v=7">
 </head>
 <body>
@@ -110,94 +113,54 @@
 
 <main id="main">
   <!-- PAGE CONTENT START -->
-  <section class="page-hero" aria-labelledby="page-title">
-    <div class="container">
-        <nav class="crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><span aria-current="page">خدمات المنشآت</span></li></ol></nav>
-        <h1 id="page-title">طوّر مهارات فريقك بالتدريب الذي يناسبهم</h1>
-        <p class="lead">اختر بين التدريب الخاص أو الدورات المباشرة المجدولة مسبقًا أو الحلول التدريبية المرنة، بتجربة تلائم منشأتك تمامًا.</p>
+  <!-- Corporate v2 (tools/corp_v2.py): private training only (no scheduled courses, per the client). Photo gen-corp(-m).jpg is an AI-generated placeholder. -->
+  <section class="h3-hero cp2-hero" aria-labelledby="page-title">
+    <picture><source media="(max-width:640px)" srcset="assets/img/gen-corp-m.jpg" width="752" height="1344"><img class="h3-hero-bg" src="assets/img/gen-corp.jpg" alt="" width="1344" height="576" fetchpriority="high"></picture>
+    <div class="container h3-hero-in">
+      <div class="h3-hero-copy">
+        <nav class="crumbs ab-crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><span aria-current="page">خدمات المنشآت</span></li></ol></nav>
+        <h1 id="page-title">طوّر مهارات فريقك <span>بالتدريب الذي يناسبهم</span></h1>
+        <p class="h3-lead">تدريب خاص مصمم وفق احتياجات وأهداف منشأتك، حضوريًا في مقر منشأتك أو في معهد مسارتك أو أونلاين مباشر.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#request">اطلب عرضًا لمنشأتك</a>
-          <a class="btn btn-outline" href="schedule.html">تصفح الدورات القادمة</a>
-        </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="options-title">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="kicker">خيارات التدريب</p>
-          <h2 id="options-title">أي خيار هو الأنسب لك؟</h2>
-          <p>حدد الخيار الأمثل حسب حجم فريقك وميزانيتك وطريقة التعلم المفضلة.</p>
+          <a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=966115116066"><svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#25D366"/><g transform="translate(5.2 5) scale(.68)"><path fill="#fff" d="M16.04 3C9.4 3 4 8.37 4 14.98c0 2.11.56 4.17 1.62 5.99L4 29l8.24-1.6a12.1 12.1 0 0 0 3.8.61c6.63 0 12.03-5.37 12.03-11.98S22.67 3 16.04 3zm0 21.86c-1.2 0-2.38-.2-3.5-.6l-.25-.09-4.9.95.98-4.73-.16-.26a9.83 9.83 0 0 1-1.52-5.25c0-5.47 4.47-9.92 9.97-9.92s9.97 4.45 9.97 9.92-4.48 9.98-9.98 9.98zm5.47-7.43c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.72.22 1.37.19 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></g></svg>تواصل عبر واتساب</a>
         </div>
       </div>
-      <ul class="options">
-        <li class="option reveal">
-          <img src="assets/live/assets-images-corporatewebpage-static-options-private-training.jpeg" alt="جلسة تدريب خاص لفريق منشأة" loading="lazy" width="600" height="338">
-          <div class="body">
-            <span class="badge badge-brand" style="align-self:flex-start">حسب احتياجك</span>
-            <h3>التدريب الخاص</h3>
-            <p>تدريب خاص مصمم وفق احتياجات وأهداف المنشأة، مقدم بمرونة كاملة وبنتائج أوضح.</p>
-            <a class="btn btn-primary" href="#request">تواصل معنا</a>
-          </div>
-        </li>
-        <li class="option reveal">
-          <img src="assets/live/assets-images-corporatewebpage-static-options-scheduled-courses.jpeg" alt="موظف يتابع دورة مجدولة عن بُعد" loading="lazy" width="600" height="338">
-          <div class="body">
-            <span class="badge badge-brand" style="align-self:flex-start">خيارات مرنة ومتعددة</span>
-            <h3>الدورات المجدولة</h3>
-            <p>سجّل موظفيك في دورات مجدولة مسبقًا بتجربة تعلم فعالة وتكلفة مناسبة.</p>
-            <a class="btn btn-outline" href="schedule.html">تصفح الدورات القادمة</a>
-          </div>
-        </li>
-      </ul>
     </div>
   </section>
 
-  <section class="logos" aria-labelledby="partners-title" style="padding-top:0">
-    <div class="container">
-      <h2 id="partners-title">شركاؤنا</h2>
-      <ul class="logo-grid" data-marquee>
-        <li><img width="600" height="600" src="assets/live/assets-images-brands-pmi-1772317207-logo.png" alt="PMI" loading="lazy"></li>
-        <li><img width="479" height="375" src="assets/live/assets-images-brands-shrm-1755797338-logo.jpeg" alt="SHRM" loading="lazy"></li>
-        <li><img width="600" height="600" src="assets/live/assets-images-brands-hrci-1755797160-logo.png" alt="HRCI" loading="lazy"></li>
-        <li><img width="900" height="500" src="assets/live/assets-images-brands-isaca-1772317035-logo.png" alt="ISACA" loading="lazy"></li>
-        <li><img width="450" height="176" src="assets/live/assets-images-brands-peoplecert-1772317158-logo.png" alt="PeopleCert" loading="lazy"></li>
-        <li><img width="512" height="512" src="assets/live/assets-images-brands-pecb-1772317135-logo.png" alt="PECB" loading="lazy"></li>
-        <li><img width="3840" height="2160" src="assets/live/assets-images-brands-veeam-1772317274-logo.png" alt="Veeam" loading="lazy"></li>
-      </ul>
-    </div>
+  <section class="h3-trust" aria-labelledby="trust-title">
+    <div class="container"><h2 id="trust-title" class="sr-only">لماذا تثق بمسارتك</h2><ul class="h3-trust-row list-reset">
+        <li><b class="g-inline"><svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>4.6 <svg class="g-star" aria-hidden="true"><use href="#i-star"/></svg></b><span>تقييم Google · 212 مراجعة</span></li>
+        <li><b><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg>معتمد</b><span>من المؤسسة العامة للتدريب التقني والمهني</span></li>
+        <li><b><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg>مركز اختبارات</b><span>دولية معتمد للمتدربين</span></li>
+        <li><b><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg>حضوري وأونلاين</b><span>في الرياض أو مباشر عن بُعد</span></li>
+      </ul></div>
   </section>
 
-  <section class="soft clients" aria-labelledby="clients-title" style="padding:56px 0">
-    <div class="container">
-      <div class="section-head">
-        <div><p class="kicker">عملاؤنا</p><h2 id="clients-title">نفخر بثقة عملائنا</h2></div>
-        <a class="btn btn-outline btn-sm" href="partners.html#clients">عرض جميع العملاء</a>
+  <section class="cp2-private" aria-labelledby="private-title">
+    <div class="container cp2-private-in">
+      <div class="cp2-private-copy">
+        <p class="h3-kicker">التدريب الخاص</p>
+        <h2 id="private-title">برنامج مصمم لفريقك، لا لدورة عامة</h2>
+        <p class="ab-lead">تدريب خاص مصمم وفق احتياجات وأهداف المنشأة، مقدم بمرونة كاملة وبنتائج أوضح.</p>
+        <ul class="cp2-modes list-reset"><li><span class="ab-ico"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span><div><h3>في مقر منشأتك</h3><p>يأتي المدرب إلى منشأتك ويدرّب فريقك في بيئة العمل نفسها.</p></div></li><li><span class="ab-ico"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><div><h3>في معهد مسارتك</h3><p>قاعات تدريب مجهزة في الرياض بعيدًا عن مشاغل العمل اليومية.</p></div></li><li><span class="ab-ico"><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg></span><div><h3>أونلاين مباشر</h3><p>يجمع فريقك من مواقع مختلفة في جلسة واحدة مع المدرب مباشرة.</p></div></li></ul>
+        <a class="btn btn-primary" href="#request">اطلب عرضًا لمنشأتك</a>
       </div>
-      <ul class="logo-grid" data-marquee>
-        <li><img width="281" height="179" src="assets/live/assets-images-brands-moi-1784712049-logo.jpeg" alt="وزارة الداخلية" loading="lazy"></li>
-        <li><img width="408" height="459" src="assets/live/assets-images-brands-ryas-amn-aldol-1784712237-logo.png" alt="رئاسة أمن الدولة" loading="lazy"></li>
-        <li><img width="950" height="500" src="assets/live/assets-images-brands-mstshf-almlk-fysl-altkhssy-1784125423-logo.png" alt="مستشفى الملك فيصل التخصصي" loading="lazy"></li>
-        <li><img width="2274" height="1749" src="assets/live/assets-images-brands-asmnt-alymam-1789911306-logo.webp" alt="أسمنت اليمامة" loading="lazy"></li>
-        <li><img width="383" height="166" src="assets/live/assets-images-brands-sabko-1786879738-logo.png" alt="سابكو" loading="lazy"></li>
-        <li><img width="987" height="604" src="assets/live/assets-images-brands-al-saaydan-llaakarat-1786434406-logo.png" alt="آل سعيدان للعقارات" loading="lazy"></li>
-        <li><img width="1019" height="899" src="assets/live/assets-images-brands-alkoat-albry-almlky-1769848216-logo.png" alt="القوات البرية الملكية" loading="lazy"></li>
-        <li><img width="1000" height="1000" src="assets/live/assets-images-brands-algoazat-1775195852-logo.png" alt="الجوازات" loading="lazy"></li>
-      </ul>
+      <div class="cp2-private-img"><img src="assets/live/assets-images-corporatewebpage-static-options-private-training.jpeg" alt="تدريب خاص لفريق منشأة" width="520" height="380" loading="lazy"></div>
     </div>
   </section>
 
-  <section aria-labelledby="fields-title">
+  <section class="cp2-steps" aria-labelledby="steps-title">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="kicker">مجالاتنا</p>
-          <h2 id="fields-title">مجالات التدريب للمنشآت</h2>
-          <p>اكتشف المجالات التي نغطيها ضمن حلول التدريب المتقدمة للشركات: 25 مجالًا يُصمَّم لها البرنامج حسب احتياج فريقك.</p>
-        </div>
-        <a class="btn btn-outline btn-sm" href="courses.html">تصفح الدورات</a>
-      </div>
+      <div class="h3-head h3-head-center"><p class="h3-kicker">كيف نعمل</p><h2 id="steps-title">ثلاث خطوات من الطلب إلى التدريب</h2></div>
+      <ol class="cp2-steps-list list-reset"><li><b>01</b><h3>أرسل احتياج فريقك</h3><p>املأ نموذج الطلب أو تواصل معنا عبر واتساب بالمجال وعدد المتدربين والموعد المفضّل.</p></li><li><b>02</b><h3>نقترح البرنامج المناسب</h3><p>يتواصل معك فريق خدمات المنشآت ويقترح المحتوى والمدة وطريقة التدريب التي تناسب فريقك.</p></li><li><b>03</b><h3>نبدأ التدريب</h3><p>ننفّذ البرنامج حضوريًا في مقر منشأتك أو في معهد مسارتك أو أونلاين مباشر، بالموعد المتفق عليه.</p></li></ol>
+    </div>
+  </section>
+
+  <section class="cp2-areas" aria-labelledby="fields-title">
+    <div class="container">
+      <div class="h3-head h3-head-row"><div><p class="h3-kicker">مجالاتنا</p><h2 id="fields-title">مجالات التدريب للمنشآت</h2><p>25 مجالًا يُصمَّم لها البرنامج حسب احتياج فريقك.</p></div><a class="h3-link" href="courses.html">تصفّح الدورات <svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></div>
       <ul class="fd-grid list-reset">
         <li class="fd fd-a"><span class="fd-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h12l-2.5 4L17 12H5"/></svg></span><span>مهارات القيادة</span></li>
         <li class="fd fd-a"><span class="fd-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><span>مهارات الإدارة</span></li>
@@ -228,27 +191,21 @@
     </div>
   </section>
 
-  <section class="soft" aria-labelledby="org-quotes-title">
+  <section class="cp2-quotes" aria-labelledby="org-quotes-title">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="kicker">آراء الجهات</p>
-          <h2 id="org-quotes-title">آراء المنظمات في خيارات التدريب لدينا</h2>
-          <p>لمحة عن كيف دعمت مساراتنا التدريبية جهات مختلفة في تطوير فرقها.</p>
-        </div>
-      </div>
-      <ul class="quotes" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-        <li><figure class="quote org-quote reveal">
+      <div class="h3-head"><p class="h3-kicker">آراء الجهات</p><h2 id="org-quotes-title">ماذا تقول المنظمات عن تدريبنا</h2><p>لمحة عن كيف دعمت برامجنا التدريبية جهات مختلفة في تطوير فرقها.</p></div>
+      <ul class="cp2-quotes-list list-reset">
+<li><figure class="quote org-quote">
           <img src="assets/live/assets-images-corporatewebpage-static-testimonials-testimonial-onsite.jpeg" alt="تدريب حضوري لفريق منشأة" loading="lazy" width="600" height="338">
           <div class="q-body">
-            <span class="badge badge-brand" style="align-self:flex-start">تدريب حضوري</span>
+            <span class="cp2-qtag">تدريب حضوري</span>
             <blockquote>تمكّن فريقنا من الحفاظ على مستوى عالٍ من التركيز طوال اليوم، وساهم التدريب الحضوري في معالجة التحديات بشكل فعّال وعلى أرض الواقع</blockquote>
           </div>
         </figure></li>
-        <li><figure class="quote org-quote reveal">
+<li><figure class="quote org-quote">
           <img src="assets/live/assets-images-corporatewebpage-static-testimonials-testimonial-live-online.jpeg" alt="تدريب مباشر عن بُعد لفريق من مواقع مختلفة" loading="lazy" width="600" height="338">
           <div class="q-body">
-            <span class="badge badge-brand" style="align-self:flex-start">مباشر عن بُعد</span>
+            <span class="cp2-qtag">مباشر عن بُعد</span>
             <blockquote>تمكّنا أكثر من أي وقت من جمع فريقنا من مواقع مختلفة في دورة واحدة، وبشكل أوفر من ناحية التكاليف، وكان للتدريب المباشر دور كبير في تجاوز تحدّي تباعد المواقع بشكل كامل</blockquote>
           </div>
         </figure></li>
@@ -256,11 +213,37 @@
     </div>
   </section>
 
-  <section id="request" aria-labelledby="request-title">
-    <div class="container layout-aside">
-      <div class="panel">
+  <section class="soft clients" aria-labelledby="clients-title" style="padding:56px 0">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="kicker">عملاؤنا</p><h2 id="clients-title">نفخر بثقة عملائنا</h2></div>
+        <a class="btn btn-outline btn-sm" href="partners.html#clients">عرض جميع العملاء</a>
+      </div>
+      <ul class="logo-grid" data-marquee>
+        <li><img width="281" height="179" src="assets/live/assets-images-brands-moi-1784712049-logo.jpeg" alt="وزارة الداخلية" loading="lazy"></li>
+        <li><img width="408" height="459" src="assets/live/assets-images-brands-ryas-amn-aldol-1784712237-logo.png" alt="رئاسة أمن الدولة" loading="lazy"></li>
+        <li><img width="950" height="500" src="assets/live/assets-images-brands-mstshf-almlk-fysl-altkhssy-1784125423-logo.png" alt="مستشفى الملك فيصل التخصصي" loading="lazy"></li>
+        <li><img width="2274" height="1749" src="assets/live/assets-images-brands-asmnt-alymam-1789911306-logo.webp" alt="أسمنت اليمامة" loading="lazy"></li>
+        <li><img width="383" height="166" src="assets/live/assets-images-brands-sabko-1786879738-logo.png" alt="سابكو" loading="lazy"></li>
+        <li><img width="987" height="604" src="assets/live/assets-images-brands-al-saaydan-llaakarat-1786434406-logo.png" alt="آل سعيدان للعقارات" loading="lazy"></li>
+        <li><img width="1019" height="899" src="assets/live/assets-images-brands-alkoat-albry-almlky-1769848216-logo.png" alt="القوات البرية الملكية" loading="lazy"></li>
+        <li><img width="1000" height="1000" src="assets/live/assets-images-brands-algoazat-1775195852-logo.png" alt="الجوازات" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="h3-trust ab-partners" aria-labelledby="partners-title">
+    <div class="container"><h2 id="partners-title" class="sr-only">شركاؤنا في الاعتماد</h2><div class="h3-partners">
+        <div class="h3-partners-head"><h3>شركاؤنا في الاعتماد</h3><p>جهات دولية نقدّم برامجها التدريبية المعتمدة.</p><a class="h3-link" href="partners.html">كل الشركاء <svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></div>
+        <ul class="h3-logos list-reset" aria-label="شركاؤنا في الاعتماد"><li><img width="600" height="600" src="assets/live/assets-images-brands-pmi-1772317207-logo.webp" alt="PMI" loading="lazy"></li><li><img width="479" height="375" src="assets/live/assets-images-brands-shrm-1755797338-logo.jpeg" alt="SHRM" loading="lazy"></li><li><img width="600" height="600" src="assets/live/assets-images-brands-hrci-1755797160-logo.png" alt="HRCI" loading="lazy"></li><li><img width="900" height="500" src="assets/live/assets-images-brands-isaca-1772317035-logo.png" alt="ISACA" loading="lazy"></li><li><img width="450" height="176" src="assets/live/assets-images-brands-peoplecert-1772317158-logo.png" alt="PeopleCert" loading="lazy"></li><li><img width="512" height="512" src="assets/live/assets-images-brands-pecb-1772317135-logo.png" alt="PECB" loading="lazy"></li><li><img width="3840" height="2160" src="assets/live/assets-images-brands-veeam-1772317274-logo.png" alt="Veeam" loading="lazy"></li></ul>
+      </div></div>
+  </section>
+
+  <section id="request" class="cp2-request" aria-labelledby="request-title">
+    <div class="container cp2-request-in">
+      <div class="cp2-form-card">
         <h2 id="request-title">اطلب حلًا تدريبيًا لمنشأتك</h2>
-        <p class="muted" style="margin-top:0">نتائج حقيقية لفريقك تبدأ بخطوة تواصل واضحة مع فريقنا. املأ البيانات وسنتواصل معك.</p>
+        <p class="cp2-muted">املأ البيانات وسيتواصل معك فريق خدمات المنشآت لاقتراح البرنامج المناسب.</p>
         <form class="form" data-demo>
           <div class="form-row">
             <div class="field">
@@ -289,7 +272,6 @@
               <select id="c-type" name="training_type" required>
                 <option value="">اختر نوع التدريب</option>
                 <option>التدريب الخاص</option>
-                <option>الدورات المجدولة</option>
                 <option>لم أحدد بعد</option>
               </select>
             </div>
@@ -307,11 +289,11 @@
           <div><button class="btn btn-primary" type="submit">إرسال الطلب</button></div>
         </form>
       </div>
-      <aside class="panel aside-note sticky-aside" aria-labelledby="help-title">
+      <aside class="cp2-help" aria-labelledby="help-title">
         <h2 id="help-title">دعنا نساعدك!</h2>
-        <p>تحدّث مع فريق خدمات المنشآت مباشرة لاختيار الخيار الأنسب لفريقك.</p>
-        <a class="btn btn-primary" href="https://wa.me/966544956205"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg>تواصل عبر واتساب</a>
-        <a class="btn btn-outline" href="tel:+966920014582"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span class="ltr">920014582</span></a>
+        <p>تحدّث مع فريق خدمات المنشآت مباشرة لاختيار البرنامج الأنسب لفريقك.</p>
+        <a class="btn h3-btn-white" href="https://api.whatsapp.com/send?phone=966115116066"><svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#25D366"/><g transform="translate(5.2 5) scale(.68)"><path fill="#fff" d="M16.04 3C9.4 3 4 8.37 4 14.98c0 2.11.56 4.17 1.62 5.99L4 29l8.24-1.6a12.1 12.1 0 0 0 3.8.61c6.63 0 12.03-5.37 12.03-11.98S22.67 3 16.04 3zm0 21.86c-1.2 0-2.38-.2-3.5-.6l-.25-.09-4.9.95.98-4.73-.16-.26a9.83 9.83 0 0 1-1.52-5.25c0-5.47 4.47-9.92 9.97-9.92s9.97 4.45 9.97 9.92-4.48 9.98-9.98 9.98zm5.47-7.43c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.72.22 1.37.19 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></g></svg>تواصل عبر واتساب</a>
+        <a class="cp2-phone" href="tel:920014582"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span dir="ltr" translate="no">920014582</span></a>
       </aside>
     </div>
   </section>
