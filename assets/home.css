@@ -211,3 +211,18 @@ body:has(.h3-final) footer{margin-top:0;border-top:1px solid rgba(255,255,255,.0
   .h3-hero .btn{min-height:50px}
   .h3-hero::before{background:linear-gradient(0deg,rgba(11,27,51,.98) 0%,rgba(11,27,51,.94) 52%,rgba(11,27,51,.5) 68%,rgba(11,27,51,.05) 82%,transparent 100%)}
 }
+/* trust strip: four facts on one line; partners get their own titled row with full-colour logos */
+.h3-trust .container{grid-template-columns:1fr}
+.h3-trust-row .g-star{color:#F5A623;fill:#F5A623}
+.h3-partners{display:grid;grid-template-columns:260px 1fr;gap:32px;align-items:center;padding-top:32px;border-top:1px solid var(--line)}
+.h3-partners-head h3{margin:0 0 6px;font-size:22px;color:var(--navy)}
+.h3-partners-head p{margin:0 0 6px;color:var(--muted);font-size:15px}
+.h3-logos{border-top:0;padding-top:0;grid-column:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px}
+.h3-logos li{display:grid;place-items:center;height:88px;padding:12px 16px;background:#fff;border:1px solid var(--line);border-radius:16px;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.h3-logos li:hover{border-color:#B2DDFF;box-shadow:0 10px 24px rgba(11,27,51,.08);transform:translateY(-2px)}
+.h3-logos img{height:auto!important;max-height:52px;max-width:100%;width:auto;filter:none;opacity:1}
+@media (max-width:1100px){.h3-partners{grid-template-columns:1fr;gap:18px}}
+@media (max-width:640px){.h3-logos{grid-template-columns:repeat(3,1fr);gap:10px}.h3-logos li{height:72px;padding:10px}.h3-logos img{max-height:40px}}
+@media (prefers-reduced-motion:reduce){.h3-logos li{transition:none}.h3-logos li:hover{transform:none}}
+@media (min-width:1101px){.h3-logos{grid-template-columns:repeat(7,1fr);gap:12px}.h3-logos li{padding:10px 12px}}
+@media (max-width:640px){.h3-logos{grid-template-columns:repeat(4,1fr);gap:8px}.h3-logos li{height:64px;padding:8px}.h3-logos img{max-height:34px}}
