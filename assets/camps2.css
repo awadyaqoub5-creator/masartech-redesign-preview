@@ -71,3 +71,8 @@ section.cm-list{padding:48px 0 88px}
 .cm-actions .btn{white-space:normal;text-align:center}
 @media (min-width:901px){.cm-card{flex-direction:row}.cm-media{width:240px;height:auto;flex:none}.cm-media img{width:110px;height:110px!important}}
 @media (min-width:901px){.cm-media{width:200px}.cm-actions .btn{white-space:nowrap}}
+/* camps are bundles of 3 courses: three overlapping logos in the card banner */
+.cm-media.cm-logos{display:flex;align-items:center;justify-content:center}
+.cm-media.cm-logos img{width:72px!important;height:72px!important;border-radius:18px;padding:8px}
+.cm-media.cm-logos img+img{margin-inline-start:-14px}
+@media (min-width:901px){.cm-media.cm-logos{width:240px;flex-direction:column;gap:0}.cm-media.cm-logos img+img{margin-inline-start:0;margin-top:-14px}}
