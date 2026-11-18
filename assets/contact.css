@@ -1,0 +1,57 @@
+/* contact.css: contact page v2 (tools/contact_v2.py). */
+.ct-hero{color:#fff;padding:56px 0 64px;background:radial-gradient(700px 360px at 12% 0%,rgba(7,147,208,.4),transparent 70%),linear-gradient(135deg,#0B1B33 0%,#0D2747 60%,#075E8F 100%)}
+.ct-hero h1{margin:0 0 12px;color:#fff;font-size:clamp(36px,4.6vw,56px)}
+.ct-lead{margin:0 0 32px;max-width:640px;color:#DCE6F2;font-size:18px;line-height:1.8}
+.ct-quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ct-quick a{display:flex;align-items:center;gap:14px;min-height:76px;padding:14px 18px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;transition:background-color .2s ease,border-color .2s ease,transform .2s ease}
+.ct-quick a:hover{background:rgba(255,255,255,.14);border-color:#7DD3F5;color:#fff;transform:translateY(-2px)}
+.ct-quick .i,.ct-quick .wa-ico{width:40px;height:40px;flex:none;padding:9px;border-radius:12px;background:#fff;color:var(--brand-strong)}
+.ct-quick .wa-ico{padding:0;background:none}
+.ct-quick span{display:grid;min-width:0}
+.ct-quick small{color:#B9C7D8;font-size:13px}
+.ct-quick b{font-size:17px;overflow-wrap:anywhere;text-align:start}
+
+section.ct-main{padding:72px 0;background:#F8FAFC}
+.ct-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;align-items:start}
+.ct-form-card{padding:34px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:0 20px 40px rgba(11,27,51,.06)}
+.ct-form-card h2{margin:0 0 6px;color:var(--navy)}
+.ct-muted{margin:0 0 22px;color:var(--muted)}
+.ct-side{display:grid;gap:16px}
+.ct-card{position:relative;padding:24px;border-radius:22px;background:#fff;border:1px solid var(--line)}
+.ct-card h3{margin:0 0 6px;font-size:19px;color:var(--navy)}
+.ct-card p{margin:0 0 14px;color:#475467;line-height:1.7}
+.ct-ico{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#E0F2FE;color:var(--brand-strong);margin-bottom:12px}
+.ct-ico .i{width:22px;height:22px}
+.ct-hours{margin:6px 0 0;display:grid;gap:8px}
+.ct-hours div{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:12px;background:#F8FAFC}
+.ct-hours dt{font-weight:700;color:var(--navy)}
+.ct-hours dd{margin:0;color:#475467;font-variant-numeric:tabular-nums}
+.ct-fast{color:#fff;border:0;background:radial-gradient(380px 200px at 85% 0%,rgba(125,211,245,.25),transparent 70%),linear-gradient(135deg,#0B1B33,#0670A8)}
+.ct-fast h3{color:#fff}
+.ct-fast p{color:#DCE6F2}
+.ct-fast .btn{width:100%;margin-bottom:10px}
+.ct-phone{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:999px;border:1px solid rgba(255,255,255,.4);color:#fff;font-weight:700;font-size:18px}
+.ct-phone:hover{background:rgba(255,255,255,.1);color:#fff}
+.ct-phone .i{width:20px;height:20px}
+.ct-faq{margin:0;padding:14px 18px;border-radius:16px;border:1px dashed #CBD5E1;color:#475467;text-align:center}
+section.ct-social{padding:80px 0}
+body:has(.ct-social) footer{margin-top:0}
+
+@media (max-width:1100px){.ct-grid{grid-template-columns:1fr}.ct-quick{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .ct-hero{padding:36px 0 40px}
+  .ct-lead{font-size:16px;margin-bottom:22px}
+  .ct-quick a{min-height:64px;padding:10px 14px}
+  section.ct-main{padding:40px 0}
+  .ct-form-card,.ct-card{padding:20px}
+  section.ct-social{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){.ct-quick a{transition:none}.ct-quick a:hover{transform:none}}
+/* phones: the three quick contacts side by side as compact tiles, so the form comes up sooner */
+@media (max-width:640px){
+  .ct-quick{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .ct-quick a{flex-direction:column;justify-content:center;gap:6px;min-height:84px;padding:10px 6px;text-align:center}
+  .ct-quick span{justify-items:center}
+  .ct-quick small{color:#fff;font-size:13px;font-weight:600}
+  .ct-quick b{display:none}
+}
