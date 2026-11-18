@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="assets/site.css?v=67">
 <link rel="stylesheet" href="assets/catalog.css?v=55">
 <link rel="stylesheet" href="assets/mobile.css?v=13">
-<link rel="stylesheet" href="assets/schedule.css?v=2">
+<link rel="stylesheet" href="assets/schedule.css?v=4">
 <link rel="stylesheet" href="assets/taste.css?v=6">
 </head>
 <body>
@@ -122,6 +122,7 @@
   <section class="sch" aria-labelledby="sched-title">
     <div class="container">
       <h2 id="sched-title" class="sr-only">مواعيد الدورات القادمة</h2>
+      <div class="sch-box" data-sch data-url-sync>
       <div class="sch-bar">
         <fieldset class="sch-filter">
           <legend>التصفية:</legend>
@@ -129,15 +130,12 @@
           <label><input type="radio" name="sch-mode" value="onsite"> حضوري</label>
           <label><input type="radio" name="sch-mode" value="online"> أونلاين</label>
         </fieldset>
-        <p class="sch-count" id="sch-count" aria-live="polite">26 موعدًا</p>
-        <div class="sch-views" role="group" aria-label="طريقة العرض">
-          <button type="button" data-view="table" aria-pressed="true" aria-label="عرض كجدول"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-          <button type="button" data-view="grid" aria-pressed="false" aria-label="عرض كبطاقات"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
-        </div>
+        <p class="sch-count" aria-live="polite">26 موعدًا</p>
+        <div class="sch-views" role="group" aria-label="طريقة العرض"><button type="button" data-view="table" aria-pressed="true" aria-label="عرض كجدول"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><button type="button" data-view="grid" aria-pressed="false" aria-label="عرض كبطاقات"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button></div>
       </div>
-      <div class="sch-list" id="sch-list" data-view="table">
-      <section class="sch-month" aria-labelledby="m-2026-11">
-        <h3 class="sch-mhead" id="m-2026-11">دورات شهر نوفمبر 2026</h3>
+      <div class="sch-list" data-view="table">
+      <section class="sch-month" aria-labelledby="sch-m-2026-11">
+        <h3 class="sch-mhead" id="sch-m-2026-11">دورات شهر نوفمبر 2026</h3>
         <div class="sch-thead" aria-hidden="true"><span>الدورة</span><span>تاريخ البداية</span><span>وقت الدورة</span><span>التفاصيل والتسجيل</span></div>
         <ul class="sch-items list-reset">
         <li class="sch-item" data-mode="onsite">
@@ -154,8 +152,8 @@
         </li>
         </ul>
       </section>
-      <section class="sch-month" aria-labelledby="m-2026-12">
-        <h3 class="sch-mhead" id="m-2026-12">دورات شهر ديسمبر 2026</h3>
+      <section class="sch-month" aria-labelledby="sch-m-2026-12">
+        <h3 class="sch-mhead" id="sch-m-2026-12">دورات شهر ديسمبر 2026</h3>
         <div class="sch-thead" aria-hidden="true"><span>الدورة</span><span>تاريخ البداية</span><span>وقت الدورة</span><span>التفاصيل والتسجيل</span></div>
         <ul class="sch-items list-reset">
         <li class="sch-item" data-mode="onsite">
@@ -305,37 +303,40 @@
         </ul>
       </section>
       </div>
-      <p class="sch-empty" id="sch-empty" hidden>لا توجد مواعيد بهذا النوع حاليًا. <a href="courses.html">تصفّح كل الدورات</a> أو <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل معنا</a>.</p>
+      <p class="sch-empty" hidden>لا توجد مواعيد بهذا النوع حاليًا. <a href="courses.html">تصفّح كل الدورات</a> أو <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل معنا</a>.</p>
+    </div>
       <p class="form-note sch-note">التسجيل يتم من صفحة الدورة: اختر الموعد ثم أكمل الطلب. الأسعار تجدها في صفحة كل دورة شاملة الضريبة.</p>
     </div>
     <script>
-      (function () {
-        var list = document.getElementById('sch-list'), count = document.getElementById('sch-count'), empty = document.getElementById('sch-empty');
-        var radios = document.querySelectorAll('input[name="sch-mode"]'), views = document.querySelectorAll('.sch-views button');
-        var q = new URLSearchParams(location.search);
-        function apply() {
-          var mode = document.querySelector('input[name="sch-mode"]:checked').value, n = 0;
-          list.querySelectorAll('.sch-item').forEach(function (li) { var show = mode === 'all' || li.dataset.mode === mode; li.hidden = !show; if (show) n++; });
-          list.querySelectorAll('.sch-month').forEach(function (m) { m.hidden = !m.querySelector('.sch-item:not([hidden])'); });
-          count.textContent = n + ' موعدًا'; empty.hidden = n > 0;
-          var u = new URLSearchParams(location.search);
-          if (mode === 'all') u.delete('mode'); else u.set('mode', mode);
-          if (list.dataset.view === 'grid') u.set('view', 'grid'); else u.delete('view');
-          var s = u.toString(); history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
-        }
-        function setView(v) {
-          list.dataset.view = v;
-          views.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
-          try { localStorage.setItem('mt_sched_view', v); } catch (e) {}
-          apply();
-        }
-        radios.forEach(function (r) { r.addEventListener('change', apply); });
-        views.forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); }); });
-        var m = q.get('mode'); if (m) radios.forEach(function (r) { r.checked = r.value === m; });
-        var v = q.get('view'); if (!v) { try { v = localStorage.getItem('mt_sched_view'); } catch (e) {} }
-        setView(v === 'grid' ? 'grid' : 'table');
-      })();
-    </script>
+  document.querySelectorAll('[data-sch]:not([data-sch-ready])').forEach(function (box) {
+    box.setAttribute('data-sch-ready', '');
+    var list = box.querySelector('.sch-list'), count = box.querySelector('.sch-count'), empty = box.querySelector('.sch-empty');
+    var radios = box.querySelectorAll('.sch-filter input'), views = box.querySelectorAll('.sch-views button'), sync = box.hasAttribute('data-url-sync');
+    var q = new URLSearchParams(location.search);
+    function apply() {
+      var mode = box.querySelector('.sch-filter input:checked').value, n = 0;
+      list.querySelectorAll('.sch-item').forEach(function (li) { var show = mode === 'all' || li.dataset.mode === mode; li.hidden = !show; if (show) n++; });
+      list.querySelectorAll('.sch-month').forEach(function (m) { m.hidden = !m.querySelector('.sch-item:not([hidden])'); });
+      count.textContent = n + ' موعدًا'; empty.hidden = n > 0;
+      if (!sync) return;
+      var u = new URLSearchParams(location.search);
+      if (mode === 'all') u.delete('mode'); else u.set('mode', mode);
+      if (list.dataset.view === 'grid') u.set('view', 'grid'); else u.delete('view');
+      var s = u.toString(); history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
+    }
+    function setView(v) {
+      list.dataset.view = v;
+      views.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
+      try { localStorage.setItem('mt_sched_view', v); } catch (e) {}
+      apply();
+    }
+    radios.forEach(function (r) { r.addEventListener('change', apply); });
+    views.forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); }); });
+    if (sync && q.get('mode')) radios.forEach(function (r) { r.checked = r.value === q.get('mode'); });
+    var v = sync ? q.get('view') : null; if (!v) { try { v = localStorage.getItem('mt_sched_view'); } catch (e) {} }
+    setView(v === 'grid' ? 'grid' : 'table');
+  });
+</script>
   </section>
 
   <section aria-labelledby="help-title" style="padding-top:0">

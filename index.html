@@ -18,8 +18,9 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css?v=67">
 <link rel="stylesheet" href="assets/catalog.css?v=55">
-<link rel="stylesheet" href="assets/home.css?v=11">
 <link rel="stylesheet" href="assets/mobile.css?v=13">
+<link rel="stylesheet" href="assets/home.css?v=12">
+<link rel="stylesheet" href="assets/schedule.css?v=4">
 <link rel="stylesheet" href="assets/taste.css?v=6">
 </head>
 <body>
@@ -195,6 +196,107 @@
       </div>
     </div>
   </section>
+
+  <!-- SCHEDULE START -->
+  <section class="sch sch-home" aria-labelledby="home-sched-title">
+    <div class="container">
+      <div class="h3-head h3-head-row"><div><p class="h3-kicker">جدول التدريب</p><h2 id="home-sched-title">المواعيد القادمة</h2></div><a class="h3-link" href="schedule.html">عرض الجدول كاملًا (26 موعدًا) <svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></div>
+      <div class="sch-box" data-sch>
+      <div class="sch-bar">
+        <fieldset class="sch-filter">
+          <legend>التصفية:</legend>
+          <label><input type="radio" name="hsch-mode" value="all" checked> الكل</label>
+          <label><input type="radio" name="hsch-mode" value="onsite"> حضوري</label>
+          <label><input type="radio" name="hsch-mode" value="online"> أونلاين</label>
+        </fieldset>
+        <p class="sch-count" aria-live="polite">6 موعدًا</p>
+        <div class="sch-views" role="group" aria-label="طريقة العرض"><button type="button" data-view="table" aria-pressed="true" aria-label="عرض كجدول"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><button type="button" data-view="grid" aria-pressed="false" aria-label="عرض كبطاقات"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button></div>
+      </div>
+      <div class="sch-list" data-view="table">
+      <section class="sch-month" aria-labelledby="hsch-m-2026-11">
+        <h3 class="sch-mhead" id="hsch-m-2026-11">دورات شهر نوفمبر 2026</h3>
+        <div class="sch-thead" aria-hidden="true"><span>الدورة</span><span>تاريخ البداية</span><span>وقت الدورة</span><span>التفاصيل والتسجيل</span></div>
+        <ul class="sch-items list-reset">
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-comptia-a.html">دورة CompTIA A+ للدعم الفني وصيانة الحاسب</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-11-29">الأحد 29/11/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 08:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-comptia-a.html" aria-label="تفاصيل دورة CompTIA A+ للدعم الفني وصيانة الحاسب">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-comptia-a.html#options" aria-label="سجّل في دورة CompTIA A+ للدعم الفني وصيانة الحاسب بتاريخ الأحد 29/11/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-aphri-online.html">دورة aPHRi</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-11-29">الأحد 29/11/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 07:00 مساءً حتى 09:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-aphri-online.html" aria-label="تفاصيل دورة aPHRi">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-aphri-online.html#options" aria-label="سجّل في دورة aPHRi بتاريخ الأحد 29/11/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        </ul>
+      </section>
+      <section class="sch-month" aria-labelledby="hsch-m-2026-12">
+        <h3 class="sch-mhead" id="hsch-m-2026-12">دورات شهر ديسمبر 2026</h3>
+        <div class="sch-thead" aria-hidden="true"><span>الدورة</span><span>تاريخ البداية</span><span>وقت الدورة</span><span>التفاصيل والتسجيل</span></div>
+        <ul class="sch-items list-reset">
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-capm.html">دورة CAPM لإدارة المشاريع</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-capm.html" aria-label="تفاصيل دورة CAPM لإدارة المشاريع">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-capm.html#options" aria-label="سجّل في دورة CAPM لإدارة المشاريع بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-capm.html">دورة CAPM لإدارة المشاريع</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-capm.html" aria-label="تفاصيل دورة CAPM لإدارة المشاريع">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-capm.html#options" aria-label="سجّل في دورة CAPM لإدارة المشاريع بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-aphri-online.html">دورة aPHRi</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-aphri-online.html" aria-label="تفاصيل دورة aPHRi">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-aphri-online.html#options" aria-label="سجّل في دورة aPHRi بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-mos.html">دورة أخصائي مايكروسوفت أوفيس MOS</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-mos.html" aria-label="تفاصيل دورة أخصائي مايكروسوفت أوفيس MOS">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-mos.html#options" aria-label="سجّل في دورة أخصائي مايكروسوفت أوفيس MOS بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        </ul>
+      </section>
+      </div>
+      <p class="sch-empty" hidden>لا توجد مواعيد بهذا النوع حاليًا. <a href="courses.html">تصفّح كل الدورات</a> أو <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل معنا</a>.</p>
+    </div>
+    </div>
+    <script>
+  document.querySelectorAll('[data-sch]:not([data-sch-ready])').forEach(function (box) {
+    box.setAttribute('data-sch-ready', '');
+    var list = box.querySelector('.sch-list'), count = box.querySelector('.sch-count'), empty = box.querySelector('.sch-empty');
+    var radios = box.querySelectorAll('.sch-filter input'), views = box.querySelectorAll('.sch-views button'), sync = box.hasAttribute('data-url-sync');
+    var q = new URLSearchParams(location.search);
+    function apply() {
+      var mode = box.querySelector('.sch-filter input:checked').value, n = 0;
+      list.querySelectorAll('.sch-item').forEach(function (li) { var show = mode === 'all' || li.dataset.mode === mode; li.hidden = !show; if (show) n++; });
+      list.querySelectorAll('.sch-month').forEach(function (m) { m.hidden = !m.querySelector('.sch-item:not([hidden])'); });
+      count.textContent = n + ' موعدًا'; empty.hidden = n > 0;
+      if (!sync) return;
+      var u = new URLSearchParams(location.search);
+      if (mode === 'all') u.delete('mode'); else u.set('mode', mode);
+      if (list.dataset.view === 'grid') u.set('view', 'grid'); else u.delete('view');
+      var s = u.toString(); history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
+    }
+    function setView(v) {
+      list.dataset.view = v;
+      views.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
+      try { localStorage.setItem('mt_sched_view', v); } catch (e) {}
+      apply();
+    }
+    radios.forEach(function (r) { r.addEventListener('change', apply); });
+    views.forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); }); });
+    if (sync && q.get('mode')) radios.forEach(function (r) { r.checked = r.value === q.get('mode'); });
+    var v = sync ? q.get('view') : null; if (!v) { try { v = localStorage.getItem('mt_sched_view'); } catch (e) {} }
+    setView(v === 'grid' ? 'grid' : 'table');
+  });
+</script>
+  </section>
+  <!-- SCHEDULE END -->
 
   <section class="h3-why" aria-labelledby="why-title">
     <div class="container h3-why-in">

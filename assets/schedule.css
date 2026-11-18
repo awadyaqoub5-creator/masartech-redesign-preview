@@ -74,3 +74,8 @@ section.sch{padding:40px 0 64px}
 }
 @media (prefers-reduced-motion:reduce){.sch-item,.sch-views button{transition:none!important}.sch-item:hover{transform:none!important}}
 section.sch-month{padding:0!important}
+/* homepage block: same look, a little tighter */
+section.sch-home{padding:96px 0;background:#F8FAFC}
+.sch-home .sch-bar{background:#fff}
+@media (max-width:640px){section.sch-home{padding:64px 0}}
+@media (max-width:760px){.sch-list .sch-item>*{align-self:stretch;text-align:start}}
