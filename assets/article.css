@@ -112,3 +112,14 @@ section.ar-ad{padding:0!important;margin:0}
 .ar-ad-chips a:focus-visible{outline:2px solid #7DD3F5;outline-offset:2px}
 @media (max-width:640px){.ar-ad-chips a{padding:4px 10px}}
 @media (prefers-reduced-motion:reduce){.ar-ad-chips a{transition:none}}
+/* desktop = the phone design (client): one compact column, no logo cards */
+.ar-ad-art{display:none!important}
+.ar-ad-in{grid-template-columns:minmax(0,1fr);gap:0;padding-block:24px}
+.ar-ad-k{margin-bottom:8px;font-size:13.5px}
+.ar-ad-t{font-size:clamp(21px,2.2vw,26px);margin-bottom:12px}
+.ar-ad-t span{font-size:15.5px;margin-top:4px}
+.ar-ad-chips{gap:6px;margin-bottom:14px}
+.ar-ad-chips li{font-size:13.5px}
+.ar-ad-chips a{padding:5px 12px}
+.ar-ad-btn{min-height:46px;padding-inline:22px}
+.ar-ad::before{-webkit-mask:linear-gradient(90deg,#000,transparent 80%);mask:linear-gradient(90deg,#000,transparent 80%)}
