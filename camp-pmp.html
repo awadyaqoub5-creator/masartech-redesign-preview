@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="assets/camps.css?v=49">
 <link rel="stylesheet" href="assets/waitlist.css?v=49">
 <link rel="stylesheet" href="assets/mobile.css?v=15">
+<link rel="stylesheet" href="assets/about.css?v=3">
+<link rel="stylesheet" href="assets/camp-page.css?v=3">
 <link rel="stylesheet" href="assets/taste.css?v=8">
 </head>
 <body>
@@ -112,117 +114,119 @@
 
 <main id="main">
   <!-- PAGE CONTENT START -->
-  <!-- PROPOSED CAMP built on the real «دورة إدارة المشاريع PMP من PMI» page. Agenda is a proposal: review with the trainer. Dates, price, seats = placeholders. -->
-  <section class="page-hero camp-hero" aria-labelledby="page-title">
+  <!-- Camp page v2 (tools/gen_camp_pages_v2.py): dark numbered landing page. Content from gen_camps.py CAMPS; dates/fees still to be announced. -->
+  <div class="cg">
+  <section class="cg-hero" aria-labelledby="page-title">
+    <div class="container cg-hero-in">
+      <div class="cg-hero-copy">
+        <nav class="crumbs ab-crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><a href="camps.html">المعسكرات</a></li><li><span aria-current="page">معسكر PMP لإدارة المشاريع</span></li></ol></nav>
+        <p class="cg-en" dir="ltr" translate="no">PMP PROJECT MANAGEMENT BOOTCAMP</p>
+        <h1 id="page-title">معسكر PMP لإدارة المشاريع</h1>
+        <p class="cg-sub">تحضير مكثّف لشهادة <span dir="auto">PMP من PMI</span></p>
+        <p class="cg-lead">خمسة أيام × 7 ساعات = 35 ساعة تعليم في إدارة المشاريع، تغطي مجالات PMP الحديثة وتنتهي بمحاكاة اختبار وخطة مراجعة.</p>
+        <div class="cta-row"><a class="btn cg-btn" href="#register">سجّل اهتمامك الآن</a><a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=966115116066">اسأل على واتساب</a></div>
+        <p class="cg-when"><span class="dot" aria-hidden="true"></span>المواعيد تُعلن قريبًا · حضوري في الرياض أو أونلاين مباشر</p>
+      </div>
+      <div class="cg-hero-art" aria-hidden="true">
+        <div class="cg-logo"><img src="assets/live/assets-images-products-product_images-34-1-1789738310.webp" alt="" width="140" height="140"></div>
+        <ol class="cg-steps list-reset"><li><span>اليوم 1</span></li><li><span>اليوم 2</span></li><li><span>اليوم 3</span></li><li><span>اليوم 4</span></li><li><span>اليوم 5</span></li></ol>
+      </div>
+    </div>
+    <div class="container"><ul class="cg-facts list-reset" aria-label="معلومات المعسكر">
+      <li><b>5 أيام</b><small>مكثّفة ومتواصلة</small></li>
+      <li><b dir="auto">PMP من PMI</b><small>الشهادة المستهدفة</small></li>
+      <li><b>مرن</b><small>حضوري أو أونلاين</small></li>
+      <li><b>تُعلن قريبًا</b><small>الرسوم والمواعيد</small></li>
+    </ul></div>
+  </section>
+
+  <section class="cg-sec" aria-labelledby="who-title">
+    <div class="container cg-split">
+      <div><p class="cg-k">01 / لمن هذا المعسكر؟</p><h2 id="who-title">مصمّم لمن يريد نتيجة أسرع.</h2></div>
+      <ul class="cg-who list-reset"><li><span class="cg-chk" aria-hidden="true"></span>مديرو المشاريع ومنسقوها الذين يستوفون شروط خبرة PMI</li><li><span class="cg-chk" aria-hidden="true"></span>من يحتاج 35 ساعة تعليم للتقديم على PMP</li><li><span class="cg-chk" aria-hidden="true"></span>الفرق التي تريد إطار عمل موحّدًا يجمع التنبؤي والرشيق</li></ul>
+    </div>
+  </section>
+
+  <section class="cg-sec cg-alt" aria-labelledby="out-title">
     <div class="container">
-      <nav class="crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><a href="camps.html">المعسكرات</a></li><li><span aria-current="page">معسكر PMP لإدارة المشاريع</span></li></ol></nav>
-      <div class="camp-hero-grid">
-        <div>
-          <div class="pill-row" style="margin:12px 0 4px"><span class="badge badge-brand">إدارة المشاريع</span><span class="badge">معسكر مكثّف</span></div>
-          <h1 id="page-title">معسكر PMP لإدارة المشاريع</h1>
-          <p class="lead">خمسة أيام × 7 ساعات = 35 ساعة تعليم في إدارة المشاريع، تغطي مجالات PMP الحديثة وتنتهي بمحاكاة اختبار وخطة مراجعة.</p>
-          <div style="margin-top:14px"><a class="g-rating g-rating-lg" href="https://maps.google.com/?cid=1297278102350562421" target="_blank" rel="noopener" aria-label="تقييم معهد مسارتك على Google: 4.6 من 5، من 212 مراجعة (يفتح خرائط Google)"><svg class="g-logo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg><span aria-hidden="true">تقييم Google</span><b aria-hidden="true">4.6</b><svg class="g-star" aria-hidden="true"><use href="#i-star"/></svg><span aria-hidden="true">(212 مراجعة)</span></a></div>
-          <ul class="key-facts list-reset">
-            <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span><small>المدة</small><b>5 أيام مكثّفة</b></span></li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><span><small>البداية</small><b><span class="placeholder">[dd/MM/yyyy]</span></b></span></li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-monitor"/></svg><span><small>الحضور</small><b>حضوري بالرياض أو أونلاين</b></span></li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg><span><small>الشهادة المستهدفة</small><b dir="auto">PMP من PMI</b></span></li>
-          </ul>
+      <p class="cg-k">02 / ماذا ستحقق</p><h2 id="out-title">في نهاية المعسكر ستكون قادرًا على…</h2>
+      <ul class="cg-out list-reset"><li><h3>إطار عمل كامل</h3><p>أساسيات إدارة المشاريع ونظام توصيل القيمة ومجالات الأداء.</p></li><li><h3>التحكم في المشروع</h3><p>النطاق والوقت والتكلفة: WBS والجدولة والميزانية وEVM.</p></li><li><h3>أصحاب المصلحة والمخاطر</h3><p>الاتصال ومصفوفات التأثير والمخاطر والمشتريات.</p></li><li><h3>Agile &amp; Hybrid</h3><p>Scrum وKanban واختيار النهج المناسب لكل مشروع.</p></li></ul>
+    </div>
+  </section>
+
+  <section class="cg-sec" aria-labelledby="agenda-title">
+    <div class="container">
+      <p class="cg-k">03 / البرنامج يومًا بيوم</p><h2 id="agenda-title">5 أيام. خطة واحدة متكاملة.</h2>
+      <p class="cg-note">برنامج مقترح مبني على محاور الدورة، يُعتمد مع إعلان الموعد.</p>
+      <ol class="cg-agenda list-reset"><li><b class="cg-n">01</b><div><p class="cg-day">اليوم 1</p><h3>أساسيات إدارة المشاريع ونظام القيمة</h3><p>الحوكمة وأدوار الفريق وبيئة المشروع، والمواءمة الاستراتيجية وقياس القيمة.</p></div></li><li><b class="cg-n">02</b><div><p class="cg-day">اليوم 2</p><h3>مجالات الأداء والنطاق والوقت والتكلفة</h3><p>أصحاب المصلحة والفريق والتخطيط، وWBS والجدولة والميزانية وEVM.</p></div></li><li><b class="cg-n">03</b><div><p class="cg-day">اليوم 3</p><h3>الجودة والموارد والاتصال</h3><p>RACI وإدارة الموارد وقنوات الاتصال وإدارة التوقعات.</p></div></li><li><b class="cg-n">04</b><div><p class="cg-day">اليوم 4</p><h3>المخاطر والمشتريات وAgile</h3><p>التحليل النوعي والكمي وخطط الاستجابة والتعاقد، وScrum وKanban والنهج الهجين.</p></div></li><li><b class="cg-n">05</b><div><p class="cg-day">اليوم 5</p><h3>الأخلاقيات ومحاكاة الاختبار</h3><p>مدونة PMI والمسؤولية المهنية، ثم محاكاة اختبار وتحليل فجوات وخطة مراجعة.</p></div></li></ol>
+    </div>
+  </section>
+
+  <section class="cg-sec cg-alt" aria-labelledby="exam-title">
+    <div class="container cg-split">
+      <div><p class="cg-k">04 / الاختبار والشهادة</p><h2 id="exam-title">من التدريب إلى الشهادة.</h2>
+        <p class="cg-muted">المعسكر برنامج تدريب وتحضير. الشهادة الرسمية (<span dir="auto">PMP من PMI</span>) تصدر من الجهة المانحة بعد اجتياز اختبارها، وتحصل من مسارتك على شهادة معتمدة عبر منصة منار.</p></div>
+      <ul class="cg-exam list-reset"><li><small>الجهة المانحة</small><b>PMI</b></li><li><small>ساعات التعليم المطلوبة</small><b>35 ساعة في إدارة المشاريع</b></li><li><small>شرط الخبرة</small><b>خبرة قيادة مشاريع حسب مؤهلك</b></li><li><small>بديل بلا خبرة</small><b>CAPM (23 ساعة، بلا خبرة)</b></li></ul>
+    </div>
+  </section>
+
+  <section class="cg-sec" aria-labelledby="incl-title">
+    <div class="container">
+      <p class="cg-k">05 / ما يشمله المعسكر</p><h2 id="incl-title">كل ما تحتاجه في مكان واحد.</h2>
+      <ul class="cg-incl list-reset"><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg></span><div><h3>شهادة معتمدة</h3><p>معتمدة من المؤسسة العامة للتدريب التقني والمهني والمركز الوطني للتعليم الإلكتروني عبر منصة منار.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></span><div><h3>مركز اختبارات دولية</h3><p>مركز اختبارات دولية معتمد مخصص للمتدربين المسجلين.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><div><h3>متابعة المدربين</h3><p>فريق مدربين متخصصين يتابعك خلال المعسكر.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span><div><h3>اختبار تجريبي</h3><p>آخر يوم في المعسكر محاكاة للاختبار وخطة مراجعة.</p></div></li></ul>
+    </div>
+  </section>
+
+  <section class="cg-sec cg-alt" id="fees" aria-labelledby="fees-title">
+    <div class="container">
+      <p class="cg-k">06 / الرسوم والمواعيد</p><h2 id="fees-title">احجز مكانك أول ما يُفتح التسجيل.</h2>
+      <div class="cg-fees">
+        <div class="cg-fee-card">
+          <p class="cg-status"><span class="dot" aria-hidden="true"></span>التسجيل لم يُفتح بعد</p>
+          <ul class="cg-fee-list list-reset"><li><small>بداية المعسكر</small><b>تُعلن قريبًا</b></li><li><small>المدة</small><b>5 أيام مكثّفة</b></li><li><small>طريقة الحضور</small><b>حضوري أو أونلاين</b></li><li><small>الرسوم</small><b>تُعلن قريبًا</b></li></ul>
+          <button type="button" class="btn cg-btn" data-waitlist="معسكر PMP لإدارة المشاريع">انضم لقائمة الانتظار</button>
+          <p class="cg-pay">الدفع المباشر أو التقسيط عبر tabby وتمارا عند فتح التسجيل.</p>
         </div>
-        <img class="camp-logo" src="assets/live/assets-images-products-product_images-34-1-1789738310.webp" alt="شعار شهادة PMP" width="160" height="160">
+        <div class="cg-alt-card">
+          <p class="cg-k">تفضّل التعلّم على مدى أسابيع؟</p>
+          <h3>دورة إدارة المشاريع PMP من PMI</h3>
+          <p>4 أسابيع · ابتداءً من 1,495 ر.س</p>
+          <a class="btn btn-ghost-light" href="course-pmp.html">تفاصيل الدورة</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="container layout-aside camp-layout">
-    <aside class="camp-aside" aria-label="التسجيل في المعسكر">
-      <div class="sticky-aside stack">
-        <div class="panel enrol-camp">
-          <h2>سجّل في معسكر PMP لإدارة المشاريع</h2>
-          <div class="price"><small>رسوم المعسكر</small><strong><span class="placeholder">[السعر]</span> <span class="sar" aria-label="ريال سعودي">⃁</span></strong></div>
-          <ul class="facts">
-            <li><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg>البداية: <span class="placeholder">[التاريخ]</span></li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>5 أيام، <span class="placeholder">[الساعات اليومية]</span></li>
-            <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>المقاعد: <span class="placeholder">[العدد]</span></li>
-          </ul>
-          <div class="wl-callout"><b>التسجيل لم يُفتح بعد</b>انضم لقائمة الانتظار ونبلغك أول ما يُعلن الموعد.</div>
-          <button type="button" class="btn btn-primary" style="width:100%;margin-top:12px" data-waitlist="معسكر PMP لإدارة المشاريع">انضم لقائمة الانتظار</button>
-          <a class="btn btn-outline" style="width:100%;margin-top:10px" href="https://api.whatsapp.com/send?phone=966115116066"><svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#25D366"/><g transform="translate(5.2 5) scale(.68)"><path fill="#fff" d="M16.04 3C9.4 3 4 8.37 4 14.98c0 2.11.56 4.17 1.62 5.99L4 29l8.24-1.6a12.1 12.1 0 0 0 3.8.61c6.63 0 12.03-5.37 12.03-11.98S22.67 3 16.04 3zm0 21.86c-1.2 0-2.38-.2-3.5-.6l-.25-.09-4.9.95.98-4.73-.16-.26a9.83 9.83 0 0 1-1.52-5.25c0-5.47 4.47-9.92 9.97-9.92s9.97 4.45 9.97 9.92-4.48 9.98-9.98 9.98zm5.47-7.43c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.58c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.48.71.31 1.27.49 1.7.63.72.22 1.37.19 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z"/></g></svg>اسأل على واتساب</a>
-        </div>
-        <div class="panel">
-          <h2 style="font-size:17px;margin-bottom:6px">تفضّل التعلّم على مدى أسابيع؟</h2>
-          <p class="muted" style="margin:0 0 12px;font-size:15px">دورة إدارة المشاريع PMP من PMI: 4 أسابيع، ابتداءً من 1,495 <span class="sar" aria-label="ريال سعودي">⃁</span>.</p>
-          <a class="btn btn-outline btn-sm" style="width:100%" href="course-pmp.html">تفاصيل الدورة</a>
-        </div>
-      </div>
-    </aside>
-
-    <div class="camp-main">
-      <section aria-labelledby="who-title">
-        <h2 id="who-title">لمن هذا المعسكر؟</h2>
-        <ul class="facts who list-reset"><li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span>مديرو المشاريع ومنسقوها الذين يستوفون شروط خبرة PMI</span></li><li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span>من يحتاج 35 ساعة تعليم للتقديم على PMP</span></li><li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span>الفرق التي تريد إطار عمل موحّدًا يجمع التنبؤي والرشيق</span></li></ul>
-      </section>
-
-      <section aria-labelledby="out-title">
-        <h2 id="out-title">ماذا ستحقق في نهاية المعسكر؟</h2>
-        <ul class="benefits two">
-          <li class="benefit"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></div><h3>إطار عمل كامل</h3><p>أساسيات إدارة المشاريع ونظام توصيل القيمة ومجالات الأداء.</p></li>
-          <li class="benefit"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></div><h3>التحكم في المشروع</h3><p>النطاق والوقت والتكلفة: WBS والجدولة والميزانية وEVM.</p></li>
-          <li class="benefit"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></div><h3>أصحاب المصلحة والمخاطر</h3><p>الاتصال ومصفوفات التأثير والمخاطر والمشتريات.</p></li>
-          <li class="benefit"><div class="ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></div><h3>Agile & Hybrid</h3><p>Scrum وKanban واختيار النهج المناسب لكل مشروع.</p></li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="agenda-title">
-        <h2 id="agenda-title">البرنامج يومًا بيوم</h2>
-        <p class="muted"><span class="placeholder">[برنامج مقترح مبني على محاور الدورة: يُراجع مع المدرب قبل النشر]</span></p>
-        <ol class="timeline list-reset">
-          <li class="reveal"><span class="day">اليوم 1</span><div><h3>أساسيات إدارة المشاريع ونظام القيمة</h3><p>الحوكمة وأدوار الفريق وبيئة المشروع، والمواءمة الاستراتيجية وقياس القيمة.</p></div></li>
-          <li class="reveal"><span class="day">اليوم 2</span><div><h3>مجالات الأداء والنطاق والوقت والتكلفة</h3><p>أصحاب المصلحة والفريق والتخطيط، وWBS والجدولة والميزانية وEVM.</p></div></li>
-          <li class="reveal"><span class="day">اليوم 3</span><div><h3>الجودة والموارد والاتصال</h3><p>RACI وإدارة الموارد وقنوات الاتصال وإدارة التوقعات.</p></div></li>
-          <li class="reveal"><span class="day">اليوم 4</span><div><h3>المخاطر والمشتريات وAgile</h3><p>التحليل النوعي والكمي وخطط الاستجابة والتعاقد، وScrum وKanban والنهج الهجين.</p></div></li>
-          <li class="reveal"><span class="day">اليوم 5</span><div><h3>الأخلاقيات ومحاكاة الاختبار</h3><p>مدونة PMI والمسؤولية المهنية، ثم محاكاة اختبار وتحليل فجوات وخطة مراجعة.</p></div></li>
-        </ol>
-      </section>
-
-      <section aria-labelledby="exam-title">
-        <h2 id="exam-title">الاختبار والشهادة</h2>
-        <ul class="stat-tiles list-reset"><li><b>PMI</b><span>الجهة المانحة</span></li><li><b>35 ساعة في إدارة المشاريع</b><span>ساعات التعليم المطلوبة</span></li><li><b>خبرة قيادة مشاريع حسب مؤهلك</b><span>شرط الخبرة</span></li><li><b>CAPM (23 ساعة، بلا خبرة)</b><span>بديل بلا خبرة</span></li></ul>
-        
-        <div class="alert alert-info" style="margin-top:16px">المعسكر برنامج تدريب وتحضير. الشهادة الرسمية (PMP من PMI) تصدر من الجهة المانحة بعد اجتياز الاختبار، وتحصل من مسارتك على شهادة معتمدة من المؤسسة العامة للتدريب التقني والمهني والمركز الوطني للتعليم الإلكتروني عبر منصة منار.</div>
-      </section>
-
-      <section aria-labelledby="incl-title">
-        <h2 id="incl-title">ما يشمله المعسكر</h2>
-        <ul class="facts incl list-reset">
-          <li><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg>مركز اختبارات دولية معتمد مخصص للمتدربين المسجلين.</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>متابعة مستمرة من فريق مدربين متخصصين.</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg>شهادة حضور معتمدة عبر منصة منار.</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span class="placeholder">[مزايا خاصة: مواد، اختبارات تجريبية، وجبات…]</span></li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="faq-title">
-        <h2 id="faq-title">أسئلة شائعة</h2>
-        <div class="accordion">
-          <details><summary>هل تُحتسب ساعات المعسكر ضمن 35 ساعة PMI؟</summary><div><span class="placeholder">[أكّد اعتماد ساعات المعسكر كساعات تعليم معتمدة لدى PMI قبل النشر]</span></div></details>
-          <details><summary>ليست لدي خبرة في إدارة المشاريع، هل يناسبني؟</summary><div>PMP تشترط خبرة في قيادة المشاريع حسب مؤهلك. إذا لم تكن لديك خبرة فشهادة <a href="course-capm.html">CAPM</a> لا تشترط خبرة وتحتاج 23 ساعة تعليم.</div></details>
-          <details><summary>هل رسوم اختبار PMI مشمولة؟</summary><div><span class="placeholder">[الإجابة]</span></div></details>
-        </div>
-      </section>
+  <section class="cg-sec" aria-labelledby="faq-title">
+    <div class="container cg-split">
+      <div><p class="cg-k">07 / أسئلة سريعة</p><h2 id="faq-title">إجابات واضحة.</h2></div>
+      <div class="cg-faq"><details><summary>هل تُحتسب ساعات المعسكر ضمن 35 ساعة PMI؟</summary><div><span class="placeholder">[أكّد اعتماد ساعات المعسكر كساعات تعليم معتمدة لدى PMI قبل النشر]</span></div></details><details><summary>ليست لدي خبرة في إدارة المشاريع، هل يناسبني؟</summary><div>PMP تشترط خبرة في قيادة المشاريع حسب مؤهلك. إذا لم تكن لديك خبرة فشهادة <a href="https://masartech.com.sa/product/capm">CAPM</a> لا تشترط خبرة وتحتاج 23 ساعة تعليم.</div></details><details><summary>هل رسوم اختبار PMI مشمولة؟</summary><div><span class="placeholder">[الإجابة]</span></div></details></div>
     </div>
+  </section>
+
+  <section class="cg-sec cg-alt" id="register" aria-labelledby="reg-title">
+    <div class="container cg-split">
+      <div><p class="cg-k">08 / التسجيل</p><h2 id="reg-title">سجّل اهتمامك بالمعسكر.</h2><p class="cg-muted">اترك بياناتك، ونبلغك أول ما يُعلن الموعد والرسوم.</p>
+        <p class="cg-muted">تفضّل المحادثة؟ <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل عبر واتساب</a> أو اتصل على <a href="tel:+966920014582" dir="ltr">920014582</a>.</p></div>
+      <form class="cg-form" data-demo>
+        <div class="cg-row"><label>الاسم الكامل<input name="name" autocomplete="name" required></label><label>رقم الجوال<input name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="05XXXXXXXX…" required></label></div>
+        <div class="cg-row"><label>البريد الإلكتروني<input name="email" type="email" autocomplete="email" spellcheck="false" dir="ltr" required></label><label>طريقة الحضور<select name="mode" required><option value="">اختر طريقة الحضور</option><option>حضوري في الرياض</option><option>أونلاين مباشر</option></select></label></div>
+        <input type="hidden" name="camp" value="معسكر PMP لإدارة المشاريع">
+        <button class="btn cg-btn" type="submit">إرسال طلب التسجيل</button>
+        <p class="cg-done" data-demo-msg hidden tabindex="-1">تم تسجيل اهتمامك بـ معسكر PMP لإدارة المشاريع. نبلغك أول ما يُعلن الموعد.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="cg-sec" aria-labelledby="more-title">
+    <div class="container">
+      <p class="cg-k">معسكرات أخرى</p><h2 id="more-title">قد يهمك أيضًا.</h2>
+      <ul class="cg-more list-reset"><li><a href="camp-ccna.html"><img src="assets/live/assets-images-products-product_images-24-1-1791803038.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر CCNA للشبكات</b><small>6 أيام · Cisco CCNA</small></span></a></li><li><a href="camp-power-bi.html"><img src="assets/live/assets-images-products-product_images-29-1-1791802843.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر Power BI لتحليل البيانات</b><small>5 أيام · Microsoft Certified: Power BI Data Analyst Associate</small></span></a></li><li><a href="camp-aphri.html"><img src="assets/live/assets-images-products-product_images-31-1-1789740441.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر aPHRi للموارد البشرية</b><small>5 أيام · aPHRi من HRCI</small></span></a></li></ul>
+      <p class="cg-all"><a class="btn btn-ghost-light" href="camps.html">كل المعسكرات</a></p>
+    </div>
+  </section>
+  <a class="cg-float" href="#register"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><span>سجّل الآن</span></a>
   </div>
-
-  <section class="soft" aria-labelledby="more-title">
-    <div class="container">
-      <div class="section-head"><div><p class="kicker">معسكرات أخرى</p><h2 id="more-title">قد يهمك أيضًا</h2></div><a class="btn btn-outline btn-sm" href="camps.html">كل المعسكرات</a></div>
-      <ul class="grid list-reset">
-        <li class="card camp"><div class="camp-top"><span class="badge badge-brand">الشبكات والتقنية</span><span class="badge">6 أيام</span></div><div class="card-body"><h3><a href="camp-ccna.html">معسكر CCNA للشبكات</a></h3><p class="sub">تأهيل لـ Cisco CCNA</p><div class="card-foot"><span class="muted" style="font-size:14px"><span class="placeholder">[الموعد]</span></span><span class="btn btn-outline btn-sm" aria-hidden="true">التفاصيل</span></div></div></li>
-        <li class="card camp"><div class="camp-top"><span class="badge badge-brand">تحليل البيانات</span><span class="badge">5 أيام</span></div><div class="card-body"><h3><a href="camp-power-bi.html">معسكر Power BI لتحليل البيانات</a></h3><p class="sub">تأهيل لـ Microsoft Certified: Power BI Data Analyst Associate</p><div class="card-foot"><span class="muted" style="font-size:14px"><span class="placeholder">[الموعد]</span></span><span class="btn btn-outline btn-sm" aria-hidden="true">التفاصيل</span></div></div></li>
-        <li class="card camp"><div class="camp-top"><span class="badge badge-brand">الموارد البشرية</span><span class="badge">5 أيام</span></div><div class="card-body"><h3><a href="camp-aphri.html">معسكر aPHRi للموارد البشرية</a></h3><p class="sub">تأهيل لـ aPHRi من HRCI</p><div class="card-foot"><span class="muted" style="font-size:14px"><span class="placeholder">[الموعد]</span></span><span class="btn btn-outline btn-sm" aria-hidden="true">التفاصيل</span></div></div></li>
-      </ul>
-    </div>
-  </section>
   <!-- PAGE CONTENT END -->
 </main>
 
