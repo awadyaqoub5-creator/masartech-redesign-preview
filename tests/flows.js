@@ -32,8 +32,8 @@ async page => {
   await page.locator('.h3-rv-cards').scrollIntoViewIfNeeded(); await page.locator('.h3-rv-cards .rv-nav.next').click(); await page.waitForTimeout(700);
   ok('reviews arrow scrolls', Math.abs((await track.evaluate(e => e.scrollLeft)) - x0) > 20);
   // hero tile goes to its course
-  await page.locator('.h3-big h3 a').click(); await page.waitForLoadState('load');
-  ok('featured course tile opens its page', /course-pmp\.html/.test(page.url()), page.url().slice(22));
+  await page.locator('.sch-home .sch-act .btn-outline').first().click(); await page.waitForLoadState('load');
+  ok('home schedule opens a course page', /course-.*\.html/.test(page.url()), page.url().slice(22));
   await go('index.html');
   if (mobile) {
     ok('bottom tab bar on home', await vis('.m-tabbar') && (await page.locator('.m-tabbar a[aria-current=page]').getAttribute('href')) === 'index.html');

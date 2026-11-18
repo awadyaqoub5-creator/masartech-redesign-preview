@@ -1,0 +1,70 @@
+/* about.css: About page v2 (tools/about_v2.py). Shares hero, trust, partners and final CTA with home.css. */
+.ab-crumbs{margin-bottom:14px}
+.ab-crumbs ol{display:flex;gap:8px;margin:0;padding:0;list-style:none;font-size:14px;color:#B9C7D8}
+.ab-crumbs li+li::before{content:"‹";margin-inline-end:8px;color:#7DD3F5}
+.ab-crumbs a{color:#DCE6F2}
+.ab-hero h1{font-size:clamp(34px,4.6vw,58px)}
+section.ab-who{background:#fff}
+.ab-who .h3-why-copy h2{margin-bottom:18px}
+.ab-who p{margin:0 0 14px;color:#344054;font-size:17px;line-height:1.9}
+.ab-who .ab-lead{font-size:19px;color:var(--navy);font-weight:600}
+
+/* Vision & mission: two cards */
+section.ab-mv{padding:0 0 96px;background:#fff}
+.ab-mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ab-mv-card{position:relative;padding:34px 32px;border-radius:24px;background:#F4F7FA;border:1px solid var(--line);overflow:hidden}
+.ab-mv-card:first-child{background:#0B1B33;border-color:#0B1B33}
+.ab-mv-card:first-child p{color:#fff}
+.ab-mv-card:first-child .ab-mv-tag{background:rgba(125,211,245,.16);color:#7DD3F5}
+.ab-mv-tag{display:inline-block;margin-bottom:14px;padding:6px 14px;border-radius:999px;background:#E0F2FE;color:#0670A8;font-weight:700;font-size:15px}
+.ab-mv-card p{margin:0;font-size:clamp(19px,1.8vw,23px);line-height:1.7;color:var(--navy);font-weight:600}
+
+/* Vision 2030 band */
+section.ab-2030{padding:88px 0;color:#fff;background:radial-gradient(600px 300px at 15% 20%,rgba(7,147,208,.35),transparent 70%),linear-gradient(135deg,#0B1B33,#0670A8)}
+.ab-2030-in{max-width:880px;text-align:center}
+.ab-2030 .h3-kicker{justify-content:center;color:#7DD3F5}
+.ab-2030 h2{margin:0 0 16px;color:#fff}
+.ab-2030 p:last-child{margin:0;color:#DCE6F2;font-size:18px;line-height:1.9}
+
+/* Values: five numbered tiles */
+section.ab-values{padding:96px 0}
+.ab-values-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.ab-values-list li{padding:24px 20px;border:1px solid var(--line);border-radius:20px;background:#fff;transition:transform .2s ease,box-shadow .2s ease}
+.ab-values-list li:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(11,27,51,.08)}
+.ab-values-list b{display:block;font-size:34px;font-weight:300;line-height:1;color:var(--brand-strong);margin-bottom:16px;font-variant-numeric:tabular-nums}
+.ab-values-list h3{margin:0 0 8px;font-size:18px;color:var(--navy)}
+.ab-values-list p{margin:0;font-size:15px;line-height:1.75;color:#475467}
+
+/* Why us: four reasons + training areas */
+section.ab-whyus{padding:96px 0;background:#F4F7FA;background-image:radial-gradient(rgba(11,27,51,.06) 1px,transparent 1px);background-size:22px 22px}
+.ab-whyus-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:stretch}
+.ab-whyus-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ab-whyus-list li{padding:24px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+.ab-ico{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#E0F2FE;color:var(--brand-strong);margin-bottom:14px}
+.ab-ico .i{width:24px;height:24px}
+.ab-whyus-list h3{margin:0 0 6px;font-size:18px;color:var(--navy)}
+.ab-whyus-list p{margin:0;font-size:15px;line-height:1.75;color:#475467}
+.ab-areas{padding:28px;border-radius:20px;background:#0B1B33;color:#fff;display:flex;flex-direction:column}
+.ab-areas h3{margin:0 0 16px;font-size:20px;color:#fff}
+.ab-areas ul{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.ab-areas li{padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);font-size:14.5px}
+.ab-areas .h3-link{margin-top:auto;color:#7DD3F5}
+section.ab-partners{border-bottom:0;padding:64px 0}
+.ab-partners .h3-partners{border-top:0;padding-top:0}
+
+@media (max-width:1100px){
+  .ab-values-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ab-whyus-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  section.ab-mv{padding-bottom:64px}
+  .ab-mv-grid,.ab-whyus-list{grid-template-columns:1fr}
+  .ab-mv-card{padding:24px}
+  section.ab-2030,section.ab-values,section.ab-whyus{padding:64px 0}
+  .ab-values-list{grid-template-columns:1fr 1fr}
+  .ab-values-list li:last-child{grid-column:1/-1}
+  .ab-who p{font-size:16px}
+  .ab-who .ab-lead{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){.ab-values-list li{transition:none}.ab-values-list li:hover{transform:none}}
+.ab-crumbs [aria-current]{color:#fff}

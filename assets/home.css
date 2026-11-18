@@ -234,3 +234,26 @@ body:has(.h3-final) footer{margin-top:0;border-top:1px solid rgba(255,255,255,.0
 .h3-msearch:focus-within{box-shadow:0 0 0 3px #7DD3F5,0 14px 34px rgba(0,0,0,.28)}
 .h3-msearch .btn{min-height:46px;padding:0 26px;border-radius:999px}
 .h3-hero .h3-lead{margin-bottom:22px}
+
+/* Blog: Bakkah-style swipe carousel */
+section.h3-blog{padding:96px 0}
+.h3-head-center{margin-inline:auto;text-align:center;max-width:720px}
+.h3-blog-rv .rv-track{gap:20px}
+.h3-blog-rv .rv-slide{flex:0 0 calc((100% - 60px)/4)}
+.h3-blog .rv-dots{display:flex!important;justify-content:center;gap:8px;margin-top:22px}
+.h3-blog .rv-dots>*{width:26px;height:10px;border-radius:999px;border:1.5px solid #CBD5E1;background:#fff}
+.h3-blog .rv-dots>.on{background:var(--brand-strong);border-color:var(--brand-strong);width:32px}
+.h3-blog-more{margin:28px 0 0;text-align:center}
+@media (max-width:1100px){.h3-blog-rv .rv-slide{flex-basis:calc((100% - 20px)/2)}}
+@media (max-width:640px){section.h3-blog{padding:64px 0}.h3-blog-rv .rv-slide{flex-basis:82%}}
+/* phones: the four trust facts side by side (2x2), not stacked, so the page stays short */
+@media (max-width:640px){
+  section.h3-trust{padding:28px 0}
+  .h3-trust-row{grid-template-columns:1fr 1fr!important;gap:0}
+  .h3-trust-row li{padding:12px 10px!important;border-bottom:0!important;border-inline-start:0!important;text-align:center}
+  .h3-trust-row li:nth-child(odd){border-inline-end:1px solid var(--line)!important}
+  .h3-trust-row li:nth-child(-n+2){border-bottom:1px solid var(--line)!important}
+  .h3-trust-row b{justify-content:center;font-size:16px;gap:6px}
+  .h3-trust-row b .i{width:18px;height:18px}
+  .h3-trust-row span{display:block;font-size:12.5px;line-height:1.5}
+}
