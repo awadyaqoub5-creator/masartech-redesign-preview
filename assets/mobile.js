@@ -178,3 +178,74 @@
 
 // The about tabs are now a horizontal row at every size
 document.querySelectorAll('.about-tabs[role=tablist]').forEach((t) => t.setAttribute('aria-orientation', 'horizontal'));
+
+/* ===== App-style phone layer (design-refs/mobile-1..5) =====
+   - bottom tab bar (Home / Courses / Cart / Account) on every page except course pages and checkout
+   - course pages: sticky price bar «احجز مقعدك» (hidden while the training options are on screen)
+   - checkout: sticky total + pay button that submits the same form */
+(function () {
+  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  var isCourse = /^course-.+\.html$/.test(page), isCheckout = page === 'checkout.html';
+  var SVG = {
+    home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/></svg>',
+    courses: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 11.5h5"/></svg>',
+    cart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2.2l2.3 11h10.8L20.5 7.5H6.6"/><circle cx="9.5" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>',
+    user: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>'
+  };
+  function cartCount() { try { return (JSON.parse(localStorage.getItem('mt_cart') || '[]')).length; } catch (e) { return 0; } }
+
+  if (!isCourse && !isCheckout) {
+    var tabs = [['index.html', 'الرئيسية', 'home'], ['courses.html', 'الدورات', 'courses'], ['cart.html', 'السلة', 'cart'], ['login.html', 'حسابي', 'user']];
+    var nav = document.createElement('nav');
+    nav.className = 'm-tabbar'; nav.setAttribute('aria-label', 'التنقل السريع');
+    nav.innerHTML = tabs.map(function (t) {
+      var on = page === t[0] || (t[0] === 'courses.html' && /^(courses|schedule|supported-courses)\.html$/.test(page));
+      var badge = t[2] === 'cart' && cartCount() ? '<span class="m-count" aria-hidden="true">' + cartCount() + '</span>' : '';
+      var label = t[1] + (t[2] === 'cart' && cartCount() ? ' (' + cartCount() + ')' : '');
+      return '<a href="' + t[0] + '"' + (on ? ' aria-current="page"' : '') + ' aria-label="' + label + '">' + SVG[t[2]] + '<span aria-hidden="true">' + t[1] + '</span>' + badge + '</a>';
+    }).join('');
+    document.body.appendChild(nav); document.body.classList.add('has-tabbar');
+  }
+
+  function bar(html) {
+    var b = document.createElement('div'); b.className = 'm-buybar'; b.innerHTML = html;
+    document.body.appendChild(b); document.body.classList.add('has-buybar'); return b;
+  }
+  if (isCourse) {
+    var add = document.querySelector('[data-add-to-cart][data-price]');
+    var price = add ? (+add.dataset.price).toLocaleString('en-US') : '';
+    var b = bar((price ? '<span class="m-price"><small>ابتداءً من</small><b>' + price + ' <span class="sar" aria-label="ريال سعودي">\u20c1</span></b></span>' : '') +
+      '<a class="btn btn-primary" href="#options">' + (document.querySelector('.opt select') ? 'احجز مقعدك' : 'خيارات التدريب') + '</a>');
+    var opts = document.getElementById('options');
+    if (opts && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { es.forEach(function (e) { b.classList.toggle('is-hidden', e.isIntersecting); }); }, { rootMargin: '0px 0px -30% 0px' }).observe(opts);
+    }
+  }
+  if (isCheckout) {
+    var form = document.getElementById('co-form'), total = document.getElementById('co-total'), txt = document.getElementById('co-submit-text');
+    if (form && total) {
+      var cb = bar('<span class="m-price"><small>الإجمالي شامل الضريبة</small><b class="m-total"></b></span><button type="submit" form="co-form" class="btn btn-primary"></button>');
+      var tEl = cb.querySelector('.m-total'), bEl = cb.querySelector('button');
+      var sync = function () {
+        if (tEl.innerHTML !== total.innerHTML) tEl.innerHTML = total.innerHTML;
+        var label = txt ? txt.textContent.trim() : 'ادفع';
+        if (bEl.textContent !== label) bEl.textContent = label;
+        if (cb.hidden !== form.hidden) cb.hidden = form.hidden;
+        document.body.classList.toggle('has-buybar', !form.hidden);
+      };
+      sync();
+      var mo = new MutationObserver(sync);   // only the source nodes, never the bar itself
+      mo.observe(total, { subtree: true, childList: true, characterData: true });
+      if (txt) mo.observe(txt, { subtree: true, childList: true, characterData: true });
+      mo.observe(form, { attributes: true, attributeFilter: ['hidden'] });
+    }
+  }
+})();
+
+/* WhatsApp button: on phones it waits until the hero is scrolled past, so it never covers the hero buttons */
+(function () {
+  var fab = document.querySelector('.fab-wa');
+  if (!fab || !matchMedia('(max-width:900px)').matches) return;
+  var sync = function () { fab.classList.toggle('fab-wait', window.scrollY < 420); };
+  sync(); window.addEventListener('scroll', sync, { passive: true });
+})();

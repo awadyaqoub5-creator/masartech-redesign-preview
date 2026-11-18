@@ -27,13 +27,19 @@ async page => {
     ok('Escape closes mega menu', (await t.getAttribute('aria-expanded')) === 'false');
   }
   // carousel arrows move the paths track
-  const track = page.locator('.paths .rv-track');
+  const track = page.locator('.h3-rv-cards .rv-track');
   const x0 = await track.evaluate(e => e.scrollLeft);
-  await page.locator('.paths .rv-nav.next').click(); await page.waitForTimeout(700);
-  ok('carousel next arrow scrolls', Math.abs((await track.evaluate(e => e.scrollLeft)) - x0) > 20);
+  await page.locator('.h3-rv-cards').scrollIntoViewIfNeeded(); await page.locator('.h3-rv-cards .rv-nav.next').click(); await page.waitForTimeout(700);
+  ok('reviews arrow scrolls', Math.abs((await track.evaluate(e => e.scrollLeft)) - x0) > 20);
   // hero tile goes to its course
-  await page.locator('.bk-hero-art a').first().click(); await page.waitForLoadState('load');
-  ok('hero tile opens a course page', /course-.*\.html/.test(page.url()), page.url().slice(22));
+  await page.locator('.h3-big h3 a').click(); await page.waitForLoadState('load');
+  ok('featured course tile opens its page', /course-pmp\.html/.test(page.url()), page.url().slice(22));
+  await go('index.html');
+  if (mobile) {
+    ok('bottom tab bar on home', await vis('.m-tabbar') && (await page.locator('.m-tabbar a[aria-current=page]').getAttribute('href')) === 'index.html');
+    await page.fill('#h3-q', 'PMP'); await page.locator('.h3-msearch button').click(); await page.waitForLoadState('load'); await page.waitForTimeout(400);
+    ok('hero search opens filtered catalog', page.url().includes('q=PMP') && +(await page.locator('#course-count').textContent()) >= 1, page.url().slice(22));
+  }
 
   // 2. Catalog filters + URL state
   await go('courses.html');
@@ -66,6 +72,10 @@ async page => {
     ok('section bar link lands below the sticky bars', top > 100 && top < 400, Math.round(top));
   }
 
+  if (mobile) {
+    await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(300);
+    ok('course price bar shows on phones', await vis('.m-buybar') && !(await page.locator('.m-buybar').evaluate(b => b.classList.contains('is-hidden'))));
+  }
   // 4. Add to cart → cart → checkout
   await page.evaluate(() => localStorage.removeItem('mt_cart'));
   await page.locator('[data-add-to-cart]').first().scrollIntoViewIfNeeded();
@@ -78,6 +88,7 @@ async page => {
   await page.locator('#co-submit').click(); await page.waitForTimeout(300);
   const errsShown = await page.locator('[id$="-err"]:not([hidden])').count();
   ok('checkout shows inline errors when empty', errsShown >= 3, errsShown);
+  if (mobile) ok('checkout pay bar mirrors the total', await vis('.m-buybar') && /1,495/.test(await page.locator('.m-buybar .m-total').textContent()));
   ok('focus moves to first error field', await page.evaluate(() => document.activeElement && document.activeElement.id === 'co-name'), await page.evaluate(() => document.activeElement.id));
   await page.fill('#co-name', 'سارة أحمد محمد العتيبي');
   await page.fill('#co-email', 'sara@example.com');

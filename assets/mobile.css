@@ -176,3 +176,63 @@ section:has(> .container > .news){padding-top:64px!important}
 .cr-answer p{margin:0;color:#344054;line-height:1.85;font-size:16px}
 .cr-answer .cr-updated{margin-top:10px;font-size:13px;color:var(--muted)}
 @media (max-width:640px){.cr-answer{padding:16px 16px;border-radius:18px}.cr-answer p{font-size:15px}}
+
+/* ===== App-style phone layer (from design-refs/mobile-1..5) ===== */
+.m-tabbar,.m-buybar{display:none}
+@media (max-width:900px){
+  /* bottom tab bar: Home / Courses / Cart / Account */
+  .m-tabbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;inset-inline:0;bottom:0;z-index:55;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+  .m-tabbar a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border-radius:12px;color:#667085;font-size:12.5px;font-weight:600}
+  .m-tabbar svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .m-tabbar a[aria-current="page"]{color:var(--brand-strong)}
+  .m-tabbar a[aria-current="page"]::after{content:"";position:absolute;bottom:2px;width:18px;height:3px;border-radius:3px;background:currentColor}
+  .m-tabbar .m-count{position:absolute;top:4px;inset-inline-end:calc(50% - 22px);min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:#D92D20;color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+  body.has-tabbar{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
+  /* sticky price / pay bar (course pages, checkout) */
+  .m-buybar{display:flex;align-items:center;gap:12px;position:fixed;inset-inline:0;bottom:0;z-index:55;background:#fff;border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(11,27,51,.08);padding:10px 16px calc(10px + env(safe-area-inset-bottom));transition:transform .25s ease}
+  .m-buybar.is-hidden{transform:translateY(110%)}
+  .m-buybar .m-price{display:grid;line-height:1.3;flex:none}
+  .m-buybar .m-price small{color:var(--muted);font-size:12px}
+  .m-buybar .m-price b{font-size:20px;color:var(--navy);font-variant-numeric:tabular-nums}
+  .m-buybar .btn{flex:1;min-height:50px;font-size:16px}
+  body.has-buybar{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  body.has-tabbar .fab-wa,body.has-tabbar .to-top{bottom:calc(84px + env(safe-area-inset-bottom))}
+  body.has-buybar .fab-wa,body.has-buybar .to-top{bottom:calc(92px + env(safe-area-inset-bottom))}
+  html.menu-open .m-tabbar,html.menu-open .m-buybar{display:none}
+}
+@media (max-width:640px){
+  /* course list as compact rows (logo · title · date · price) */
+  #course-list{gap:12px}
+  #course-list .cc{flex-direction:row;align-items:flex-start;gap:14px;padding:14px;border-radius:18px}
+  #course-list .cc-top{flex:none;width:72px;padding:0;background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+  #course-list .cc-top img,#course-list .cc-ph{width:64px;height:64px;border-radius:16px;padding:6px}
+  #course-list .cc-ribbon{position:static;font-size:10.5px;padding:3px 6px;line-height:1.3;text-align:center;border-radius:8px}
+  #course-list .cc-ribbon svg,#course-list .cc-level,#course-list .cc-sub,#course-list .g-rating,#course-list .pill-row,#course-list .days-note{display:none}
+  #course-list .cc-body{align-items:flex-start;text-align:start;gap:6px;padding:0;min-width:0}
+  #course-list .cc-body h3{font-size:16px;line-height:1.5}
+  #course-list .cc-facts{gap:2px;font-size:13.5px;color:#475467}
+  #course-list .cc-facts li{justify-content:flex-start}
+  #course-list .cc-price{margin-top:4px;padding-top:0;display:flex;align-items:baseline;gap:6px}
+  #course-list .cc-price small{display:inline}
+  #course-list .cc-price strong{font-size:19px;color:var(--brand-strong)}
+  #course-list .cc-body>.btn{display:none}
+  /* checkout: payment options as a 2x2 grid */
+  .co-pay{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important}
+  .co-pay .co-opt{min-width:0}
+  /* homepage: nearest courses as a swipe shelf, search in the hero */
+  .h3-small{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-16px;padding:2px 16px 10px;scrollbar-width:none}
+  .h3-small::-webkit-scrollbar{display:none}
+  .h3-small .h3-tile{flex:0 0 78%;scroll-snap-align:start;flex-direction:column}
+}
+.h3-msearch{display:none}
+@media (max-width:640px){
+  .h3-msearch{display:flex;align-items:center;gap:10px;margin:0 0 18px;padding:6px 6px 6px 8px;padding-inline-start:16px;background:#fff;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+  .h3-msearch svg{width:20px;height:20px;color:#667085;flex:none}
+  .h3-msearch input{flex:1;min-width:0;min-height:44px;border:0;background:none;font:inherit;font-size:16px;color:var(--ink)}
+  .h3-msearch input:focus-visible{outline:none}
+  .h3-msearch:focus-within{box-shadow:0 0 0 3px #7DD3F5,0 12px 30px rgba(0,0,0,.25)}
+  .h3-msearch .btn{min-height:44px;padding:0 18px;border-radius:999px}
+}
+@media (prefers-reduced-motion:reduce){.m-buybar{transition:none}}
+@media (max-width:900px){.fab-wa{transition:opacity .2s ease,transform .2s ease}.fab-wa.fab-wait{opacity:0;transform:translateY(12px);pointer-events:none;visibility:hidden}}
+@media (prefers-reduced-motion:reduce){.fab-wa{transition:none}}

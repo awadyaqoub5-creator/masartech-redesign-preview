@@ -1,0 +1,192 @@
+/* home.css: homepage v3 (tools/home_v3.py), from the design reference images design-refs/web-01..08. Loaded on index.html only. */
+
+/* Shared bits */
+.h3-kicker{margin:0 0 8px;color:var(--brand-strong);font-weight:700;font-size:15px;display:flex;align-items:center;gap:10px}
+.h3-kicker::before{content:"";width:28px;height:2px;background:currentColor;border-radius:2px}
+.h3-head{max-width:640px;margin-bottom:36px}
+.h3-head h2{margin:0 0 8px;color:var(--navy)}
+.h3-head p{margin:0;color:var(--muted);font-size:17px}
+.h3-head .hl{color:var(--brand-strong)}
+.h3-head-row{max-width:none;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.h3-link{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--brand-strong);text-decoration:underline;text-underline-offset:6px;min-height:44px}
+.h3-link .i,.h3-link-light .i,.h3-go .i,.h3-path-more .i{width:16px;height:16px}
+.h3-link-light{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:#fff;font-weight:600;text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:6px}
+.h3-link-light:hover{color:#fff;text-decoration-color:#fff}
+.h3-eyebrow{display:inline-block;margin:0 0 18px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:14px;font-weight:600}
+.h3-btn-white{background:#fff;color:var(--navy);border-color:#fff}
+.h3-btn-white:hover{background:#E8F3FB;color:var(--navy);border-color:#E8F3FB}
+section.h3-trust,section.h3-paths,section.h3-feat,section.h3-why,section.h3-rv,section.h3-final{padding:96px 0}
+
+/* 1. Hero: full-bleed photo, navy grade toward the text side (right in RTL), text bottom-right */
+.h3-hero{position:relative;overflow:hidden;color:#fff;background:#0B1B33;min-height:min(760px,calc(100svh - 117px));display:flex}
+.h3-hero-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%!important;object-fit:cover;object-position:left center}
+.h3-hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(270deg,rgba(11,27,51,.96) 0%,rgba(11,27,51,.88) 34%,rgba(11,27,51,.35) 62%,rgba(11,27,51,.05) 100%),linear-gradient(0deg,rgba(11,27,51,.55),transparent 45%)}
+.h3-hero-in{position:relative;z-index:2;padding-block:120px 88px}
+.h3-hero-copy{max-width:600px}
+.h3-hero h1{margin:0 0 18px;font-size:clamp(40px,5.6vw,72px);line-height:1.15;color:#fff;letter-spacing:-.5px}
+.h3-hero h1 span{display:block;color:#7DD3F5}
+.h3-lead{margin:0 0 30px;font-size:clamp(17px,1.6vw,20px);color:#DCE6F2;max-width:520px}
+.h3-hero .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.h3-hero .btn{min-height:54px;padding-inline:30px;font-size:17px}
+
+/* flex-section containers keep the page width */
+.h3-hero,.h3-corp{flex-direction:column;justify-content:flex-end}
+.h3-hero>.container,.h3-corp>.container{width:min(100% - 32px,var(--container));margin-inline:auto}
+
+/* 2. Trust strip + partner logos */
+section.h3-trust{padding:56px 0 48px;border-bottom:1px solid var(--line)}
+.h3-trust .container{display:grid;grid-template-columns:auto 1fr;column-gap:56px;row-gap:36px;align-items:center}
+.h3-trust-title{margin:0;font-size:clamp(22px,2.2vw,26px)!important;color:var(--navy)}
+.h3-trust-row{display:grid;grid-template-columns:repeat(4,1fr)}
+.h3-trust-row li{padding-inline:24px;border-inline-start:1px solid var(--line)}
+.h3-trust-row li:first-child{border-inline-start:0;padding-inline-start:0}
+.h3-trust-row b{display:flex;align-items:center;gap:8px;font-size:19px;color:var(--navy);margin-bottom:4px}
+.h3-trust-row b .i{width:22px;height:22px;color:var(--brand-strong)}
+.h3-trust-row .g-logo{width:20px;height:20px}
+.h3-trust-row .g-star{width:16px;height:16px;color:#F5A623}
+.h3-trust-row span{color:var(--muted);font-size:14px;line-height:1.6}
+.h3-logos{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px 32px;padding-top:28px;border-top:1px solid var(--line)}
+.h3-logos img{height:40px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.7;transition:filter .2s ease,opacity .2s ease}
+.h3-logos li:hover img{filter:none;opacity:1}
+
+/* 3. Career paths: five portrait cards, staggered */
+section.h3-paths{background:#F4F7FA;background-image:radial-gradient(rgba(11,27,51,.07) 1px,transparent 1px);background-size:22px 22px}
+.h3-path-row{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;align-items:start}
+.h3-path-row li:nth-child(even){margin-top:56px}
+.h3-path{position:relative;display:block;aspect-ratio:3/4;border-radius:24px;overflow:hidden;color:#fff;box-shadow:0 18px 40px rgba(11,27,51,.14);transition:transform .25s ease,box-shadow .25s ease}
+.h3-path img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover;transition:transform .4s ease}
+.h3-path::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,27,51,.94) 0%,rgba(11,27,51,.55) 38%,transparent 65%)}
+.h3-path:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(11,27,51,.22);color:#fff}
+.h3-path:hover img{transform:scale(1.04)}
+.h3-path-txt{position:absolute;z-index:1;inset-inline:18px;bottom:18px;display:grid;gap:4px}
+.h3-path-txt b{font-size:19px}
+.h3-path-txt small{font-size:14px;color:#DCE6F2;line-height:1.5}
+.h3-go{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:14px;font-weight:700;color:#7DD3F5}
+.h3-path-more{margin:48px 0 0;text-align:center}
+.h3-path-more a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:700;color:var(--navy)}
+
+/* 4. Featured courses: bento (one big navy tile + three small) */
+.h3-bento{display:grid;grid-template-columns:1.05fr 1fr;gap:20px}
+.h3-tile{position:relative;display:flex;gap:16px;padding:24px;border:1px solid var(--line);border-radius:22px;background:#fff;transition:transform .2s ease,box-shadow .2s ease}
+.h3-tile:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(11,27,51,.1)}
+.h3-tile h3{margin:0 0 10px;font-size:19px;line-height:1.45}
+.h3-tile h3 a{color:var(--navy)}
+.h3-tile h3 a::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.h3-logo{flex:none}
+.h3-logo img{width:64px;height:64px!important;border-radius:16px;border:1px solid var(--line);background:#fff;padding:8px;object-fit:contain}
+.h3-meta{display:grid;gap:6px;margin:0 0 12px}
+.h3-meta li{display:flex;align-items:center;gap:8px;color:#475467;font-size:15px}
+.h3-meta .i{width:18px;height:18px;color:var(--brand-strong);flex:none}
+.h3-tag{display:inline-flex;align-items:center;margin:0 0 12px;padding:4px 12px;border-radius:999px;background:#ECFDF3;color:#027A48;font-size:13px;font-weight:700}
+.h3-price{margin:0;font-size:15px;color:var(--muted)}
+.h3-price b{font-size:22px;color:var(--brand-strong)}
+.h3-small{display:grid;gap:20px}
+.h3-small .h3-tile{padding:20px 22px}
+.h3-big{flex-direction:column;justify-content:space-between;padding:36px;background:radial-gradient(420px 260px at 85% 0%,rgba(7,147,208,.35),transparent 70%),#0B1B33;border:0;color:#fff;min-height:100%}
+.h3-big .h3-logo img{width:108px;height:108px!important;border-radius:26px;border:0;padding:14px}
+.h3-big h3{font-size:clamp(24px,2.4vw,30px)}
+.h3-big h3 a{color:#fff}
+.h3-big .h3-meta li{color:#DCE6F2;font-size:16px}
+.h3-big .h3-meta .i{color:#7DD3F5}
+.h3-big .h3-tag{background:rgba(18,183,106,.16);color:#6CE9A6}
+.h3-big .h3-price{color:#B9C7D8;margin:8px 0 20px}
+.h3-big .h3-price b{font-size:32px;color:#fff}
+.h3-big .btn{position:relative;z-index:1;align-self:flex-start;min-height:52px;padding-inline:32px}
+
+/* 5. Why us: text on the right, photo on the left */
+section.h3-why{background:#FAFAF7}
+.h3-why-in{display:grid;grid-template-columns:1fr 1.35fr;gap:64px;align-items:center}
+.h3-why-copy h2{margin:0 0 30px;color:var(--navy);max-width:440px}
+.h3-why-list{display:grid;gap:22px}
+.h3-why-list li{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:start;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.h3-why-list li:last-child{border-bottom:0;padding-bottom:0}
+.h3-why-list b{font-size:40px;line-height:1;font-weight:300;color:var(--brand-strong);font-variant-numeric:tabular-nums}
+.h3-why-list span{font-size:17px;color:#344054;line-height:1.7;padding-top:4px}
+.h3-why-img img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:26px;box-shadow:0 30px 60px rgba(11,27,51,.16)}
+
+/* 6. Corporate: full-bleed navy/blue duotone, text bottom-left */
+.h3-corp{position:relative;overflow:hidden;color:#fff;background:#0B1B33;min-height:560px;display:flex}
+.h3-corp-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%!important;object-fit:cover;object-position:right center;filter:grayscale(1) contrast(1.05);mix-blend-mode:luminosity;opacity:.85}
+.h3-corp::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,27,51,.95) 0%,rgba(11,27,51,.82) 38%,rgba(6,112,168,.35) 75%,rgba(6,112,168,.25) 100%)}
+.h3-corp-in{position:relative;z-index:2;padding-block:96px 80px;display:flex;justify-content:flex-end}
+.h3-corp-copy{max-width:560px}
+.h3-corp h2{margin:0 0 14px;color:#fff;font-size:clamp(28px,3.4vw,42px)!important;line-height:1.3}
+.h3-corp-copy>p:not(.h3-eyebrow){margin:0 0 26px;color:#DCE6F2;font-size:18px}
+.h3-corp .cta-row,.h3-final .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+
+/* 7. Testimonials: navy, rating on the right, quote cards on the left */
+section.h3-rv{background:#0B1B33;color:#fff;background-image:radial-gradient(600px 400px at 90% 10%,rgba(7,147,208,.25),transparent 70%)}
+.h3-rv-in{display:grid;grid-template-columns:320px 1fr;gap:56px;align-items:center}
+.h3-rv .h3-kicker{color:#7DD3F5}
+.h3-rv h2{margin:0 0 26px;color:#fff}
+.h3-rate{display:grid;gap:4px;margin-bottom:24px}
+.h3-rate b{font-size:64px;line-height:1;font-weight:700}
+.h3-stars{color:#F5A623;font-size:20px;letter-spacing:3px}
+.h3-rate span:last-child{display:flex;align-items:center;gap:8px;color:#B9C7D8;font-size:15px}
+.h3-rate .g-logo{width:18px;height:18px}
+.h3-rv-side .btn{margin-bottom:8px}
+.h3-rv-cards .rv-track{gap:20px}
+.h3-rv-cards .rv-slide{flex:0 0 min(440px,85%)}
+.h3-rv-cards .quote{height:100%;margin:0;padding:30px;border-radius:24px;background:#fff;color:var(--ink);position:relative}
+.h3-rv-cards .quote::before{content:"\201D";position:absolute;top:6px;inset-inline-start:22px;font-size:84px;line-height:1;color:#0670A8;font-family:Georgia,serif}
+.h3-rv-cards blockquote{margin:44px 0 18px;font-size:17px;line-height:1.85;color:#1D2939}
+.h3-rv-cards .rv-more{color:var(--brand-strong)}
+.h3-rv-cards figcaption b{color:var(--navy)}
+.h3-rv-cards .rv-nav{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff}
+.h3-rv-cards .rv-nav:disabled{opacity:.35}
+
+/* 8. Final CTA */
+section.h3-final{text-align:center;color:#fff;background:linear-gradient(135deg,#0670A8 0%,#0B1B33 100%)}
+.h3-final h2{margin:0 0 12px;color:#fff;font-size:clamp(30px,4vw,48px)!important}
+.h3-final p{margin:0 auto 28px;max-width:560px;color:#DCE6F2;font-size:18px}
+.h3-final .cta-row{justify-content:center}
+.h3-final .btn{min-height:54px;padding-inline:34px}
+
+/* Tablet */
+@media (max-width:1100px){
+  .h3-trust .container{grid-template-columns:1fr}
+  .h3-trust-row{grid-template-columns:repeat(2,1fr);row-gap:22px}
+  .h3-trust-row li:nth-child(3){border-inline-start:0;padding-inline-start:0}
+  .h3-path-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:8px;margin-inline:-16px;padding-inline:16px;scrollbar-width:none}
+  .h3-path-row::-webkit-scrollbar{display:none}
+  .h3-path-row li{flex:0 0 min(240px,62%);scroll-snap-align:start;margin-top:0!important}
+  .h3-bento,.h3-why-in,.h3-rv-in{grid-template-columns:1fr}
+  .h3-why-in{gap:36px}
+  .h3-why-img{order:-1}
+  .h3-rv-in{gap:32px}
+}
+/* Phone */
+@media (max-width:640px){
+  section.h3-trust,section.h3-paths,section.h3-feat,section.h3-why,section.h3-rv,section.h3-final{padding:64px 0}
+  .h3-hero{min-height:calc(100svh - 110px)}
+  .h3-hero-bg{object-position:20% center}
+  .h3-hero::before{background:linear-gradient(0deg,rgba(11,27,51,.98) 0%,rgba(11,27,51,.9) 42%,rgba(11,27,51,.35) 75%,rgba(11,27,51,.15) 100%)}
+  .h3-hero-in{padding-block:200px 40px}
+  .h3-hero .cta-row .btn{flex:1 1 100%}
+  .h3-trust-row{grid-template-columns:1fr}
+  .h3-trust-row li{border-inline-start:0!important;padding-inline:0!important;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .h3-trust-row li:last-child{border-bottom:0;padding-bottom:0}
+  .h3-logos{justify-content:center}
+  .h3-logos img{height:32px}
+  .h3-big{padding:26px}
+  .h3-big .btn{align-self:stretch}
+  .h3-corp{min-height:0}
+  .h3-corp::before{background:linear-gradient(0deg,rgba(11,27,51,.97) 0%,rgba(11,27,51,.85) 55%,rgba(6,112,168,.35) 100%)}
+  .h3-corp-in{padding-block:220px 48px}
+  .h3-corp .btn,.h3-final .btn{flex:1 1 100%}
+  .h3-rate b{font-size:52px}
+  .h3-rv-cards .quote{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  .h3-path,.h3-path img,.h3-tile,.h3-logos img{transition:none}
+  .h3-path:hover,.h3-tile:hover{transform:none}
+  .h3-path:hover img{transform:none}
+}
+/* hero enters once on load (keyframes tasteEnter live in taste.css) */
+.h3-hero-copy>*{animation:tasteEnter .6s cubic-bezier(.2,.7,.2,1) both}
+.h3-hero-copy>:nth-child(2){animation-delay:.06s}.h3-hero-copy>:nth-child(3){animation-delay:.12s}.h3-hero-copy>:nth-child(4){animation-delay:.18s}
+@media (prefers-reduced-motion:reduce){.h3-hero-copy>*{animation:none}}
+/* review cards stay inside their column; final CTA meets the footer */
+.h3-rv-in>*{min-width:0}
+.h3-rv-cards{overflow:hidden;border-radius:24px}
+body:has(.h3-final) footer{margin-top:0;border-top:1px solid rgba(255,255,255,.08)}

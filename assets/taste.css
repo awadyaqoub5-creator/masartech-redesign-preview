@@ -109,3 +109,6 @@ p,li,blockquote{text-wrap:pretty}
 .sar,.price,.cart-total,.co-total,.hx-foot b,.opt-price,.cc-price,.cart-line b,[data-price],.cp-facts b,time,.rf-hint{font-variant-numeric:tabular-nums}
 h2.as-h3{font-size:1.17em;line-height:1.5}
 select{background-color:#fff;color:var(--ink)}
+/* newsletter sits on a blue band: its button is white */
+.news .btn,.news .btn:hover{background:#fff;color:var(--navy);border-color:#fff}
+.news .btn:hover{background:#E8F3FB}
