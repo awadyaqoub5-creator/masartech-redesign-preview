@@ -5,12 +5,15 @@
 (function () {
   const form = document.getElementById('co-form');
   if (!form) return;
-  const KEY = 'mt_cart';
+  // checkout.html?seat=1: a camp seat reservation (written by assets/camp-seat.js), kept apart from the course cart
+  const SEAT = new URLSearchParams(location.search).has('seat');
+  const KEY = SEAT ? 'mt_seat' : 'mt_cart';
   const VAT = 0.15;
   const read = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } };
   const SAR = ' <span class="sar" aria-label="ريال سعودي">⃁</span>';
   const num = (n) => n.toLocaleString('en-US', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
-  const fmt = (n) => num(n) + SAR;
+  // price null = amount not set yet (camp seat fee): show a placeholder instead of a number
+  const fmt = (n) => (typeof n === 'number' ? num(n) + SAR : '<span class="placeholder">[المبلغ]</span>');
   const $ = (id) => document.getElementById(id);
   const empty = $('co-empty');
   const done = $('co-done');
@@ -29,12 +32,12 @@
       li.querySelector('.co-iprice').innerHTML = fmt(it.price);
       ul.appendChild(li);
     });
-    total = items.reduce((s, i) => s + i.price, 0);
-    const net = Math.round((total / (1 + VAT)) * 100) / 100;
+    total = items.some((i) => typeof i.price !== 'number') ? null : items.reduce((s, i) => s + i.price, 0);
+    const net = total === null ? null : Math.round((total / (1 + VAT)) * 100) / 100;
     $('co-net').innerHTML = fmt(net);
-    $('co-vat-sum').innerHTML = fmt(Math.round((total - net) * 100) / 100);
+    $('co-vat-sum').innerHTML = fmt(total === null ? null : Math.round((total - net) * 100) / 100);
     $('co-total').innerHTML = fmt(total);
-    document.querySelectorAll('[data-part]').forEach((b) => { b.innerHTML = fmt(Math.round((total / 4) * 100) / 100); });
+    document.querySelectorAll('[data-part]').forEach((b) => { b.innerHTML = fmt(total === null ? null : Math.round((total / 4) * 100) / 100); });
     method();
   }
 
@@ -91,6 +94,14 @@
     } catch (err) { /* private mode */ }
   }
   $('co-demo').addEventListener('click', () => { demo(); render(); });
+  if (SEAT) {
+    document.title = 'حجز مقعد المعسكر والدفع | معهد مسارتك للتدريب';
+    $('co-title').textContent = 'حجز مقعدك في المعسكر';
+    try {
+      const who = JSON.parse(localStorage.getItem('mt_seat_who')) || {};
+      [['co-name', who.name], ['co-email', who.email], ['co-phone', who.phone]].forEach(([id, val]) => { if (val && $(id) && !$(id).value) $(id).value = val; });
+    } catch (e) { /* nothing to prefill */ }
+  }
   if (location.hash === '#demo' && !read().length) demo();   // checkout.html#demo = preview with a sample course
   render();
 })();
