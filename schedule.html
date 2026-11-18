@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="assets/site.css?v=67">
 <link rel="stylesheet" href="assets/catalog.css?v=55">
 <link rel="stylesheet" href="assets/mobile.css?v=13">
+<link rel="stylesheet" href="assets/schedule.css?v=2">
 <link rel="stylesheet" href="assets/taste.css?v=6">
 </head>
 <body>
@@ -118,62 +119,223 @@
     </div>
   </section>
 
-  <section aria-labelledby="sched-title">
+  <section class="sch" aria-labelledby="sched-title">
     <div class="container">
-      <h2 id="sched-title" class="sr-only">الدفعات القادمة</h2>
-      <div class="filter-bar">
-        <div class="chips" data-filter-group="sched-rows" role="group" aria-label="تصفية الجدول حسب التاريخ">
-          <button type="button" class="chip" data-filter="all" aria-pressed="true">الكل</button>
-          <button type="button" class="chip" data-filter="d1" aria-pressed="false">الأحد 29/11/2026</button>
-          <button type="button" class="chip" data-filter="d2" aria-pressed="false">الأحد 06/12/2026</button>
+      <h2 id="sched-title" class="sr-only">مواعيد الدورات القادمة</h2>
+      <div class="sch-bar">
+        <fieldset class="sch-filter">
+          <legend>التصفية:</legend>
+          <label><input type="radio" name="sch-mode" value="all" checked> الكل</label>
+          <label><input type="radio" name="sch-mode" value="onsite"> حضوري</label>
+          <label><input type="radio" name="sch-mode" value="online"> أونلاين</label>
+        </fieldset>
+        <p class="sch-count" id="sch-count" aria-live="polite">26 موعدًا</p>
+        <div class="sch-views" role="group" aria-label="طريقة العرض">
+          <button type="button" data-view="table" aria-pressed="true" aria-label="عرض كجدول"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+          <button type="button" data-view="grid" aria-pressed="false" aria-label="عرض كبطاقات"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
         </div>
-        <p class="result-count" id="sched-rows-status" aria-live="polite">3 نتيجة</p>
       </div>
-      <div class="table-wrap sched-wrap" role="region" aria-labelledby="sched-caption" tabindex="0">
-        <table class="table sched">
-          <caption id="sched-caption" class="sr-only">جدول الدفعات القادمة للأفراد، الأسعار بالريال السعودي شاملة الضريبة</caption>
-          <thead>
-            <tr><th scope="col">الدورة</th><th scope="col">التاريخ</th><th scope="col">أيام التدريب</th><th scope="col">الوقت</th><th scope="col">نوع الحضور</th><th scope="col">المدة</th><th scope="col">اللغة</th><th scope="col">السعر</th><th scope="col"><span class="sr-only">الحجز</span></th></tr>
-          </thead>
-          <tbody id="sched-rows">
-            <tr data-tags="d1">
-              <td class="c-course" data-label="الدورة"><a class="course-name" href="course-comptia-a.html">دورة CompTIA A+ للدعم الفني وصيانة الحاسب</a><span class="course-sub">تأهيل لشهادة CompTIA A+ أونلاين وحضوري بالرياض</span></td>
-              <td data-label="التاريخ" class="nowrap">الأحد 29/11/2026<small class="days-note block"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg>أيام التدريب: من الأحد إلى الأربعاء من كل أسبوع</small></td>
-              <td data-label="أيام التدريب">من الأحد إلى الأربعاء</td>
-              <td data-label="الوقت" class="nowrap">6:00 – 8:00 مساءً</td>
-              <td data-label="نوع الحضور"><span class="pill">حضوري</span></td>
-              <td data-label="المدة">4 أسابيع - 40 ساعة</td>
-              <td data-label="اللغة">عربي</td>
-              <td data-label="السعر" class="price-cell">1,150 <span class="sar" aria-label="ريال سعودي">⃁</span></td>
-              <td class="c-action"><a class="btn btn-primary btn-sm" href="course-comptia-a.html" aria-label="احجز دورة CompTIA A+ للدعم الفني وصيانة الحاسب بتاريخ الأحد 29/11/2026">احجز الآن</a></td>
-            </tr>
-            <tr data-tags="d1">
-              <td class="c-course" data-label="الدورة"><a class="course-name" href="course-aphri-online.html">دورة aPHRi في الرياض</a><span class="course-sub">تأهيل لشهادة HRCI أونلاين وحضوريًا</span></td>
-              <td data-label="التاريخ" class="nowrap">الأحد 29/11/2026<small class="days-note block"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg>أيام التدريب: من الأحد إلى الأربعاء من كل أسبوع</small></td>
-              <td data-label="أيام التدريب">من الأحد إلى الأربعاء</td>
-              <td data-label="الوقت" class="nowrap">7:00 – 9:00 مساءً</td>
-              <td data-label="نوع الحضور"><span class="pill alt">أونلاين</span></td>
-              <td data-label="المدة">أسبوعين</td>
-              <td data-label="اللغة">عربي</td>
-              <td data-label="السعر" class="price-cell">1,495 <span class="sar" aria-label="ريال سعودي">⃁</span></td>
-              <td class="c-action"><a class="btn btn-primary btn-sm" href="course-aphri-online.html" aria-label="احجز دورة aPHRi في الرياض بتاريخ الأحد 29/11/2026">احجز الآن</a></td>
-            </tr>
-            <tr data-tags="d2">
-              <td class="c-course" data-label="الدورة"><a class="course-name" href="course-ccna-online.html">دورة CCNA 200-301</a><span class="course-sub">تأهيل لشهادة سيسكو CCNA أونلاين وحضوري بالرياض</span></td>
-              <td data-label="التاريخ" class="nowrap">الأحد 06/12/2026<small class="days-note block"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg>أيام التدريب: من الأحد إلى الأربعاء من كل أسبوع</small></td>
-              <td data-label="أيام التدريب">من الأحد إلى الأربعاء</td>
-              <td data-label="الوقت" class="nowrap">8:00 – 10:00 مساءً</td>
-              <td data-label="نوع الحضور"><span class="pill">حضوري</span></td>
-              <td data-label="المدة">6 أسابيع</td>
-              <td data-label="اللغة">عربي</td>
-              <td data-label="السعر" class="price-cell">1,495 <span class="sar" aria-label="ريال سعودي">⃁</span></td>
-              <td class="c-action"><a class="btn btn-primary btn-sm" href="course-ccna-online.html" aria-label="احجز دورة CCNA 200-301 بتاريخ الأحد 06/12/2026">احجز الآن</a></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="sch-list" id="sch-list" data-view="table">
+      <section class="sch-month" aria-labelledby="m-2026-11">
+        <h3 class="sch-mhead" id="m-2026-11">دورات شهر نوفمبر 2026</h3>
+        <div class="sch-thead" aria-hidden="true"><span>الدورة</span><span>تاريخ البداية</span><span>وقت الدورة</span><span>التفاصيل والتسجيل</span></div>
+        <ul class="sch-items list-reset">
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-comptia-a.html">دورة CompTIA A+ للدعم الفني وصيانة الحاسب</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-11-29">الأحد 29/11/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 08:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-comptia-a.html" aria-label="تفاصيل دورة CompTIA A+ للدعم الفني وصيانة الحاسب">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-comptia-a.html#options" aria-label="سجّل في دورة CompTIA A+ للدعم الفني وصيانة الحاسب بتاريخ الأحد 29/11/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-aphri-online.html">دورة aPHRi</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-11-29">الأحد 29/11/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 07:00 مساءً حتى 09:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-aphri-online.html" aria-label="تفاصيل دورة aPHRi">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-aphri-online.html#options" aria-label="سجّل في دورة aPHRi بتاريخ الأحد 29/11/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        </ul>
+      </section>
+      <section class="sch-month" aria-labelledby="m-2026-12">
+        <h3 class="sch-mhead" id="m-2026-12">دورات شهر ديسمبر 2026</h3>
+        <div class="sch-thead" aria-hidden="true"><span>الدورة</span><span>تاريخ البداية</span><span>وقت الدورة</span><span>التفاصيل والتسجيل</span></div>
+        <ul class="sch-items list-reset">
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-capm.html">دورة CAPM لإدارة المشاريع</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-capm.html" aria-label="تفاصيل دورة CAPM لإدارة المشاريع">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-capm.html#options" aria-label="سجّل في دورة CAPM لإدارة المشاريع بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-capm.html">دورة CAPM لإدارة المشاريع</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-capm.html" aria-label="تفاصيل دورة CAPM لإدارة المشاريع">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-capm.html#options" aria-label="سجّل في دورة CAPM لإدارة المشاريع بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-aphri-online.html">دورة aPHRi</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-aphri-online.html" aria-label="تفاصيل دورة aPHRi">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-aphri-online.html#options" aria-label="سجّل في دورة aPHRi بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-mos.html">دورة أخصائي مايكروسوفت أوفيس MOS</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-mos.html" aria-label="تفاصيل دورة أخصائي مايكروسوفت أوفيس MOS">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-mos.html#options" aria-label="سجّل في دورة أخصائي مايكروسوفت أوفيس MOS بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-comptia-network.html">دورة CompTIA Network+ للشبكات</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 10:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-comptia-network.html" aria-label="تفاصيل دورة CompTIA Network+ للشبكات">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-comptia-network.html#options" aria-label="سجّل في دورة CompTIA Network+ للشبكات بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-phri-online.html">دورة PHRi</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 10:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-phri-online.html" aria-label="تفاصيل دورة PHRi">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-phri-online.html#options" aria-label="سجّل في دورة PHRi بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-pmp.html">دورة PMP لإدارة المشاريع</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 10:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-pmp.html" aria-label="تفاصيل دورة PMP لإدارة المشاريع">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-pmp.html#options" aria-label="سجّل في دورة PMP لإدارة المشاريع بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-pmp.html">دورة PMP لإدارة المشاريع</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 10:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-pmp.html" aria-label="تفاصيل دورة PMP لإدارة المشاريع">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-pmp.html#options" aria-label="سجّل في دورة PMP لإدارة المشاريع بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-power-bi.html">دورة Power BI لتحليل البيانات وPL-300</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-04">الجمعة 04/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 10:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-power-bi.html" aria-label="تفاصيل دورة Power BI لتحليل البيانات وPL-300">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-power-bi.html#options" aria-label="سجّل في دورة Power BI لتحليل البيانات وPL-300 بتاريخ الجمعة 04/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-cobit-2019-foundation.html">دورة COBIT 2019 Foundation</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 04:00 مساءً حتى 06:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-cobit-2019-foundation.html" aria-label="تفاصيل دورة COBIT 2019 Foundation">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-cobit-2019-foundation.html#options" aria-label="سجّل في دورة COBIT 2019 Foundation بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-cobit-2019-foundation.html">دورة COBIT 2019 Foundation</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 04:00 مساءً حتى 06:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-cobit-2019-foundation.html" aria-label="تفاصيل دورة COBIT 2019 Foundation">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-cobit-2019-foundation.html#options" aria-label="سجّل في دورة COBIT 2019 Foundation بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-comptia-a.html">دورة CompTIA A+ للدعم الفني وصيانة الحاسب</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 04:00 مساءً حتى 06:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-comptia-a.html" aria-label="تفاصيل دورة CompTIA A+ للدعم الفني وصيانة الحاسب">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-comptia-a.html#options" aria-label="سجّل في دورة CompTIA A+ للدعم الفني وصيانة الحاسب بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-excel.html">دورة Excel لتحليل البيانات</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 04:00 مساءً حتى 06:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-excel.html" aria-label="تفاصيل دورة Excel لتحليل البيانات">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-excel.html#options" aria-label="سجّل في دورة Excel لتحليل البيانات بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-shrm-cp.html">دورة SHRM للموارد البشرية</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 05:00 مساءً حتى 07:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-shrm-cp.html" aria-label="تفاصيل دورة SHRM للموارد البشرية">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-shrm-cp.html#options" aria-label="سجّل في دورة SHRM للموارد البشرية بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-itil.html">دورة ITIL 5</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 08:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-itil.html" aria-label="تفاصيل دورة ITIL 5">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-itil.html#options" aria-label="سجّل في دورة ITIL 5 بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-itil.html">دورة ITIL 5</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 08:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-itil.html" aria-label="تفاصيل دورة ITIL 5">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-itil.html#options" aria-label="سجّل في دورة ITIL 5 بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-power-bi.html">دورة Power BI لتحليل البيانات وPL-300</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 08:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-power-bi.html" aria-label="تفاصيل دورة Power BI لتحليل البيانات وPL-300">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-power-bi.html#options" aria-label="سجّل في دورة Power BI لتحليل البيانات وPL-300 بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-ccna-online.html">دورة CCNA 200-301</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 08:00 مساءً حتى 10:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-ccna-online.html" aria-label="تفاصيل دورة CCNA 200-301">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-ccna-online.html#options" aria-label="سجّل في دورة CCNA 200-301 بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-pmp.html">دورة PMP لإدارة المشاريع</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 08:00 مساءً حتى 10:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-pmp.html" aria-label="تفاصيل دورة PMP لإدارة المشاريع">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-pmp.html#options" aria-label="سجّل في دورة PMP لإدارة المشاريع بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-pmp.html">دورة PMP لإدارة المشاريع</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 08:00 مساءً حتى 10:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-pmp.html" aria-label="تفاصيل دورة PMP لإدارة المشاريع">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-pmp.html#options" aria-label="سجّل في دورة PMP لإدارة المشاريع بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-mos.html">دورة أخصائي مايكروسوفت أوفيس MOS</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-06">الأحد 06/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 08:00 مساءً حتى 10:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-mos.html" aria-label="تفاصيل دورة أخصائي مايكروسوفت أوفيس MOS">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-mos.html#options" aria-label="سجّل في دورة أخصائي مايكروسوفت أوفيس MOS بتاريخ الأحد 06/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-comptia-a.html">دورة CompTIA A+ للدعم الفني وصيانة الحاسب</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-11">الجمعة 11/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 02:00 مساءً حتى 06:00 مساءً<small>جمعة وسبت من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-comptia-a.html" aria-label="تفاصيل دورة CompTIA A+ للدعم الفني وصيانة الحاسب">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-comptia-a.html#options" aria-label="سجّل في دورة CompTIA A+ للدعم الفني وصيانة الحاسب بتاريخ الجمعة 11/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="online">
+          <div class="sch-c sch-name"><a href="course-aphri-online.html">دورة aPHRi</a><span class="sch-tag on">أونلاين</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-13">الأحد 13/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 07:00 مساءً حتى 09:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-aphri-online.html" aria-label="تفاصيل دورة aPHRi">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-aphri-online.html#options" aria-label="سجّل في دورة aPHRi بتاريخ الأحد 13/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        <li class="sch-item" data-mode="onsite">
+          <div class="sch-c sch-name"><a href="course-ccna-online.html">دورة CCNA 200-301</a><span class="sch-tag off">حضوري</span></div>
+          <div class="sch-c sch-date"><span class="sch-l">تاريخ البداية</span><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><time datetime="2026-12-27">الأحد 27/12/2026</time></div>
+          <div class="sch-c sch-time"><span class="sch-l">وقت الدورة</span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>من 06:00 مساءً حتى 08:00 مساءً<small>من الأحد إلى الأربعاء من كل أسبوع</small></span></div>
+          <div class="sch-c sch-act"><a class="btn btn-outline btn-sm" href="course-ccna-online.html" aria-label="تفاصيل دورة CCNA 200-301">عرض التفاصيل</a><a class="btn btn-primary btn-sm" href="course-ccna-online.html#options" aria-label="سجّل في دورة CCNA 200-301 بتاريخ الأحد 27/12/2026">إرسال طلب التسجيل</a></div>
+        </li>
+        </ul>
+      </section>
       </div>
-      <p class="form-note" style="margin-top:12px">الأسعار بالريال السعودي وشاملة الضريبة. تجد مواعيد أكثر لكل دورة في <a href="courses.html">صفحة الدورات التدريبية</a>.</p>
+      <p class="sch-empty" id="sch-empty" hidden>لا توجد مواعيد بهذا النوع حاليًا. <a href="courses.html">تصفّح كل الدورات</a> أو <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل معنا</a>.</p>
+      <p class="form-note sch-note">التسجيل يتم من صفحة الدورة: اختر الموعد ثم أكمل الطلب. الأسعار تجدها في صفحة كل دورة شاملة الضريبة.</p>
     </div>
+    <script>
+      (function () {
+        var list = document.getElementById('sch-list'), count = document.getElementById('sch-count'), empty = document.getElementById('sch-empty');
+        var radios = document.querySelectorAll('input[name="sch-mode"]'), views = document.querySelectorAll('.sch-views button');
+        var q = new URLSearchParams(location.search);
+        function apply() {
+          var mode = document.querySelector('input[name="sch-mode"]:checked').value, n = 0;
+          list.querySelectorAll('.sch-item').forEach(function (li) { var show = mode === 'all' || li.dataset.mode === mode; li.hidden = !show; if (show) n++; });
+          list.querySelectorAll('.sch-month').forEach(function (m) { m.hidden = !m.querySelector('.sch-item:not([hidden])'); });
+          count.textContent = n + ' موعدًا'; empty.hidden = n > 0;
+          var u = new URLSearchParams(location.search);
+          if (mode === 'all') u.delete('mode'); else u.set('mode', mode);
+          if (list.dataset.view === 'grid') u.set('view', 'grid'); else u.delete('view');
+          var s = u.toString(); history.replaceState(null, '', location.pathname + (s ? '?' + s : '') + location.hash);
+        }
+        function setView(v) {
+          list.dataset.view = v;
+          views.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
+          try { localStorage.setItem('mt_sched_view', v); } catch (e) {}
+          apply();
+        }
+        radios.forEach(function (r) { r.addEventListener('change', apply); });
+        views.forEach(function (b) { b.addEventListener('click', function () { setView(b.dataset.view); }); });
+        var m = q.get('mode'); if (m) radios.forEach(function (r) { r.checked = r.value === m; });
+        var v = q.get('view'); if (!v) { try { v = localStorage.getItem('mt_sched_view'); } catch (e) {} }
+        setView(v === 'grid' ? 'grid' : 'table');
+      })();
+    </script>
   </section>
 
   <section aria-labelledby="help-title" style="padding-top:0">
