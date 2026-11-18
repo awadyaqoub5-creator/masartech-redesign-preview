@@ -52,3 +52,63 @@
 }
 @media (prefers-reduced-motion:reduce){.ar-toc-h::after{transition:none}}
 .ar-promo a.btn{text-decoration:none}
+
+/* ad banner at the top of the article (like Bakkah's banner above the title) */
+.ar-ad{position:relative;overflow:hidden;color:#fff;background:radial-gradient(520px 300px at 18% 50%,rgba(125,211,245,.32),transparent 70%),radial-gradient(700px 400px at 100% 0%,rgba(7,147,208,.35),transparent 70%),linear-gradient(135deg,#071426 0%,#0B1B33 55%,#0D2747 100%)}
+.ar-ad::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:22px 22px;-webkit-mask:linear-gradient(90deg,#000,transparent 60%);mask:linear-gradient(90deg,#000,transparent 60%);pointer-events:none}
+.ar-ad-in{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:center;min-height:300px;padding-block:36px}
+.ar-ad-k{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:#C8D6E6;font-size:14.5px;font-weight:600}
+.ar-ad-k span{padding:3px 12px;border-radius:999px;background:#FEF0C7;color:#93370D;font-size:13px;font-weight:700}
+.ar-ad-t{margin:0 0 18px;color:#fff;font-size:clamp(26px,3vw,40px);font-weight:700;line-height:1.35}
+.ar-ad-t span{display:block;margin-top:6px;color:#7DD3F5;font-size:.6em;font-weight:600}
+.ar-ad-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.ar-ad-chips li{display:flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.06);font-size:14px;font-weight:600}
+.ar-ad-chips li::before{content:"";width:7px;height:7px;border-radius:50%;background:#7DD3F5}
+.ar-ad-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.ar-ad-btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding-inline:26px;border-radius:999px;background:#7DD3F5;border-color:#7DD3F5;color:#06223A;font-weight:700;box-shadow:0 12px 28px rgba(125,211,245,.25)}
+.ar-ad-btn:hover{background:#A5E2FA;border-color:#A5E2FA;color:#06223A}
+.ar-ad-btn .i{width:18px;height:18px;transform:scaleX(-1)}
+.ar-ad-alt{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,255,255,.4)}
+.ar-ad-alt:hover{color:#7DD3F5}
+.ar-ad-art{position:relative;display:flex;justify-content:center;align-items:center;min-height:220px}
+.ar-ad-art img{width:120px;height:120px;padding:14px;border-radius:30px;background:#fff;object-fit:contain;box-shadow:0 24px 50px rgba(0,0,0,.4);margin-inline:-14px;transition:transform .3s ease}
+.ar-ad-art img:nth-child(odd){transform:rotate(-8deg) translateY(10px)}
+.ar-ad-art img:nth-child(even){transform:rotate(7deg) translateY(-14px);position:relative;z-index:1}
+.ar-ad:hover .ar-ad-art img{transform:none}
+@media (max-width:900px){
+  .ar-ad-in{grid-template-columns:minmax(0,1fr);gap:8px;min-height:0;padding-block:28px}
+  .ar-ad-art{order:-1;justify-content:flex-start;min-height:0;padding-inline-start:14px}
+  .ar-ad-art img{width:64px;height:64px;padding:8px;border-radius:18px}
+}
+@media (max-width:640px){
+  .ar-ad-in{padding-block:22px}
+  .ar-ad-t{font-size:23px;margin-bottom:14px}
+  .ar-ad-chips{margin-bottom:16px}
+  .ar-ad-chips li{font-size:13px;padding:5px 11px}
+  .ar-ad-cta{gap:14px}
+  .ar-ad-btn{flex:1 1 100%;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.ar-ad-art img{transition:none}}
+/* banner sizing: no generic section padding; compact on phones */
+section.ar-ad{padding:0!important;margin:0}
+.ar-ad-btn .i{transform:none}
+.ar-ad-in{min-height:0;padding-block:40px}
+@media (max-width:900px){.ar-ad-art{display:none}}
+@media (max-width:640px){
+  .ar-ad-in{padding-block:20px}
+  .ar-ad-k{margin-bottom:8px;font-size:13px}
+  .ar-ad-t{font-size:21px;margin-bottom:12px}
+  .ar-ad-t span{font-size:14.5px;margin-top:4px}
+  .ar-ad-chips{gap:6px;margin-bottom:14px}
+  .ar-ad-chips li{padding:4px 10px;font-size:12.5px}
+  .ar-ad-btn{flex:0 1 auto;min-height:46px;padding-inline:20px}
+}
+/* course chips are links to each course page */
+.ar-ad-chips li{padding:0}
+.ar-ad-chips li::before{display:none}
+.ar-ad-chips a{display:flex;align-items:center;gap:8px;padding:7px 14px;color:#fff;text-decoration:none;border-radius:999px;transition:background-color .15s ease}
+.ar-ad-chips a::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:#7DD3F5}
+.ar-ad-chips a:hover{background:rgba(255,255,255,.12)}
+.ar-ad-chips a:focus-visible{outline:2px solid #7DD3F5;outline-offset:2px}
+@media (max-width:640px){.ar-ad-chips a{padding:4px 10px}}
+@media (prefers-reduced-motion:reduce){.ar-ad-chips a{transition:none}}
