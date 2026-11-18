@@ -224,7 +224,6 @@ section:has(> .container > .news){padding-top:64px!important}
   .h3-small::-webkit-scrollbar{display:none}
   .h3-small .h3-tile{flex:0 0 78%;scroll-snap-align:start;flex-direction:column}
 }
-.h3-msearch{display:none}
 @media (max-width:640px){
   .h3-msearch{display:flex;align-items:center;gap:10px;margin:0 0 18px;padding:6px 6px 6px 8px;padding-inline-start:16px;background:#fff;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
   .h3-msearch svg{width:20px;height:20px;color:#667085;flex:none}
