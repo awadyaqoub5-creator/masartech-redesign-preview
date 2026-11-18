@@ -190,19 +190,20 @@ document.querySelectorAll('.about-tabs[role=tablist]').forEach((t) => t.setAttri
     home: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/></svg>',
     courses: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 11.5h5"/></svg>',
     cart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2.2l2.3 11h10.8L20.5 7.5H6.6"/><circle cx="9.5" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>',
-    user: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>'
+    user: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+    sched: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M7.5 14h3M13.5 14h3M7.5 17.5h3"/></svg>'
   };
   function cartCount() { try { return (JSON.parse(localStorage.getItem('mt_cart') || '[]')).length; } catch (e) { return 0; } }
 
   if (!isCourse && !isCheckout) {
-    var tabs = [['index.html', 'الرئيسية', 'home'], ['courses.html', 'الدورات', 'courses'], ['cart.html', 'السلة', 'cart'], ['login.html', 'حسابي', 'user']];
+    var tabs = [['index.html', 'الرئيسية', 'home'], ['courses.html', 'الدورات', 'courses'], ['schedule.html', 'جدول التدريب', 'sched'], ['cart.html', 'السلة', 'cart'], ['login.html', 'حسابي', 'user']];
     var nav = document.createElement('nav');
     nav.className = 'm-tabbar'; nav.setAttribute('aria-label', 'التنقل السريع');
     nav.innerHTML = tabs.map(function (t) {
-      var on = page === t[0] || (t[0] === 'courses.html' && /^(courses|schedule|supported-courses)\.html$/.test(page));
+      var on = page === t[0] || (t[0] === 'courses.html' && /^(courses|supported-courses)\.html$/.test(page));
       var badge = t[2] === 'cart' && cartCount() ? '<span class="m-count" aria-hidden="true">' + cartCount() + '</span>' : '';
       var label = t[1] + (t[2] === 'cart' && cartCount() ? ' (' + cartCount() + ')' : '');
-      return '<a href="' + t[0] + '"' + (on ? ' aria-current="page"' : '') + ' aria-label="' + label + '">' + SVG[t[2]] + '<span aria-hidden="true">' + t[1] + '</span>' + badge + '</a>';
+      return '<a href="' + t[0] + '"' + (on ? ' aria-current="page"' : '') + ' aria-label="' + label + '">' + SVG[t[2]] + (t[2] === 'sched' ? '<span aria-hidden="true" class="m-full">' + t[1] + '</span><span aria-hidden="true" class="m-short">الجدول</span>' : '<span aria-hidden="true">' + t[1] + '</span>') + badge + '</a>';
     }).join('');
     document.body.appendChild(nav); document.body.classList.add('has-tabbar');
   }

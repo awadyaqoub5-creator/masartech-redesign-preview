@@ -181,7 +181,7 @@ section:has(> .container > .news){padding-top:64px!important}
 .m-tabbar,.m-buybar{display:none}
 @media (max-width:900px){
   /* bottom tab bar: Home / Courses / Cart / Account */
-  .m-tabbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;inset-inline:0;bottom:0;z-index:55;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+  .m-tabbar{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;inset-inline:0;bottom:0;z-index:55;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
   .m-tabbar a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border-radius:12px;color:#667085;font-size:12.5px;font-weight:600}
   .m-tabbar svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .m-tabbar a[aria-current="page"]{color:var(--brand-strong)}
@@ -235,3 +235,6 @@ section:has(> .container > .news){padding-top:64px!important}
 @media (prefers-reduced-motion:reduce){.m-buybar{transition:none}}
 @media (max-width:900px){.fab-wa{transition:opacity .2s ease,transform .2s ease}.fab-wa.fab-wait{opacity:0;transform:translateY(12px);pointer-events:none;visibility:hidden}}
 @media (prefers-reduced-motion:reduce){.fab-wa{transition:none}}
+@media (max-width:900px){.m-tabbar a{font-size:11.5px;text-align:center;line-height:1.25;padding-inline:2px}.m-tabbar svg{width:23px;height:23px}}
+.m-tabbar .m-short{display:none}
+@media (max-width:359px){.m-tabbar .m-full{display:none}.m-tabbar .m-short{display:inline}}
