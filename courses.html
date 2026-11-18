@@ -14,7 +14,9 @@
 <link rel="stylesheet" href="assets/catalog.css?v=55">
 <link rel="stylesheet" href="assets/waitlist.css?v=49">
 <link rel="stylesheet" href="assets/mobile.css?v=15">
-<link rel="stylesheet" href="assets/taste.css?v=7">
+<link rel="stylesheet" href="assets/about.css?v=3">
+<link rel="stylesheet" href="assets/courses.css?v=2">
+<link rel="stylesheet" href="assets/taste.css?v=8">
 </head>
 <body>
 <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
@@ -111,8 +113,45 @@
 
 <main id="main">
   <!-- PAGE CONTENT START -->
-  <section class="catalog" aria-labelledby="list-title">
-    <div class="container"><nav class="crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><span aria-current="page">الدورات التدريبية</span></li></ol></nav></div>
+  <section class="cs-hero" aria-labelledby="list-title">
+    <div class="container">
+      <nav class="crumbs ab-crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><span aria-current="page">الدورات التدريبية</span></li></ol></nav>
+      <h1 id="list-title">الدورات التدريبية <span class="count">(<span id="course-count">70</span>)</span></h1>
+      <p class="cs-lead">شهادات مهنية معتمدة في إدارة المشاريع والموارد البشرية والتقنية والمالية، حضوري في الرياض أو أونلاين مباشر.</p>
+      <div class="search-field" id="search">
+              <label for="course-search" class="sr-only">ابحث عن دورة</label>
+              <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+              <input type="search" id="course-search" form="course-filters" name="q" placeholder="ابحث باسم الدورة أو الشهادة…" autocomplete="off">
+            </div>
+      <ul class="cs-chips list-reset" aria-label="المجالات"><li><button type="button" class="cs-chip" data-cat="" aria-pressed="true">كل المجالات</button></li><li><button type="button" class="cs-chip" data-cat="pm" aria-pressed="false">إدارة المشاريع</button></li><li><button type="button" class="cs-chip" data-cat="hr" aria-pressed="false">الموارد البشرية</button></li><li><button type="button" class="cs-chip" data-cat="net" aria-pressed="false">الشبكات والأمن السيبراني</button></li><li><button type="button" class="cs-chip" data-cat="gov" aria-pressed="false">حوكمة تقنية المعلومات</button></li><li><button type="button" class="cs-chip" data-cat="data" aria-pressed="false">تحليل البيانات</button></li><li><button type="button" class="cs-chip" data-cat="finance" aria-pressed="false">المحاسبة والمالية</button></li><li><button type="button" class="cs-chip" data-cat="ba" aria-pressed="false">تحليل الأعمال</button></li><li><button type="button" class="cs-chip" data-cat="quality" aria-pressed="false">الجودة و Lean Six Sigma</button></li><li><button type="button" class="cs-chip" data-cat="safety" aria-pressed="false">الصحة والسلامة المهنية</button></li></ul>
+    </div>
+  </section>
+  <script>
+    // category chips drive the «المجالات» checkboxes; the result count mirrors #course-count (runs once the catalog below exists)
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.getElementById('course-filters'); if (!form) return;
+      var chips = [].slice.call(document.querySelectorAll('.cs-chip')), boxes = [].slice.call(form.querySelectorAll('input[name="cat"]'));
+      var count = document.getElementById('course-count'), mirror = document.querySelector('[data-mirror="course-count"]');
+      function sync() {
+        var on = boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.cat ? on.length === 1 && on[0] === c.dataset.cat : on.length === 0)); });
+        if (mirror && count) mirror.textContent = count.textContent;
+      }
+      chips.forEach(function (c) {
+        c.addEventListener('click', function () {
+          boxes.forEach(function (b) { b.checked = !!c.dataset.cat && b.value === c.dataset.cat; });
+          form.dispatchEvent(new Event('change', { bubbles: true }));
+          sync();
+        });
+      });
+      form.addEventListener('change', function () { setTimeout(sync); });
+      form.addEventListener('reset', function () { setTimeout(sync, 20); });
+      document.getElementById('course-search') && document.getElementById('course-search').addEventListener('input', function () { setTimeout(sync); });
+      setTimeout(sync, 50);
+    });
+  </script>
+
+  <section class="catalog" aria-label="قائمة الدورات والتصفية">
     <div class="container cat-layout">
       <aside class="filters" id="filters-panel" aria-labelledby="f-title">
         <details class="filters-box" id="filters-box" open>
@@ -130,15 +169,11 @@
       </aside>
 
       <div class="cat-main">
-        <div class="cat-head">
-          <h1 id="list-title">الدورات التدريبية <span class="count">(<span id="course-count">70</span>)</span></h1>
+        <div class="cat-head"><p class="cs-results" aria-hidden="true"><b data-mirror="course-count">70</b> دورة</p>
+          
           <div class="cat-tools">
             <button type="button" class="btn f-open" aria-controls="filters-panel" aria-expanded="false"><svg class="i" aria-hidden="true"><use href="#i-menu"/></svg>تصفية <span class="f-badge" id="f-badge" hidden></span></button>
-            <div class="search-field" id="search">
-              <label for="course-search" class="sr-only">ابحث عن دورة</label>
-              <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
-              <input type="search" id="course-search" form="course-filters" name="q" placeholder="ابحث باسم الدورة أو الشهادة…" autocomplete="off">
-            </div>
+            
             <label class="sort"><span>ترتيب حسب</span>
               <select id="course-sort" form="course-filters" name="sort">
                 <option value="date">الأقرب موعدًا</option>

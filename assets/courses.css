@@ -1,0 +1,53 @@
+/* courses.css: catalog v2 (tools/courses_v2.py). Navy header with search + category chips, lighter course cards. */
+.cs-hero{color:#fff;padding:44px 0 40px;background:radial-gradient(700px 360px at 12% 0%,rgba(7,147,208,.4),transparent 70%),linear-gradient(135deg,#0B1B33 0%,#0D2747 60%,#075E8F 100%)}
+.cs-hero h1{margin:0 0 10px;color:#fff;font-size:clamp(32px,4.2vw,50px)}
+.cs-hero h1 .count{color:#7DD3F5}
+.cs-lead{margin:0 0 22px;color:#DCE6F2;font-size:17px;max-width:680px}
+.cs-hero .search-field{max-width:720px;background:#fff;border-radius:999px;padding:6px 18px;box-shadow:0 14px 34px rgba(0,0,0,.25);display:flex;align-items:center;gap:10px;margin:0 0 20px}
+.cs-hero .search-field input{flex:1;min-width:0;min-height:48px;border:0!important;background:none!important;box-shadow:none!important;font:inherit;font-size:16px;color:var(--ink);padding:0!important}
+.cs-hero .search-field input:focus-visible{outline:none}
+.cs-hero .search-field:focus-within{box-shadow:0 0 0 3px #7DD3F5,0 14px 34px rgba(0,0,0,.25)}
+.cs-hero .search-field svg{width:20px;height:20px;color:#667085;flex:none;position:static!important}
+.cs-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;margin-inline:-16px;padding-inline:16px}
+.cs-chips::-webkit-scrollbar{display:none}
+.cs-chip{flex:none;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:14.5px;font-weight:600;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+.cs-chip:hover{border-color:#7DD3F5}
+.cs-chip[aria-pressed="true"]{background:#fff;color:var(--navy);border-color:#fff}
+.cs-chip:focus-visible{outline:2px solid #7DD3F5;outline-offset:2px}
+
+section.catalog{padding-top:32px}
+.cat-head{align-items:center;margin-bottom:18px}
+.cs-results{margin:0;margin-inline-end:auto;color:#475467;font-size:16px}
+.cs-results b{color:var(--navy);font-size:20px;font-variant-numeric:tabular-nums}
+.cat-tools{margin-inline-start:auto}
+
+/* lighter cards: one rating badge per card was the same institute rating every time, the subtitle repeated the title */
+#course-list .cc{border-radius:22px;border-color:#E4E7EC;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+#course-list .cc:hover{transform:translateY(-3px);border-color:#B2DDFF;box-shadow:0 18px 36px rgba(11,27,51,.1)}
+#course-list .cc-top{padding:26px 16px 18px;background:linear-gradient(180deg,#F4F8FC,#FFFFFF)}
+#course-list .cc-top img{width:96px;height:96px;box-shadow:0 8px 20px rgba(11,27,51,.08)}
+#course-list .cc-sub,#course-list .g-rating{display:none}
+#course-list .cc-body{gap:8px;padding:6px 20px 20px;text-align:start;align-items:stretch}
+#course-list .cc-body h3{font-size:17.5px;line-height:1.55;min-height:3.1em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#course-list .pill-row{justify-content:flex-start}
+#course-list .cc-facts li{justify-content:flex-start}
+#course-list .cc-price{display:flex;align-items:baseline;gap:6px;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+#course-list .cc-price small{display:inline}
+#course-list .cc-price strong{font-size:22px;color:var(--brand-strong)}
+#course-list .cc-body>.btn{border-radius:999px}
+
+/* «ما لقيت موعدًا يناسبك؟» no longer touches the reviews band above it */
+section:has(> .container > .help-band),section[aria-labelledby="help-title"]{padding-top:72px!important}
+
+@media (max-width:640px){
+  .cs-hero{padding:28px 0 26px}
+  .cs-lead{font-size:15px;margin-bottom:16px}
+  .cs-hero .search-field{padding:4px 14px}
+  section.catalog{padding-top:20px}
+  #course-list .cc-body{padding:0}
+  #course-list .cc-body h3{min-height:0}
+  #course-list .cc-price{border-top:0;padding-top:0}
+  section[aria-labelledby="help-title"]{padding-top:48px!important}
+}
+@media (prefers-reduced-motion:reduce){#course-list .cc,.cs-chip{transition:none}#course-list .cc:hover{transform:none}}
+.cs-chip{white-space:nowrap}

@@ -125,3 +125,6 @@ select{background-color:#fff;color:var(--ink)}
 .bl-go svg{width:26px!important;height:26px!important;color:var(--navy);transition:transform .2s ease}
 .bl-link:hover .bl-go svg{transform:translateX(-4px)}
 @media (prefers-reduced-motion:reduce){.bl-link:hover .bl-go svg{transform:none}}
+/* «ما لقيت موعدًا يناسبك؟» box: clear space from the section above (courses + schedule pages) */
+section[aria-labelledby="help-title"]{padding-top:72px!important}
+@media (max-width:640px){section[aria-labelledby="help-title"]{padding-top:48px!important}}

@@ -68,3 +68,10 @@ section.ab-partners{border-bottom:0;padding:64px 0}
 }
 @media (prefers-reduced-motion:reduce){.ab-values-list li{transition:none}.ab-values-list li:hover{transform:none}}
 .ab-crumbs [aria-current]{color:#fff}
+/* Vision 2030 band with the official logo on a white card */
+.ab-2030-in{max-width:none!important;text-align:start!important;display:grid;grid-template-columns:300px 1fr;gap:48px;align-items:center}
+.ab-2030 .h3-kicker{justify-content:flex-start!important}
+.ab-2030-logo{padding:28px;border-radius:24px;background:#fff;box-shadow:0 24px 50px rgba(0,0,0,.25)}
+.ab-2030-logo img{width:100%;height:auto!important;display:block}
+.ab-2030-copy p:last-child{margin:0;color:#DCE6F2;font-size:18px;line-height:1.9}
+@media (max-width:760px){.ab-2030-in{grid-template-columns:1fr;gap:24px;text-align:center!important}.ab-2030-logo{max-width:220px;margin-inline:auto;padding:18px}.ab-2030 .h3-kicker{justify-content:center!important}}
