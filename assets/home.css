@@ -190,3 +190,24 @@ section.h3-final{text-align:center;color:#fff;background:linear-gradient(135deg,
 .h3-rv-in>*{min-width:0}
 .h3-rv-cards{overflow:hidden;border-radius:24px}
 body:has(.h3-final) footer{margin-top:0;border-top:1px solid rgba(255,255,255,.08)}
+/* phones: portrait photos (gen-hero-m / gen-corp-m) — people in the top half, the headline over the calm lower half */
+@media (max-width:640px){
+  .h3-hero{min-height:calc(100svh - 110px)}
+  .h3-hero-bg{object-position:center top}
+  .h3-hero::before{background:linear-gradient(0deg,rgba(11,27,51,.98) 0%,rgba(11,27,51,.93) 34%,rgba(11,27,51,.55) 52%,rgba(11,27,51,.08) 68%,transparent 100%)}
+  .h3-hero-in{padding-block:52svh 40px}
+  .h3-hero h1{font-size:44px}
+  .h3-corp-bg{object-position:center top;filter:none;mix-blend-mode:normal;opacity:1}
+  .h3-corp::before{background:linear-gradient(0deg,rgba(11,27,51,.98) 0%,rgba(11,27,51,.92) 38%,rgba(11,27,51,.45) 56%,rgba(6,112,168,.15) 75%,transparent 100%)}
+  .h3-corp-in{padding-block:360px 48px}
+}
+@media (max-width:640px){
+  .h3-hero-in{padding-block:30svh 22px}
+  .h3-hero .h3-eyebrow{margin-bottom:10px;font-size:13px;padding:4px 12px}
+  .h3-hero h1{font-size:40px;margin-bottom:10px}
+  .h3-lead{font-size:16px;margin-bottom:16px}
+  .h3-msearch{margin-bottom:12px}
+  .h3-hero .cta-row{gap:10px}
+  .h3-hero .btn{min-height:50px}
+  .h3-hero::before{background:linear-gradient(0deg,rgba(11,27,51,.98) 0%,rgba(11,27,51,.94) 52%,rgba(11,27,51,.5) 68%,rgba(11,27,51,.05) 82%,transparent 100%)}
+}

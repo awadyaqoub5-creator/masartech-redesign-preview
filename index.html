@@ -18,8 +18,8 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css?v=67">
 <link rel="stylesheet" href="assets/catalog.css?v=55">
-<link rel="stylesheet" href="assets/home.css?v=5">
 <link rel="stylesheet" href="assets/mobile.css?v=12">
+<link rel="stylesheet" href="assets/home.css?v=7">
 <link rel="stylesheet" href="assets/taste.css?v=6">
 </head>
 <body>
@@ -120,7 +120,7 @@
   <!-- Homepage v3, from the design reference images (design-refs/web-01..08). Real courses, dates, prices, quotes and logos only.
        Photos assets/img/gen-hero|why|corp.jpg are AI-generated placeholders: replace with real photos of the institute. Built by tools/home_v3.py. -->
   <section class="h3-hero" aria-labelledby="hero-title">
-    <img class="h3-hero-bg" src="assets/img/gen-hero.jpg" alt="" width="1344" height="576" fetchpriority="high">
+    <picture><source media="(max-width:640px)" srcset="assets/img/gen-hero-m.jpg" width="752" height="1344"><img class="h3-hero-bg" src="assets/img/gen-hero.jpg" alt="" width="1344" height="576" fetchpriority="high"></picture>
     <div class="container h3-hero-in">
       <div class="h3-hero-copy">
         <p class="h3-eyebrow">معهد مسارتك للتدريب · الرياض</p>
@@ -220,7 +220,7 @@
   </section>
 
   <section class="h3-corp" aria-labelledby="corp-title">
-    <img class="h3-corp-bg" src="assets/img/gen-corp.jpg" alt="" width="1344" height="576" loading="lazy">
+    <picture><source media="(max-width:640px)" srcset="assets/img/gen-corp-m.jpg" width="752" height="1344"><img class="h3-corp-bg" src="assets/img/gen-corp.jpg" alt="" width="1344" height="576" loading="lazy"></picture>
     <div class="container h3-corp-in">
       <div class="h3-corp-copy">
         <p class="h3-eyebrow">خدمات مسارتك للمنشآت</p>
