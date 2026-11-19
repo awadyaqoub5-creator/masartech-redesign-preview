@@ -1157,6 +1157,3 @@ main[data-theme=shifters] .ps-why .why-ico svg{color:#BFDBFE}
   .bk-hero-art small{display:none}
 }
 @media (prefers-reduced-motion:reduce){.bk-hero-art a{transition:none}.bk-hero-art a:hover{transform:none}}
-/* one more menu item («المسارات», plan_links.py): tighter items wherever the desktop menu shows (the header is capped at the container width) */
-@media (min-width:1101px){.nav a,.nav-mega{padding-inline:5px;font-size:14px}.nav a.is-new::after{margin-inline-start:4px}.header .container{gap:4px}}
-@media (min-width:1101px) and (max-width:1240px){.nav a,.nav-mega{font-size:13.5px}}
