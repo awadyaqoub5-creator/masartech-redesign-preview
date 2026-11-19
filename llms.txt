@@ -1,0 +1,45 @@
+# معهد مسارتك للتدريب (Masartech for Training)
+
+> معهد تدريب في الرياض، المملكة العربية السعودية، يقدّم دورات الشهادات المهنية الدولية حضوريًا في الرياض وأونلاين مباشر، وبرامج تدريب للمنشآت، ودورات مدعومة من صندوق تنمية الموارد البشرية (هدف).
+
+## مجالات التدريب
+- [إدارة المشاريع](https://masartech.com.sa/courses.html?cat=pm): 19 دورة
+- [الموارد البشرية](https://masartech.com.sa/courses.html?cat=hr): 9 دورة
+- [الشبكات والأمن السيبراني](https://masartech.com.sa/courses.html?cat=net): 8 دورة
+- [حوكمة تقنية المعلومات](https://masartech.com.sa/courses.html?cat=gov): 8 دورة
+- [تحليل البيانات](https://masartech.com.sa/courses.html?cat=data): 4 دورة
+- [المحاسبة والمالية](https://masartech.com.sa/courses.html?cat=finance): 13 دورة
+- [تحليل الأعمال](https://masartech.com.sa/courses.html?cat=ba): 4 دورة
+- [الجودة و Lean Six Sigma](https://masartech.com.sa/courses.html?cat=quality): 3 دورة
+- [الصحة والسلامة المهنية](https://masartech.com.sa/courses.html?cat=safety): 2 دورة
+- [إدارة المشاريع](https://masartech.com.sa/courses.html?cat=pm): 19 دورة
+- [الموارد البشرية](https://masartech.com.sa/courses.html?cat=hr): 9 دورة
+- [الشبكات والأمن السيبراني](https://masartech.com.sa/courses.html?cat=net): 8 دورة
+- [حوكمة تقنية المعلومات](https://masartech.com.sa/courses.html?cat=gov): 8 دورة
+- [تحليل البيانات](https://masartech.com.sa/courses.html?cat=data): 4 دورة
+- [المحاسبة والمالية](https://masartech.com.sa/courses.html?cat=finance): 13 دورة
+- [تحليل الأعمال](https://masartech.com.sa/courses.html?cat=ba): 4 دورة
+- [الجودة و Lean Six Sigma](https://masartech.com.sa/courses.html?cat=quality): 3 دورة
+- [الصحة والسلامة المهنية](https://masartech.com.sa/courses.html?cat=safety): 2 دورة
+
+## أدلة الشهادات
+- [دليل PMP](https://masartech.com.sa/guide-pmp.html)
+- [دليل CCNA](https://masartech.com.sa/guide-ccna.html)
+- [دليل Security+](https://masartech.com.sa/guide-security-plus.html)
+- [دليل SHRM-CP](https://masartech.com.sa/guide-shrm-cp.html)
+- [دليل CIPD](https://masartech.com.sa/guide-cipd.html)
+- [دليل Power BI](https://masartech.com.sa/guide-power-bi.html)
+
+## مسارات التعلم
+- [كل المسارات](https://masartech.com.sa/paths.html)
+
+## للمنشآت
+- [خدمات المنشآت](https://masartech.com.sa/corporate.html)
+- [تحليل الاحتياج التدريبي](https://masartech.com.sa/training-needs.html)
+- [الاعتمادات والتراخيص](https://masartech.com.sa/accreditations.html)
+
+## معلومات
+- [من نحن](https://masartech.com.sa/about.html)
+- [جدول التدريب](https://masartech.com.sa/schedule.html)
+- [الأسئلة الشائعة](https://masartech.com.sa/faqs.html)
+- [تواصل معنا](https://masartech.com.sa/contact.html)

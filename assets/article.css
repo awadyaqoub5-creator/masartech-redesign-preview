@@ -123,3 +123,6 @@ section.ar-ad{padding:0!important;margin:0}
 .ar-ad-chips a{padding:5px 12px}
 .ar-ad-btn{min-height:46px;padding-inline:22px}
 .ar-ad::before{-webkit-mask:linear-gradient(90deg,#000,transparent 80%);mask:linear-gradient(90deg,#000,transparent 80%)}
+/* link from an article to its certificate guide (plan_links.py) */
+.ar-guide{margin:0 0 22px;padding:12px 16px;border-radius:12px;background:#E8F6FD;border-inline-start:4px solid var(--brand-strong);font-weight:600;color:var(--navy)}
+.ar-guide a{color:var(--brand-strong)}

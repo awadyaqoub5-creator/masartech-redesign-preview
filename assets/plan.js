@@ -67,6 +67,45 @@
     run();
   }
 
+  // ---------- practice questions: check one answer at a time, keep a running score ----------
+  var pqs = [].slice.call(document.querySelectorAll('.pq'));
+  if (pqs.length) {
+    var score = document.querySelector('.pq-score'), done = 0, right = 0;
+    pqs.forEach(function (li) {
+      li.addEventListener('input', function (e) { e.stopPropagation(); }, true);   // not data entry: no «unsaved form» warning
+      var btn = li.querySelector('[data-check]'), why = li.querySelector('.pq-why'), res = li.querySelector('.pq-res');
+      btn.addEventListener('click', function () {
+        var c = li.querySelector('input:checked');
+        if (!c) { res.textContent = 'اختر إجابة أولًا.'; res.className = 'pq-res no'; why.hidden = false; return; }
+        var ans = li.dataset.ans, ok = c.value === ans, first = !li.dataset.done;
+        li.querySelectorAll('label').forEach(function (l) { var v = l.querySelector('input').value; l.classList.toggle('ok', v === ans); l.classList.toggle('no', v === c.value && !ok); });
+        res.textContent = ok ? 'إجابة صحيحة.' : 'إجابة غير صحيحة. الصحيحة مظللة بالأخضر.'; res.className = 'pq-res ' + (ok ? 'ok' : 'no'); why.hidden = false;
+        if (first) { li.dataset.done = '1'; done++; if (ok) right++; li.querySelectorAll('input').forEach(function (i) { i.disabled = true; }); btn.hidden = true; }
+        score.textContent = 'أجبت عن ' + done + ' من ' + pqs.length + (done ? '، الصحيح منها ' + right : '');
+      });
+    });
+  }
+
+  // ---------- payback calculator (visitor's own numbers) ----------
+  var calc = document.getElementById('calc');
+  if (calc) {
+    var fmt = function (n) { return Math.round(n).toLocaleString('en-US') + ' ر.س'; };
+    calc.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var get = function (id) { return parseFloat(document.getElementById(id).value); };
+      var cost = get('c-cost'), sal = get('c-sal'), pct = get('c-raise'), bad = null;
+      [['c-cost', cost], ['c-sal', sal], ['c-raise', pct]].forEach(function (f) {
+        var el = document.getElementById(f[0]), ok = !isNaN(f[1]) && f[1] >= 0; el.toggleAttribute('aria-invalid', !ok); if (!ok && !bad) bad = el;
+      });
+      if (bad) { bad.focus(); return; }
+      var m = sal * pct / 100, r = calc.querySelector('.calc-res');
+      r.querySelector('[data-o="m"]').textContent = fmt(m);
+      r.querySelector('[data-o="p"]').textContent = m > 0 ? (function (k) { return k === 1 ? 'شهر واحد' : k === 2 ? 'شهرين' : k <= 10 ? k + ' أشهر' : k + ' شهرًا'; })(Math.ceil(cost / m)) :'لا تُسترد بدون زيادة';
+      r.querySelector('[data-o="y"]').textContent = fmt(m * 12 - cost);
+      r.hidden = false; r.focus();
+    });
+  }
+
   // ---------- certificate check (prototype: shows the result layout) ----------
   var vf = document.getElementById('vf');
   if (vf) {
