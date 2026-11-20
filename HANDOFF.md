@@ -453,3 +453,4 @@ python -m http.server 8765
 - FAQ: new question «كيف أعرف مواعيد الدورات الجديدة والعروض أولًا؟» linking the WhatsApp channel (23 questions, faqs_v2.py).
 - Camps page: WhatsApp channel band after the camps list («مواعيد بدء المعسكرات والعروض تُعلن في القناة أولًا»); plan.css added to camps.html.
 - Paths page: WhatsApp channel band before «محتار بين أكثر من مسار؟».
+- Corporate page: WhatsApp channel band before the request form («برامج المنشآت الجديدة والعروض والفعاليات تصلك أولًا»).
