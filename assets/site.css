@@ -194,8 +194,8 @@ footer a:hover{color:#fff}
 .foot-brand img{height:44px;width:auto;margin-bottom:14px}
 .contact-list li{display:flex;gap:10px;align-items:flex-start}
 .contact-list svg{width:18px;height:18px;margin-top:5px;color:var(--brand)}
-.social{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.social a{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;min-height:0}
+.social{display:flex;flex-wrap:wrap;gap:5px;margin-top:16px}
+.social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;min-height:0}
 .social a:hover{background:rgba(255,255,255,.16)}
 .social img{width:18px;height:18px}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px}

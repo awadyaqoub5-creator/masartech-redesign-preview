@@ -445,3 +445,4 @@ python -m http.server 8765
 - Alumni page: the alumni group is now the institute WhatsApp channel (https://whatsapp.com/channel/0029VaoR7jB0wajxdOoHW23T), «تابع القناة على واتساب».
 - Phone menu now matches the desktop menu exactly (الدورات التدريبية، المعسكرات، المسارات، خدمات المنشآت، جدول التدريب). الرئيسية، من نحن، هدف، المدربون are in the footer on both. Client rule: every change the same on phone and computer.
 - Maps: home, about (before the closing call to action) and contact (inside the «زورونا» card).
+- Footer: WhatsApp channel icon added after Snapchat on every page (plan_links.py); footer icons 40px, gap 5px so all 7 fit one row (site.css v=72).
