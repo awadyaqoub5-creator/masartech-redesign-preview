@@ -1157,3 +1157,7 @@ main[data-theme=shifters] .ps-why .why-ico svg{color:#BFDBFE}
   .bk-hero-art small{display:none}
 }
 @media (prefers-reduced-motion:reduce){.bk-hero-art a{transition:none}.bk-hero-art a:hover{transform:none}}
+
+/* long field lists: the menu scrolls inside itself (desktop) */
+.mega .mega-inner{grid-template-rows:minmax(0,1fr)}
+.mega .mm-main,.mega .mm-side{min-height:0;max-height:calc(100vh - 120px);overflow-y:auto;overscroll-behavior:contain}
