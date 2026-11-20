@@ -440,3 +440,8 @@ python -m http.server 8765
 - **الصفحات الإنجليزية:** حُذفت مع روابطها وhreflang.
 - **الأسئلة الشائعة:** 22 سؤالًا في 7 مواضيع بدل النص التجريبي (`tools/faqs_v2.py`)، مع شريط مواضيع وسكيما FAQPage. كل إجابة مأخوذة من صفحات الموقع نفسه: سياسة الاسترجاع، الدورات المدعومة من هدف، صفحة التواصل، وسائل الدفع في التذييل، المعسكرات. يراجعها المعهد قبل النشر.
 - **خريطة في الرئيسية:** قسم «زورونا في الرياض» قبل الدعوة الأخيرة، بنفس خريطة صفحة التواصل.
+
+## 20/11/2026
+- Alumni page: the alumni group is now the institute WhatsApp channel (https://whatsapp.com/channel/0029VaoR7jB0wajxdOoHW23T), «تابع القناة على واتساب».
+- Phone menu now matches the desktop menu exactly (الدورات التدريبية، المعسكرات، المسارات، خدمات المنشآت، جدول التدريب). الرئيسية، من نحن، هدف، المدربون are in the footer on both. Client rule: every change the same on phone and computer.
+- Maps: home, about (before the closing call to action) and contact (inside the «زورونا» card).
