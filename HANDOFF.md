@@ -454,3 +454,4 @@ python -m http.server 8765
 - Camps page: WhatsApp channel band after the camps list («مواعيد بدء المعسكرات والعروض تُعلن في القناة أولًا»); plan.css added to camps.html.
 - Paths page: WhatsApp channel band before «محتار بين أكثر من مسار؟».
 - Corporate page: WhatsApp channel band before the request form («برامج المنشآت الجديدة والعروض والفعاليات تصلك أولًا»).
+- Trainer د. أحمد سيد فداوي: photo (from his CV), bio, certificates, experience, +3000 trainees and qualifications from the client (20/11/2026); First Furniture training photos and logo; reviews naming «أحمد السيد» now included. Personal data on the CV left out. gen_mega.py fixed for the menu without «الرئيسية».
