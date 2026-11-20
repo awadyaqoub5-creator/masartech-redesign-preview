@@ -288,3 +288,6 @@
 @media (max-width:900px){.fq-bar{top:60px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.fq-bar a{flex:none}}
 
 .ct-map .nw{white-space:nowrap}
+.ct-visit-map{margin:0 0 14px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#eef2f6}
+.ct-visit-map iframe{display:block;width:100%;height:260px;border:0}
+@media (max-width:600px){.ct-visit-map iframe{height:240px}}
