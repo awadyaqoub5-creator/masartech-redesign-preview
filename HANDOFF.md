@@ -447,3 +447,4 @@ python -m http.server 8765
 - Maps: home, about (before the closing call to action) and contact (inside the «زورونا» card).
 - Footer: WhatsApp channel icon added after Snapchat on every page (plan_links.py); footer icons 40px, gap 5px so all 7 fit one row (site.css v=72).
 - Contact page: full-width «قناة مسارتك على واتساب» card first in «تابعنا» (plan.css v=9).
+- Home: «تابع قناة مسارتك على واتساب» band after the upcoming dates (plan.css v=11).
