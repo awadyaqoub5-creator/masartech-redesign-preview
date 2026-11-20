@@ -449,3 +449,4 @@ python -m http.server 8765
 - Contact page: full-width «قناة مسارتك على واتساب» card first in «تابعنا» (plan.css v=9).
 - Home: «تابع قناة مسارتك على واتساب» band after the upcoming dates (plan.css v=11).
 - About: the same WhatsApp channel band after «لماذا نحن؟».
+- Home: newsletter moved under the map (map → newsletter → closing call to action), in plan_links.py.
