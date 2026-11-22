@@ -337,3 +337,13 @@
 .tr-corp-wide .tr-m{aspect-ratio:16/9}
 .tr-corp-photos .tr-m{aspect-ratio:4/3}
 @media (max-width:900px){.tr-corp-mix{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.tr-corp-mix .tr-m-tall{aspect-ratio:9/16}.tr-corp-wide{grid-column:1/-1;grid-row:2}}
+
+/* trainer career list + other topics */
+.tr-facts .tr-jobs{grid-column:1/-1}
+.tr-jobs li{display:grid;grid-template-columns:230px minmax(0,1fr);gap:2px 18px;padding:12px 0;border-bottom:1px solid var(--line)}
+.tr-jobs li:last-child{border-bottom:0}
+.tr-jobs li div{display:grid}
+.tr-jobs li b{color:var(--navy)}
+.tr-jobs li div span,.tr-when{color:var(--muted);font-size:14.5px}
+.tr-topics-h{margin:28px 0 12px;font-size:18px;color:var(--navy)}
+@media (max-width:600px){.tr-jobs li{grid-template-columns:minmax(0,1fr)}}
