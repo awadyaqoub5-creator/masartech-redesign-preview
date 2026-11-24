@@ -1161,3 +1161,17 @@ main[data-theme=shifters] .ps-why .why-ico svg{color:#BFDBFE}
 /* long field lists: the menu scrolls inside itself (desktop) */
 .mega .mega-inner{grid-template-rows:minmax(0,1fr)}
 .mega .mm-main,.mega .mm-side{min-height:0;max-height:calc(100vh - 120px);overflow-y:auto;overscroll-behavior:contain}
+/* course logos in the courses menu (desktop and phone) and the training schedule */
+.clogo{flex:none;display:block;width:40px;height:40px!important;object-fit:contain;border:1px solid var(--line);border-radius:10px;background:#fff}
+.mm-col li a:has(.clogo),.m-courses li a:has(.clogo){display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;align-items:center}
+.mm-col li a .clogo,.m-courses li a .clogo{grid-row:1/span 3;align-self:start;margin-top:2px}
+.mm-col li a:has(.clogo)>span,.m-courses li a:has(.clogo)>span{grid-column:2}
+.mm-col li a:has(.clogo) .mm-tag,.m-courses li a:has(.clogo) .mm-tag{justify-self:start}
+.sch-name:has(.clogo){display:grid!important;grid-template-columns:44px minmax(0,1fr);column-gap:12px;align-items:center}
+.sch-name .clogo{width:44px;height:44px!important;grid-row:1/span 2}
+.sch-name:has(.clogo)>:not(.clogo){grid-column:2;justify-self:start}
+.sch-list[data-view="grid"] .sch-name:has(.clogo){padding-bottom:12px}
+@media (max-width:700px){
+  .sch-list[data-view="table"] .sch-name:has(.clogo){display:grid!important;grid-template-columns:40px minmax(0,1fr)}
+  .sch-name .clogo{width:40px;height:40px!important}
+}
