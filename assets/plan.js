@@ -114,7 +114,14 @@
       var no = document.getElementById('v-no');
       if (!no.value.trim()) { no.setAttribute('aria-invalid', 'true'); no.focus(); return; }
       no.removeAttribute('aria-invalid');
-      var r = vf.querySelector('.vf-res'); r.hidden = false; r.focus();
+      // no certificate register is connected yet: never show a result box for a number nobody checked
+      var r = vf.querySelector('.vf-res'), nm = document.getElementById('v-name');
+      var text = 'أرغب في التحقق من شهادة صادرة من معهد مسارتك، رقمها: ' + no.value.trim() + (nm && nm.value.trim() ? '، باسم: ' + nm.value.trim() : '');
+      var url = 'https://wa.me/966115116066?text=' + encodeURIComponent(text);
+      r.innerHTML = '<p><b>التحقق الإلكتروني غير متاح على الموقع حاليًا.</b> أرسل رقم الشهادة لفريق مسارتك على واتساب، ونؤكد لك صحتها وبياناتها.</p>' +
+        '<p><a class="btn btn-primary" target="_blank" rel="noopener">أرسل الرقم على واتساب</a></p>';
+      r.querySelector('a').href = url;
+      r.hidden = false; r.focus();
     });
   }
 })();

@@ -1175,3 +1175,13 @@ main[data-theme=shifters] .ps-why .why-ico svg{color:#BFDBFE}
   .sch-list[data-view="table"] .sch-name:has(.clogo){display:grid!important;grid-template-columns:40px minmax(0,1fr)}
   .sch-name .clogo{width:40px;height:40px!important}
 }
+/* 25/11/2026 audit fixes: a visible focus ring on every control, readable small links, arrow off state, form notes */
+:is(a,button,summary,select,textarea,input:not([type=radio]):not([type=checkbox])):focus-visible{outline:3px solid #0670A8!important;outline-offset:2px!important}
+:is(input[type=radio],input[type=checkbox]):focus-visible{outline:3px solid #0670A8!important;outline-offset:3px!important}
+:is(.bnr,.h3-hero,.cp-hero,.page-hero,footer,.h3-rv,.h3-corp,.h3-final,.reviews-band,.bl-band) :is(a,button,summary,input,select,textarea):focus-visible{outline-color:#fff!important}
+.rv-more{color:#065F8F;text-decoration:underline;text-underline-offset:4px}
+.reviews-band .rv-more,.story .rv-more{color:#BEE6F8}
+.bl-arrow[disabled]{opacity:.35;cursor:default;pointer-events:none}
+.co-tbd{font-weight:700;color:var(--brand-strong)}
+.form-ok{margin:10px 0 0;font-weight:600}
+.form-ok a,[data-demo-msg] a{font-weight:700;text-decoration:underline}

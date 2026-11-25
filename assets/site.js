@@ -122,11 +122,52 @@ document.querySelectorAll('[data-filter-group]').forEach((group) => {
 })();
 
 // Prototype-only: forms don't submit anywhere
+// Forms: the site has no server yet, so a valid form opens WhatsApp with the answers filled in and the visitor sends it there.
+// Forms with a password (login, register) never send anything and keep their «demo» note.
+const WA_NUMBER = '966115116066';
+const waLink = (text) => 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+function formLines(f) {
+  const out = [];
+  f.querySelectorAll('input, select, textarea').forEach((el) => {
+    if (el.disabled || ['hidden', 'submit', 'button', 'reset', 'password', 'file'].includes(el.type) || el.closest('[hidden]')) return;
+    if ((el.type === 'checkbox' || el.type === 'radio') && !el.checked) return;
+    let v = el.tagName === 'SELECT' ? (el.selectedOptions[0] || {}).text : el.value;
+    if (el.type === 'checkbox' && el.value === 'on') v = 'نعم';
+    if (!v || !String(v).trim()) return;
+    const lab = (el.id && f.querySelector('label[for="' + CSS.escape(el.id) + '"]')) || el.closest('label');
+    let name = lab ? lab.textContent.replace(String(el.value), '') : (el.getAttribute('aria-label') || el.name);
+    name = name.replace('*', '').replace(/\s+/g, ' ').trim();
+    out.push((name ? name + ': ' : '') + String(v).trim());
+  });
+  return out;
+}
+function waSent(msg, url) {
+  if (!msg) return;
+  msg.textContent = '';
+  const p = document.createElement('span');
+  p.textContent = 'فتحنا لك واتساب برسالة فيها بياناتك. اضغط «إرسال» هناك ليصل طلبك لفريق مسارتك. ';
+  const a = document.createElement('a');
+  a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'لم يفتح واتساب؟ افتحه من هنا';
+  msg.append(p, a);
+  msg.hidden = false; msg.focus();
+}
 document.querySelectorAll('form[data-demo]').forEach((f) => f.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!f.reportValidity()) return;
   const msg = f.querySelector('[data-demo-msg]');
-  if (msg) { msg.hidden = false; msg.focus(); }
+  if (f.querySelector('input[type=password]')) { if (msg) { msg.hidden = false; msg.focus(); } return; }
+  const head = document.querySelector('main h1');
+  const url = waLink(['طلب من موقع مسارتك: ' + (head ? head.textContent.trim() : document.title)].concat(formLines(f)).join('\n'));
+  window.open(url, '_blank', 'noopener');
+  waSent(msg, url);
+}));
+// Newsletter: the email goes to the team on WhatsApp, as above
+document.querySelectorAll('form[data-news]').forEach((f) => f.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!f.reportValidity()) return;
+  const url = waLink('أرغب في الاشتراك في نشرة مسارتك البريدية: ' + f.querySelector('input[type=email]').value.trim());
+  window.open(url, '_blank', 'noopener');
+  waSent(f.parentElement.querySelector('[data-news-msg]'), url);
 }));
 
 // Catalog filters (courses.html): checkboxes AND across groups / OR inside a group, text search, sort, counts.

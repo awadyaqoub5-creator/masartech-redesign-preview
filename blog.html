@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=74">
+<link rel="stylesheet" href="assets/site.css?v=75">
 <link rel="stylesheet" href="assets/catalog.css?v=55">
 <link rel="stylesheet" href="assets/content.css?v=49">
 <link rel="stylesheet" href="assets/mobile.css?v=15">
@@ -885,6 +885,10 @@
       var list = document.getElementById('bl-cats');
       document.querySelectorAll('.bl-arrow').forEach(function (b) { b.addEventListener('click', function () {
         list.scrollBy({ left: (b.classList.contains('next') ? -1 : 1) * list.clientWidth * 0.8, behavior: 'smooth' }); }); });
+      var prevB = document.querySelector('.bl-arrow.prev'), nextB = document.querySelector('.bl-arrow.next');
+      function edges() { var x = Math.abs(list.scrollLeft), end = list.scrollWidth - list.clientWidth - 2;
+        prevB.disabled = x <= 2; nextB.disabled = x >= end; }
+      list.addEventListener('scroll', edges, { passive: true }); window.addEventListener('resize', edges); setTimeout(edges, 300);
       var sel = tiles.filter(function (x) { return x.dataset.cat === cat; })[0]; if (sel && cat !== 'all') sel.scrollIntoView({ block: 'nearest', inline: 'center' });
       render();
     })();
@@ -946,8 +950,7 @@
           <li><a href="refund.html">سياسة الاسترجاع</a></li>
           <li><a href="terms.html">الشروط والأحكام</a></li>
           <li><a href="disclaimer.html">إخلاء المسؤولية القانونية</a></li><li data-sm><a href="sitemap.html">خريطة مسارتك</a></li>
-          <li><a href="https://masartech.com.sa/sitemap">خريطة الموقع</a></li>
-        </ul>
+          </ul>
       </div>
       <div>
         <h2>دوراتنا</h2>
@@ -976,7 +979,7 @@
   <a class="icon-btn" href="tel:+966920014582" aria-label="اتصال"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></a>
 </div>
 
-<script src="assets/site.js?v=58" defer></script>
+<script src="assets/site.js?v=59" defer></script>
 <script src="assets/cart.js?v=3" defer></script>
 <script src="assets/mobile.js?v=15" defer></script>
 </body>

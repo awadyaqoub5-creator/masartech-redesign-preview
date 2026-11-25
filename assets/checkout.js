@@ -12,8 +12,8 @@
   const read = () => { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } };
   const SAR = ' <span class="sar" aria-label="ريال سعودي">⃁</span>';
   const num = (n) => n.toLocaleString('en-US', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
-  // price null = amount not set yet (camp seat fee): show a placeholder instead of a number
-  const fmt = (n) => (typeof n === 'number' ? num(n) + SAR : '<span class="placeholder">[المبلغ]</span>');
+  // price null = the camp seat fee is not published yet: the team confirms it on WhatsApp
+  const fmt = (n) => (typeof n === 'number' ? num(n) + SAR : '<span class="co-tbd">يؤكده لك فريق مسارتك</span>');
   const $ = (id) => document.getElementById(id);
   const empty = $('co-empty');
   const done = $('co-done');
@@ -51,6 +51,7 @@
     const v = (form.querySelector('input[name="pay"]:checked') || {}).value || 'card';
     form.querySelectorAll('.co-opt').forEach((o) => o.classList.toggle('on', o.querySelector('input').checked));
     $('co-pay-note').querySelector('span').textContent = NOTES[v];
+    if (total === null) { $('co-submit-text').textContent = 'أرسل طلب الحجز على واتساب'; return; }
     $('co-submit-text').innerHTML = v === 'tabby' ? 'المتابعة إلى tabby' : v === 'tamara' ? 'المتابعة إلى تمارا' : v === 'apple' ? 'ادفع عبر Apple Pay ' + fmt(total) : 'ادفع ' + fmt(total);
   }
   form.addEventListener('change', (e) => { if (e.target.name === 'pay') method(); });
@@ -74,8 +75,16 @@
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     let first = null;
-    form.querySelectorAll('input[required], #co-org input').forEach((i) => { if (!check(i) && !first) first = i; });
+    form.querySelectorAll('input[required], #co-org input').forEach((i) => { if (i.closest('[hidden]')) return; if (!check(i) && !first) first = i; });
     if (first) { first.focus(); return; }
+    if (total === null) {   // a seat without a published fee: the booking goes to the team on WhatsApp
+      const v = (id) => ($(id) ? $(id).value.trim() : '');
+      const lines = ['طلب حجز مقعد من موقع مسارتك'].concat(read().map((i) => '• ' + [i.name, i.mode, i.session].filter(Boolean).join(' · ')),
+        ['الاسم: ' + v('co-name'), 'الجوال: ' + v('co-phone'), 'البريد: ' + v('co-email')]);
+      window.open('https://wa.me/966115116066?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      $('co-pay-note').querySelector('span').textContent = 'فتحنا لك واتساب برسالة الحجز. اضغط «إرسال» هناك، ويؤكد لك الفريق المبلغ والمقعد.';
+      return;
+    }
     form.hidden = true; done.hidden = false;
     document.querySelector('.co-steps .now').classList.replace('now', 'done');
     const last = document.querySelector('.co-steps li:last-child'); last.classList.add('now'); last.setAttribute('aria-current', 'step');
