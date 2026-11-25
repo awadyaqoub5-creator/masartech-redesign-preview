@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="assets/camps.css?v=49">
 <link rel="stylesheet" href="assets/waitlist.css?v=49">
 <link rel="stylesheet" href="assets/about.css?v=3">
-<link rel="stylesheet" href="assets/camp-page.css?v=6">
+<link rel="stylesheet" href="assets/camp-landing.css?v=2">
 <link rel="stylesheet" href="assets/mobile.css?v=15">
 <link rel="stylesheet" href="assets/taste.css?v=8">
 </head>
@@ -109,109 +109,116 @@
 
 <main id="main">
   <!-- PAGE CONTENT START -->
-  <!-- Camp page v3 (tools/gen_camp_bundles.py, data in tools/camps_data.py): one camp = 3 real courses over 12+ weeks (bundle proposed, pending client confirmation). Seat form -> checkout.html?seat=1. Dates and fees still to be announced. -->
-  <div class="cg">
-  <section class="cg-hero" aria-labelledby="page-title">
-    <div class="container cg-hero-in">
-      <div class="cg-hero-copy">
-        <nav class="crumbs ab-crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><a href="camps.html">المعسكرات</a></li><li data-pl><a href="paths.html">مسارات التعلم</a></li><li data-pl><a href="trainers.html">المدربون</a></li><li data-pl><a href="alumni.html">خريجو مسارتك</a></li><li data-pl><a href="guides.html">أدلة الشهادات</a></li><li data-pl><a href="online.html">الدورات أونلاين</a></li><li data-pl><a href="webinars.html">الندوات</a></li><li><span aria-current="page">معسكر تحليل البيانات</span></li></ol></nav>
-        <p class="cg-en" dir="ltr" translate="no">DATA ANALYSIS BOOTCAMP</p>
-        <h1 id="page-title">معسكر تحليل البيانات</h1>
-        <p class="cg-sub">3 دورات في معسكر واحد</p>
-        <p class="cg-lead">3 دورات في معسكر واحد على مدى 12 أسبوعًا أو أكثر: Excel لتحليل البيانات، <bdi dir="ltr">Power BI</bdi>، <bdi dir="ltr">Python</bdi>. تتعلّمها بالترتيب من الأساس إلى المستوى الأعلى بالتطبيق العملي، وتختم باختبار تجريبي وخطة مراجعة.</p>
-        <div class="cta-row"><a class="btn cg-btn" href="#register">احجز مقعدك الآن</a><a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=966115116066">اسأل على واتساب</a></div>
-        <p class="cg-when"><span class="dot" aria-hidden="true"></span>المواعيد تُعلن قريبًا · حضوري في الرياض أو أونلاين مباشر</p>
-      </div>
-      <div class="cg-hero-art" aria-hidden="true">
-        <div class="cg-logos"><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="96" height="96"><img src="assets/live/assets-images-products-product_images-29-1-1791802843.webp" alt="" width="96" height="96"><img src="assets/live/assets-images-products-product_images-48-1-1789738403.webp" alt="" width="96" height="96"></div>
-        <ol class="cg-steps list-reset"><li><span>Excel لتحليل البيانات</span></li><li><span><bdi dir="ltr">Power BI</bdi></span></li><li><span><bdi dir="ltr">Python</bdi></span></li></ol>
-      </div>
-    </div>
-    <div class="container"><ul class="cg-facts list-reset" aria-label="معلومات المعسكر">
-      <li><b>12 أسبوعًا أو أكثر</b><small>مدة المعسكر</small></li>
-      <li><b>3 دورات</b><small>في معسكر واحد</small></li>
-      <li><b>مرن</b><small>حضوري أو أونلاين</small></li>
-      <li><b>تُعلن قريبًا</b><small>الرسوم والمواعيد</small></li>
-    </ul></div>
-  </section>
-
-  <section class="cg-sec" aria-labelledby="certs-title">
+  <!-- Camp page v4 (tools/gen_camp_landing.py, data in tools/camps_data.py, theme .cl--data in assets/camp-landing.css). Bundle of 3 real courses, 12+ weeks; bundle pending client confirmation. Dates and fees still to be announced. Seat form -> checkout.html?seat=1 (assets/camp-seat.js). -->
+  <div class="cl cl--data">
+  <section class="cl-hero" aria-labelledby="page-title">
     <div class="container">
-      <p class="cg-k">01 / الدورات في المعسكر</p><h2 id="certs-title">3 دورات. مسار واحد.</h2>
-      <ul class="cg-certs list-reset"><li><a href="course-excel.html"><b class="cg-n">01</b><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="64" height="64" loading="lazy"><span><h3>Excel لتحليل البيانات</h3><small dir="auto">شهادة من مسارتك</small><em>تفاصيل الدورة<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></em></span></a></li><li><a href="course-power-bi.html"><b class="cg-n">02</b><img src="assets/live/assets-images-products-product_images-29-1-1791802843.webp" alt="" width="64" height="64" loading="lazy"><span><h3><bdi dir="ltr">Power BI</bdi></h3><small dir="auto">PL-300</small><em>تفاصيل الدورة<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></em></span></a></li><li><a href="course-python-online.html"><b class="cg-n">03</b><img src="assets/live/assets-images-products-product_images-48-1-1789738403.webp" alt="" width="64" height="64" loading="lazy"><span><h3><bdi dir="ltr">Python</bdi></h3><small dir="auto">شهادة حضور من مسارتك</small><em>تفاصيل الدورة<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></em></span></a></li></ul>
+      <nav class="crumbs ab-crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><a href="camps.html">المعسكرات</a></li><li><span aria-current="page">معسكر تحليل البيانات</span></li></ol></nav>
+      <span class="cl-pill" dir="auto">3 دورات · 12 أسبوعًا أو أكثر</span>
+      <h1 id="page-title">معسكر <span class="grad">تحليل البيانات</span></h1>
+      <p class="cl-sub">3 دورات في معسكر واحد: Excel لتحليل البيانات، <bdi dir="ltr">Power BI</bdi>، <bdi dir="ltr">Python</bdi>. تتعلّمها بالترتيب من الأساس إلى المستوى الأعلى بالتطبيق العملي، وتختم باختبار تجريبي وخطة مراجعة.</p>
+      <div class="cl-logos" aria-hidden="true"><span><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="80" height="80"></span><span><img src="assets/live/assets-images-products-product_images-29-1-1791802843.webp" alt="" width="80" height="80"></span><span><img src="assets/live/assets-images-products-product_images-48-1-1789738403.webp" alt="" width="80" height="80"></span></div>
+      <ul class="cl-facts list-reset" aria-label="معلومات المعسكر">
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg></span><b>تُعلن قريبًا</b><small>تاريخ البداية</small></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span><b>12 أسبوعًا أو أكثر</b><small>مدة المعسكر</small></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg></span><b>3 دورات</b><small>في مسار واحد</small></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span><b>الرياض أو أونلاين</b><small>حضوري أو بث مباشر</small></li>
+      </ul>
+      <div class="cl-cta"><a class="cl-btn" href="#register">احجز مقعدك الآن</a><a class="cl-ghost" href="https://api.whatsapp.com/send?phone=966115116066">اسأل على واتساب</a></div>
+      <p class="cl-note">المقاعد تُحجز الآن، والموعد يُعلن قريبًا.</p>
     </div>
   </section>
 
-  <section class="cg-sec cg-alt" aria-labelledby="who-title">
-    <div class="container cg-split">
-      <div><p class="cg-k">02 / لمن هذا المعسكر؟</p><h2 id="who-title">مصمّم لمن يريد تأهيلًا متكاملًا.</h2></div>
-      <ul class="cg-who list-reset"><li><span class="cg-chk" aria-hidden="true"></span>موظفو التقارير في المبيعات والمالية والموارد البشرية</li><li><span class="cg-chk" aria-hidden="true"></span>من يستخدم Excel يوميًا ويريد لوحات متابعة</li><li><span class="cg-chk" aria-hidden="true"></span>الخريجون الباحثون عن دخول مجال تحليل البيانات</li></ul>
-    </div>
-  </section>
-
-  <section class="cg-sec" aria-labelledby="agenda-title">
+  <section class="cl-sec cl-light" aria-labelledby="pain-title">
     <div class="container">
-      <p class="cg-k">03 / الخطة الأسبوعية</p><h2 id="agenda-title">12 أسبوعًا. 3 مراحل.</h2>
-      <p class="cg-note">خطة مقترحة، تُعتمد مع إعلان الموعد. المدة 12 أسبوعًا أو أكثر.</p>
-      <ol class="cg-agenda list-reset"><li><b class="cg-n">01</b><div><p class="cg-day">الأسابيع 1–4</p><h3>Excel لتحليل البيانات</h3><p>تحليل البيانات في Excel: تنظيف البيانات وتلخيصها بـ Power Query وPivot Tables.</p></div></li><li><b class="cg-n">02</b><div><p class="cg-day">الأسابيع 5–8</p><h3><bdi dir="ltr">Power BI</bdi></h3><p>Power Query وDAX والتقارير التفاعلية، والتحضير لاختبار PL-300.</p></div></li><li><b class="cg-n">03</b><div><p class="cg-day">الأسابيع 9–12</p><h3><bdi dir="ltr">Python</bdi></h3><p>Python من الصفر في دورة تأسيسية تطبيقية.</p></div></li></ol>
+      <div class="cl-head"><span class="cl-pill">قبل أن تبدأ</span><h2 id="pain-title" style="margin-top:14px">هل تواجه أحد هذه المواقف؟</h2></div>
+      <ul class="cl-pains list-reset"><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>تقضي ساعات كل أسبوع في تقارير Excel يدوية</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>مديرك يطلب لوحة متابعة وما تعرف تسويها</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>بياناتك متفرقة في ملفات كثيرة</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>تسمع عن Python وما تعرف وش تفيدك</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>تقاريرك أرقام بدون قصة واضحة</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>تبي تدخل مجال تحليل البيانات وما تعرف الطريق</li></ul>
+      <p class="cl-yes"><small>إذا كانت إجابتك نعم على أكثر من واحدة..</small>فهذا المعسكر <span class="grad">لك</span></p>
     </div>
   </section>
 
-  <section class="cg-sec cg-alt" aria-labelledby="incl-title">
+  <section class="cl-sec cl-light" style="padding-top:0" aria-labelledby="ba-title">
     <div class="container">
-      <p class="cg-k">04 / ما يشمله المعسكر</p><h2 id="incl-title">كل ما تحتاجه في مكان واحد.</h2>
-      <ul class="cg-incl list-reset"><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg></span><div><h3>شهادة معتمدة</h3><p>معتمدة من المؤسسة العامة للتدريب التقني والمهني والمركز الوطني للتعليم الإلكتروني عبر منصة منار.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></span><div><h3>مركز اختبارات دولية</h3><p>مركز اختبارات دولية معتمد مخصص للمتدربين المسجلين.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><div><h3>متابعة المدربين</h3><p>فريق مدربين متخصصين يتابعك خلال المعسكر.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span><div><h3>اختبار تجريبي</h3><p>آخر مرحلة في المعسكر محاكاة للاختبار وخطة مراجعة.</p></div></li></ul>
-    </div>
-  </section>
-
-  <section class="cg-sec" id="fees" aria-labelledby="fees-title">
-    <div class="container">
-      <p class="cg-k">05 / الرسوم والمواعيد</p><h2 id="fees-title">احجز مقعدك الآن.</h2>
-      <div class="cg-fees">
-        <div class="cg-fee-card">
-          <p class="cg-status"><span class="dot" aria-hidden="true"></span>حجز المقاعد متاح · الموعد يُعلن قريبًا</p>
-          <ul class="cg-fee-list list-reset"><li><small>بداية المعسكر</small><b>تُعلن قريبًا</b></li><li><small>المدة</small><b>12 أسبوعًا أو أكثر</b></li><li><small>رسوم حجز المقعد</small><b>تُعلن قريبًا</b></li><li><small>رسوم المعسكر</small><b>تُعلن قريبًا</b></li></ul>
-          <a class="btn cg-btn" href="#register">احجز مقعدك</a>
-          <p class="cg-pay">تدفع رسوم حجز المقعد بالبطاقة أو Apple Pay أو بالتقسيط عبر tabby وتمارا.</p>
-        </div>
-        <div class="cg-alt-card">
-          <p class="cg-k">تفضّل دورة واحدة؟</p>
-          <h3>كل دورة متاحة منفصلة</h3>
-          <ul class="cg-singles list-reset"><li><a href="course-excel.html"><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="40" height="40" loading="lazy"><span>Excel لتحليل البيانات</span><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="course-power-bi.html"><img src="assets/live/assets-images-products-product_images-29-1-1791802843.webp" alt="" width="40" height="40" loading="lazy"><span><bdi dir="ltr">Power BI</bdi></span><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="course-python-online.html"><img src="assets/live/assets-images-products-product_images-48-1-1789738403.webp" alt="" width="40" height="40" loading="lazy"><span><bdi dir="ltr">Python</bdi></span><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></li></ul>
-        </div>
+      <div class="cl-head"><h2 id="ba-title">ماذا يتغيّر بعد 12 أسبوعًا؟</h2><p>قارن بين وضعك الحالي ووضعك بعد المعسكر.</p></div>
+      <div class="cl-ba">
+        <div class="cl-before"><p class="k">قبل المعسكر</p><h3>الوضع الحالي</h3><ul class="list-reset"><li>تقارير يدوية تتكرر كل أسبوع</li><li>ملفات متفرقة وأرقام متضاربة</li><li>لوحات متابعة ما تعرف تبنيها</li><li>Python اسم تسمع عنه فقط</li></ul></div>
+        <div class="cl-after"><p class="k">بعد المعسكر</p><h3>الوضع المنتظر</h3><ul class="list-reset"><li>تنظيف البيانات وتلخيصها في Excel</li><li>تقارير Power BI تفاعلية بـ Power Query وDAX</li><li>تحضير لاختبار PL-300</li><li>أساس في Python تبني عليه</li></ul></div>
       </div>
     </div>
   </section>
 
-  <section class="cg-sec cg-alt" aria-labelledby="faq-title">
-    <div class="container cg-split">
-      <div><p class="cg-k">06 / أسئلة سريعة</p><h2 id="faq-title">إجابات واضحة.</h2></div>
-      <div class="cg-faq"><details><summary>هل أحصل على شهادات احترافية؟</summary><div>المعسكر يؤهلك لاختبار PL-300 (Microsoft Certified: Power BI Data Analyst Associate) الذي تصدر شهادته من Microsoft بعد اجتيازه. دورتا Excel وPython تمنحانك شهادة من مسارتك، وليستا شهادة من Microsoft أو جهة مانحة أخرى. عن رسوم اختبار PL-300 <a href="https://api.whatsapp.com/send?phone=966115116066">اسأل فريق مسارتك على واتساب</a> قبل التسجيل.</div></details><details><summary>هل أستطيع الالتحاق بدورة واحدة فقط؟</summary><div>نعم، كل دورة في المعسكر متاحة كدورة منفصلة، وروابطها في قسم «الدورات في المعسكر».</div></details><details><summary>متى يبدأ المعسكر؟</summary><div>المواعيد تُعلن قريبًا. احجز مقعدك الآن ويصلك تأكيد الموعد قبل البداية.</div></details><details><summary>هل الحضور حضوري أم أونلاين؟</summary><div>حضوري في الرياض أو أونلاين مباشر، وتختار طريقة الحضور عند الحجز.</div></details></div>
+  <section class="cl-sec cl-dark2" aria-labelledby="plan-title">
+    <div class="container">
+      <div class="cl-head"><span class="cl-pill">الخطة الأسبوعية</span><h2 id="plan-title" style="margin-top:14px">ماذا ستتعلّم في <span class="grad">12 أسبوعًا</span>؟</h2><p>3 مراحل متسلسلة، كل مرحلة دورة كاملة.</p></div>
+      <ol class="cl-tl list-reset"><li><span class="node">1</span><div class="card"><span class="wk">الأسابيع 1–4</span><div class="head"><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="46" height="46" loading="lazy"><h3>Excel لتحليل البيانات</h3></div><p>تحليل البيانات في Excel: تنظيف البيانات وتلخيصها بـ Power Query وPivot Tables.</p><a class="go" href="course-excel.html">تفاصيل الدورة</a></div></li><li><span class="node">2</span><div class="card"><span class="wk">الأسابيع 5–8</span><div class="head"><img src="assets/live/assets-images-products-product_images-29-1-1791802843.webp" alt="" width="46" height="46" loading="lazy"><h3><bdi dir="ltr">Power BI</bdi></h3></div><p>Power Query وDAX والتقارير التفاعلية، والتحضير لاختبار PL-300.</p><a class="go" href="course-power-bi.html">تفاصيل الدورة</a></div></li><li><span class="node">3</span><div class="card"><span class="wk">الأسابيع 9–12</span><div class="head"><img src="assets/live/assets-images-products-product_images-48-1-1789738403.webp" alt="" width="46" height="46" loading="lazy"><h3><bdi dir="ltr">Python</bdi></h3></div><p>Python من الصفر في دورة تأسيسية تطبيقية.</p><a class="go" href="course-python-online.html">تفاصيل الدورة</a></div></li></ol>
+      <p class="cl-tl-note">خطة مقترحة، تُعتمد مع إعلان الموعد. المدة 12 أسبوعًا أو أكثر.</p>
     </div>
   </section>
 
-  <section class="cg-sec" id="register" aria-labelledby="reg-title">
-    <div class="container cg-split">
-      <div><p class="cg-k">07 / احجز مقعدك</p><h2 id="reg-title">احجز مقعدك في المعسكر.</h2><p class="cg-muted">عبّئ بياناتك وتنتقل مباشرة إلى صفحة الدفع لتأكيد حجز مقعدك، ويصلك تأكيد الموعد قبل البداية.</p>
-        <p class="cg-muted">تفضّل المحادثة؟ <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل عبر واتساب</a> أو اتصل على <a href="tel:+966920014582" dir="ltr">920014582</a>.</p></div>
-      <form class="cg-form" data-seat="camp-data" data-name="معسكر تحليل البيانات" data-img="assets/live/assets-images-products-product_images-207-1-1789044346.webp">
-        <div class="cg-row"><label>الاسم الرباعي<input name="name" autocomplete="name" required></label><label>رقم الجوال<input name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="05XXXXXXXX…" required></label></div>
-        <div class="cg-row"><label>البريد الإلكتروني<input name="email" type="email" autocomplete="email" spellcheck="false" dir="ltr" required></label><label>طريقة الحضور<select name="mode" required><option value="">اختر طريقة الحضور</option><option>حضوري في الرياض</option><option>أونلاين مباشر</option></select></label></div>
+  <section class="cl-sec cl-light" aria-labelledby="certs-title">
+    <div class="container">
+      <div class="cl-head"><span class="cl-pill">الدورات والشهادات</span><h2 id="certs-title" style="margin-top:14px">3 دورات في معسكر واحد</h2><p>شهادة PL-300 تصدر من Microsoft بعد اجتياز اختبارها، ودورتا Excel وPython بشهادة من مسارتك.</p></div>
+      <ol class="cl-certs list-reset"><li><span class="num" aria-hidden="true">01</span><span class="lg"><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="64" height="64" loading="lazy"></span><div><p class="t">الدورة 1</p><h3>Excel لتحليل البيانات</h3><span class="en" dir="auto">شهادة من مسارتك · شهادة من مسارتك</span><p>تحليل البيانات في Excel: تنظيف البيانات وتلخيصها بـ Power Query وPivot Tables.</p></div></li><li><span class="num" aria-hidden="true">02</span><span class="lg"><img src="assets/live/assets-images-products-product_images-29-1-1791802843.webp" alt="" width="64" height="64" loading="lazy"></span><div><p class="t">الدورة 2</p><h3><bdi dir="ltr">Power BI</bdi></h3><span class="en" dir="auto">Microsoft · PL-300 · PL-300</span><p>Power Query وDAX والتقارير التفاعلية، والتحضير لاختبار PL-300.</p></div></li><li><span class="num" aria-hidden="true">03</span><span class="lg"><img src="assets/live/assets-images-products-product_images-48-1-1789738403.webp" alt="" width="64" height="64" loading="lazy"></span><div><p class="t">الدورة 3</p><h3><bdi dir="ltr">Python</bdi></h3><span class="en" dir="auto">شهادة حضور من مسارتك · شهادة حضور من مسارتك</span><p>Python من الصفر في دورة تأسيسية تطبيقية.</p></div></li></ol>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-light" style="padding-top:0" aria-labelledby="method-title">
+    <div class="container">
+      <div class="cl-head"><h2 id="method-title">طريقة التدريب</h2><p>تطبيق عملي ومتابعة حتى يوم الاختبار.</p></div>
+      <ul class="cl-method list-reset"><li><span class="num" aria-hidden="true">1</span><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg></span><h3>شهادة معتمدة</h3><p>شهادة من مسارتك معتمدة من المؤسسة العامة للتدريب التقني والمهني والمركز الوطني للتعليم الإلكتروني عبر منصة منار.</p></li><li><span class="num" aria-hidden="true">2</span><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></span><h3>مركز اختبارات دولية</h3><p>مركز اختبارات دولية معتمد مخصص للمتدربين المسجلين.</p></li><li><span class="num" aria-hidden="true">3</span><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><h3>متابعة المدربين</h3><p>فريق مدربين متخصصين يتابعك خلال المعسكر.</p></li><li><span class="num" aria-hidden="true">4</span><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span><h3>اختبار تجريبي</h3><p>آخر مرحلة في المعسكر محاكاة للاختبار وخطة مراجعة.</p></li></ul>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-dark2" id="fees" aria-labelledby="fees-title">
+    <div class="container">
+      <div class="cl-head"><span class="cl-pill">الرسوم والمواعيد</span><h2 id="fees-title" style="margin-top:14px">احجز مقعدك <span class="grad">الآن</span></h2></div>
+      <div class="cl-fee">
+        <ul class="cl-fee-grid list-reset"><li><small>تاريخ البداية</small><b>تُعلن قريبًا</b></li><li><small>المدة</small><b>12 أسبوعًا أو أكثر</b></li><li><small>الحضور</small><b>الرياض أو أونلاين</b></li></ul>
+        <p class="price">رسوم المعسكر تُعلن قريبًا</p>
+        <p class="seat">رسوم حجز المقعد: <span class="placeholder">[المبلغ]</span></p>
+        <a class="cl-btn" href="#register">احجز مقعدك</a>
+        <p class="cl-pay">الدفع بالبطاقة أو Apple Pay أو بالتقسيط عبر tabby وتمارا.</p>
+        <div class="cl-singles"><p>تفضّل دورة واحدة؟ كل دورة متاحة منفصلة:</p><a href="course-excel.html"><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="28" height="28" loading="lazy">Excel لتحليل البيانات</a><a href="course-power-bi.html"><img src="assets/live/assets-images-products-product_images-29-1-1791802843.webp" alt="" width="28" height="28" loading="lazy"><bdi dir="ltr">Power BI</bdi></a><a href="course-python-online.html"><img src="assets/live/assets-images-products-product_images-48-1-1789738403.webp" alt="" width="28" height="28" loading="lazy"><bdi dir="ltr">Python</bdi></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-light" aria-labelledby="who-title">
+    <div class="container">
+      <div class="cl-head"><h2 id="who-title">لمن هذا <span class="grad">المعسكر</span>؟</h2><p>المعسكر لك إذا كنت…</p></div>
+      <ul class="cl-who list-reset"><li>موظفو التقارير في المبيعات والمالية والموارد البشرية</li><li>من يستخدم Excel يوميًا ويريد لوحات متابعة</li><li>الخريجون الباحثون عن دخول مجال تحليل البيانات</li></ul>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-dark" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="cl-head"><h2 id="faq-title">أسئلة شائعة</h2></div>
+      <div class="cl-faq"><details><summary>هل أحصل على شهادات احترافية؟</summary><div>المعسكر يؤهلك لاختبار PL-300 (Microsoft Certified: Power BI Data Analyst Associate) الذي تصدر شهادته من Microsoft بعد اجتيازه. دورتا Excel وPython تمنحانك شهادة من مسارتك، وليستا شهادة من Microsoft أو جهة مانحة أخرى. <span class="placeholder">[هل رسوم اختبار PL-300 ضمن رسوم المعسكر؟]</span></div></details><details><summary>هل أستطيع الالتحاق بدورة واحدة فقط؟</summary><div>نعم، كل دورة في المعسكر متاحة كدورة منفصلة، وروابطها في قسم الرسوم والمواعيد.</div></details><details><summary>متى يبدأ المعسكر؟</summary><div>المواعيد تُعلن قريبًا. احجز مقعدك الآن ويصلك تأكيد الموعد قبل البداية.</div></details><details><summary>هل الحضور حضوري أم أونلاين؟</summary><div>حضوري في الرياض أو أونلاين مباشر، وتختار طريقة الحضور عند الحجز.</div></details></div>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-dark2" id="register" aria-labelledby="reg-title">
+    <div class="container cl-reg">
+      <div><span class="cl-pill">احجز مقعدك</span><h2 id="reg-title">مقعدك في <span class="grad">معسكر تحليل البيانات</span></h2><p class="lead">عبّئ بياناتك وتنتقل مباشرة إلى صفحة الدفع لتأكيد حجز مقعدك، ويصلك تأكيد الموعد قبل البداية.</p>
+        <p class="lead">تفضّل المحادثة؟ <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل عبر واتساب</a> أو اتصل على <a href="tel:+966920014582" dir="ltr">920014582</a>.</p></div>
+      <form class="cl-form" data-seat="camp-data" data-name="معسكر تحليل البيانات" data-img="assets/live/assets-images-products-product_images-207-1-1789044346.webp">
+        <div class="cl-row"><label>الاسم الرباعي<input name="name" autocomplete="name" required></label><label>رقم الجوال<input name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="05XXXXXXXX…" required></label></div>
+        <div class="cl-row"><label>البريد الإلكتروني<input name="email" type="email" autocomplete="email" spellcheck="false" dir="ltr" required></label><label>طريقة الحضور<select name="mode" required><option value="">اختر طريقة الحضور</option><option>حضوري في الرياض</option><option>أونلاين مباشر</option></select></label></div>
         <input type="hidden" name="camp" value="معسكر تحليل البيانات">
-        <button class="btn cg-btn" type="submit">المتابعة لدفع حجز المقعد</button>
-        <p class="cg-pay">تُنقل إلى صفحة الدفع الآمنة لإتمام الحجز.</p>
+        <button class="cl-btn" type="submit">المتابعة لدفع حجز المقعد</button>
+        <p class="cl-pay" style="margin:0">تُنقل إلى صفحة الدفع الآمنة لإتمام الحجز.</p>
       </form>
     </div>
   </section>
 
-  <section class="cg-sec cg-alt" aria-labelledby="more-title">
+  <section class="cl-sec cl-dark" aria-labelledby="more-title">
     <div class="container">
-      <p class="cg-k">معسكرات أخرى</p><h2 id="more-title">قد يهمك أيضًا.</h2>
-      <ul class="cg-more list-reset"><li><a href="camp-network-1.html"><img src="assets/live/assets-images-products-product_images-23-1-1791114999.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر الشبكات – المستوى الأول</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li><li><a href="camp-network-2.html"><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر الشبكات – المستوى الثاني</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li><li><a href="camp-pm-1.html"><img src="assets/live/assets-images-products-product_images-36-1-1789740468.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر إدارة المشاريع – المستوى الأول</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li></ul>
-      <p class="cg-all"><a class="btn btn-ghost-light" href="camps.html">كل المعسكرات</a></p>
+      <div class="cl-head"><h2 id="more-title">معسكرات أخرى</h2></div>
+      <ul class="cl-more list-reset"><li><a href="camp-network-1.html"><img src="assets/live/assets-images-products-product_images-23-1-1791114999.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر الشبكات – المستوى الأول</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li><li><a href="camp-network-2.html"><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر الشبكات – المستوى الثاني</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li><li><a href="camp-pm-1.html"><img src="assets/live/assets-images-products-product_images-36-1-1789740468.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر إدارة المشاريع – المستوى الأول</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li></ul>
+      <p class="cl-all"><a class="cl-ghost" href="camps.html">كل المعسكرات</a></p>
     </div>
   </section>
-  <a class="cg-float" href="#register"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><span>احجز مقعدك</span></a>
+  <a class="cl-float" href="#register"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><span>احجز مقعدك</span></a>
   </div>
   <!-- PAGE CONTENT END -->
 </main>

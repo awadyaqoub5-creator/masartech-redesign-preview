@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="assets/camps.css?v=49">
 <link rel="stylesheet" href="assets/waitlist.css?v=49">
 <link rel="stylesheet" href="assets/about.css?v=3">
-<link rel="stylesheet" href="assets/camp-page.css?v=6">
+<link rel="stylesheet" href="assets/camp-landing.css?v=2">
 <link rel="stylesheet" href="assets/mobile.css?v=15">
 <link rel="stylesheet" href="assets/taste.css?v=8">
 </head>
@@ -109,109 +109,116 @@
 
 <main id="main">
   <!-- PAGE CONTENT START -->
-  <!-- Camp page v3 (tools/gen_camp_bundles.py, data in tools/camps_data.py): one camp = 3 real courses over 12+ weeks (bundle proposed, pending client confirmation). Seat form -> checkout.html?seat=1. Dates and fees still to be announced. -->
-  <div class="cg">
-  <section class="cg-hero" aria-labelledby="page-title">
-    <div class="container cg-hero-in">
-      <div class="cg-hero-copy">
-        <nav class="crumbs ab-crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><a href="camps.html">المعسكرات</a></li><li data-pl><a href="paths.html">مسارات التعلم</a></li><li data-pl><a href="trainers.html">المدربون</a></li><li data-pl><a href="alumni.html">خريجو مسارتك</a></li><li data-pl><a href="guides.html">أدلة الشهادات</a></li><li data-pl><a href="online.html">الدورات أونلاين</a></li><li data-pl><a href="webinars.html">الندوات</a></li><li><span aria-current="page">معسكر الشبكات – المستوى الثاني</span></li></ol></nav>
-        <p class="cg-en" dir="ltr" translate="no">NETWORKING BOOTCAMP · LEVEL 2</p>
-        <h1 id="page-title">معسكر الشبكات <span class="cg-lvl">المستوى الثاني</span></h1>
-        <p class="cg-sub">3 شهادات احترافية في معسكر واحد</p>
-        <p class="cg-lead">3 شهادات احترافية في معسكر واحد على مدى 12 أسبوعًا أو أكثر: <bdi dir="ltr">CompTIA Security+</bdi>، <bdi dir="ltr">Fortinet NSE4</bdi>، <bdi dir="ltr">Palo Alto Network Security Professional</bdi>. تتعلّمها بالترتيب من الأساس إلى المستوى الأعلى بالتطبيق العملي، وتختم باختبار تجريبي وخطة مراجعة.</p>
-        <div class="cta-row"><a class="btn cg-btn" href="#register">احجز مقعدك الآن</a><a class="btn btn-ghost-light" href="https://api.whatsapp.com/send?phone=966115116066">اسأل على واتساب</a></div>
-        <p class="cg-when"><span class="dot" aria-hidden="true"></span>المواعيد تُعلن قريبًا · حضوري في الرياض أو أونلاين مباشر</p>
-      </div>
-      <div class="cg-hero-art" aria-hidden="true">
-        <div class="cg-logos"><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="96" height="96"><img src="assets/live/assets-images-products-product_images-178-1-1788716455.webp" alt="" width="96" height="96"><img src="assets/live/assets-images-products-product_images-70-1-1788810962.webp" alt="" width="96" height="96"></div>
-        <ol class="cg-steps list-reset"><li><span><bdi dir="ltr">CompTIA Security+</bdi></span></li><li><span><bdi dir="ltr">Fortinet NSE4</bdi></span></li><li><span><bdi dir="ltr">Palo Alto Network Security Professional</bdi></span></li></ol>
-      </div>
-    </div>
-    <div class="container"><ul class="cg-facts list-reset" aria-label="معلومات المعسكر">
-      <li><b>12 أسبوعًا أو أكثر</b><small>مدة المعسكر</small></li>
-      <li><b>3 شهادات احترافية</b><small>في معسكر واحد</small></li>
-      <li><b>مرن</b><small>حضوري أو أونلاين</small></li>
-      <li><b>تُعلن قريبًا</b><small>الرسوم والمواعيد</small></li>
-    </ul></div>
-  </section>
-
-  <section class="cg-sec" aria-labelledby="certs-title">
+  <!-- Camp page v4 (tools/gen_camp_landing.py, data in tools/camps_data.py, theme .cl--net2 in assets/camp-landing.css). Bundle of 3 real courses, 12+ weeks; bundle pending client confirmation. Dates and fees still to be announced. Seat form -> checkout.html?seat=1 (assets/camp-seat.js). -->
+  <div class="cl cl--net2">
+  <section class="cl-hero" aria-labelledby="page-title">
     <div class="container">
-      <p class="cg-k">01 / الشهادات في المعسكر</p><h2 id="certs-title">3 شهادات احترافية. مسار واحد.</h2>
-      <ul class="cg-certs list-reset"><li><a href="course-comptia-security-online.html"><b class="cg-n">01</b><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="64" height="64" loading="lazy"><span><h3><bdi dir="ltr">CompTIA Security+</bdi></h3><small dir="auto">SY0-701</small><em>تفاصيل الدورة<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></em></span></a></li><li><a href="course-fortinet-nse4.html"><b class="cg-n">02</b><img src="assets/live/assets-images-products-product_images-178-1-1788716455.webp" alt="" width="64" height="64" loading="lazy"><span><h3><bdi dir="ltr">Fortinet NSE4</bdi></h3><small dir="auto">FortiGate وFortiOS 7.6</small><em>تفاصيل الدورة<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></em></span></a></li><li><a href="course-palo-alto-network-security-professional.html"><b class="cg-n">03</b><img src="assets/live/assets-images-products-product_images-70-1-1788810962.webp" alt="" width="64" height="64" loading="lazy"><span><h3><bdi dir="ltr">Palo Alto Network Security Professional</bdi></h3><small dir="auto">Palo Alto Networks</small><em>تفاصيل الدورة<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></em></span></a></li></ul>
+      <nav class="crumbs ab-crumbs" aria-label="مسار التنقل"><ol><li><a href="index.html">الرئيسية</a></li><li><a href="camps.html">المعسكرات</a></li><li><span aria-current="page">معسكر الشبكات – المستوى الثاني</span></li></ol></nav>
+      <span class="cl-pill" dir="auto">المستوى الثاني · 3 شهادات احترافية · 12 أسبوعًا أو أكثر</span>
+      <h1 id="page-title">معسكر <span class="grad">الشبكات</span><span class="sr-only"> – المستوى الثاني</span></h1>
+      <p class="cl-sub">3 شهادات احترافية في معسكر واحد: <bdi dir="ltr">CompTIA Security+</bdi>، <bdi dir="ltr">Fortinet NSE4</bdi>، <bdi dir="ltr">Palo Alto Network Security Professional</bdi>. تتعلّمها بالترتيب من الأساس إلى المستوى الأعلى بالتطبيق العملي، وتختم باختبار تجريبي وخطة مراجعة.</p>
+      <div class="cl-logos" aria-hidden="true"><span><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="80" height="80"></span><span><img src="assets/live/assets-images-products-product_images-178-1-1788716455.webp" alt="" width="80" height="80"></span><span><img src="assets/live/assets-images-products-product_images-70-1-1788810962.webp" alt="" width="80" height="80"></span></div>
+      <ul class="cl-facts list-reset" aria-label="معلومات المعسكر">
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg></span><b>تُعلن قريبًا</b><small>تاريخ البداية</small></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span><b>12 أسبوعًا أو أكثر</b><small>مدة المعسكر</small></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg></span><b>3 شهادات احترافية</b><small>في مسار واحد</small></li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span><b>الرياض أو أونلاين</b><small>حضوري أو بث مباشر</small></li>
+      </ul>
+      <div class="cl-cta"><a class="cl-btn" href="#register">احجز مقعدك الآن</a><a class="cl-ghost" href="https://api.whatsapp.com/send?phone=966115116066">اسأل على واتساب</a></div>
+      <p class="cl-note">المقاعد تُحجز الآن، والموعد يُعلن قريبًا.</p>
     </div>
   </section>
 
-  <section class="cg-sec cg-alt" aria-labelledby="who-title">
-    <div class="container cg-split">
-      <div><p class="cg-k">02 / لمن هذا المعسكر؟</p><h2 id="who-title">مصمّم لمن يريد تأهيلًا متكاملًا.</h2></div>
-      <ul class="cg-who list-reset"><li><span class="cg-chk" aria-hidden="true"></span>من أنهى المستوى الأول أو لديه أساس في الشبكات</li><li><span class="cg-chk" aria-hidden="true"></span>مهندسو الشبكات الذين يريدون التخصص في أمن الشبكات</li><li><span class="cg-chk" aria-hidden="true"></span>فرق تقنية المعلومات المسؤولة عن الجدران النارية</li></ul>
-    </div>
-  </section>
-
-  <section class="cg-sec" aria-labelledby="agenda-title">
+  <section class="cl-sec cl-light" aria-labelledby="pain-title">
     <div class="container">
-      <p class="cg-k">03 / الخطة الأسبوعية</p><h2 id="agenda-title">12 أسبوعًا. 3 مراحل.</h2>
-      <p class="cg-note">خطة مقترحة، تُعتمد مع إعلان الموعد. المدة 12 أسبوعًا أو أكثر.</p>
-      <ol class="cg-agenda list-reset"><li><b class="cg-n">01</b><div><p class="cg-day">الأسابيع 1–4</p><h3><bdi dir="ltr">CompTIA Security+</bdi></h3><p>تدريب عملي على حماية الشبكات والأنظمة، والتحضير لاختبار Security+ SY0-701.</p></div></li><li><b class="cg-n">02</b><div><p class="cg-day">الأسابيع 5–8</p><h3><bdi dir="ltr">Fortinet NSE4</bdi></h3><p>تدريب عملي على FortiGate وFortiOS 7.6 مع تركيز على الاختبار الرسمي.</p></div></li><li><b class="cg-n">03</b><div><p class="cg-day">الأسابيع 9–12</p><h3><bdi dir="ltr">Palo Alto Network Security Professional</bdi></h3><p>أمن الشبكات على منصة Palo Alto Networks، والتحضير للشهادة.</p></div></li></ol>
+      <div class="cl-head"><span class="cl-pill">قبل أن تبدأ</span><h2 id="pain-title" style="margin-top:14px">هل تواجه أحد هذه المواقف؟</h2></div>
+      <ul class="cl-pains list-reset"><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>تشتغل في الشبكات وتبي تتخصص في الأمن</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>تتعامل مع جدار ناري وما تعرف كل إعداداته</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>جهة عملك تطلب شهادات في أمن الشبكات</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>تقرأ عن الاختراقات وما تعرف كيف تحمي شبكتك</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>تحتاج تطبيقًا عمليًا على أجهزة FortiGate وPalo Alto</li><li><span class="x"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></span>ما تعرف بأي شهادة أمن تبدأ</li></ul>
+      <p class="cl-yes"><small>إذا كانت إجابتك نعم على أكثر من واحدة..</small>فهذا المعسكر <span class="grad">لك</span></p>
     </div>
   </section>
 
-  <section class="cg-sec cg-alt" aria-labelledby="incl-title">
+  <section class="cl-sec cl-light" style="padding-top:0" aria-labelledby="ba-title">
     <div class="container">
-      <p class="cg-k">04 / ما يشمله المعسكر</p><h2 id="incl-title">كل ما تحتاجه في مكان واحد.</h2>
-      <ul class="cg-incl list-reset"><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg></span><div><h3>شهادة معتمدة</h3><p>معتمدة من المؤسسة العامة للتدريب التقني والمهني والمركز الوطني للتعليم الإلكتروني عبر منصة منار.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></span><div><h3>مركز اختبارات دولية</h3><p>مركز اختبارات دولية معتمد مخصص للمتدربين المسجلين.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><div><h3>متابعة المدربين</h3><p>فريق مدربين متخصصين يتابعك خلال المعسكر.</p></div></li><li><span class="cg-ico"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span><div><h3>اختبار تجريبي</h3><p>آخر مرحلة في المعسكر محاكاة للاختبار وخطة مراجعة.</p></div></li></ul>
-    </div>
-  </section>
-
-  <section class="cg-sec" id="fees" aria-labelledby="fees-title">
-    <div class="container">
-      <p class="cg-k">05 / الرسوم والمواعيد</p><h2 id="fees-title">احجز مقعدك الآن.</h2>
-      <div class="cg-fees">
-        <div class="cg-fee-card">
-          <p class="cg-status"><span class="dot" aria-hidden="true"></span>حجز المقاعد متاح · الموعد يُعلن قريبًا</p>
-          <ul class="cg-fee-list list-reset"><li><small>بداية المعسكر</small><b>تُعلن قريبًا</b></li><li><small>المدة</small><b>12 أسبوعًا أو أكثر</b></li><li><small>رسوم حجز المقعد</small><b>تُعلن قريبًا</b></li><li><small>رسوم المعسكر</small><b>تُعلن قريبًا</b></li></ul>
-          <a class="btn cg-btn" href="#register">احجز مقعدك</a>
-          <p class="cg-pay">تدفع رسوم حجز المقعد بالبطاقة أو Apple Pay أو بالتقسيط عبر tabby وتمارا.</p>
-        </div>
-        <div class="cg-alt-card">
-          <p class="cg-k">تفضّل دورة واحدة؟</p>
-          <h3>كل دورة متاحة منفصلة</h3>
-          <ul class="cg-singles list-reset"><li><a href="course-comptia-security-online.html"><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="40" height="40" loading="lazy"><span><bdi dir="ltr">CompTIA Security+</bdi></span><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="course-fortinet-nse4.html"><img src="assets/live/assets-images-products-product_images-178-1-1788716455.webp" alt="" width="40" height="40" loading="lazy"><span><bdi dir="ltr">Fortinet NSE4</bdi></span><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></li><li><a href="course-palo-alto-network-security-professional.html"><img src="assets/live/assets-images-products-product_images-70-1-1788810962.webp" alt="" width="40" height="40" loading="lazy"><span><bdi dir="ltr">Palo Alto Network Security Professional</bdi></span><svg class="i" aria-hidden="true"><use href="#i-chev"/></svg></a></li></ul>
-        </div>
+      <div class="cl-head"><h2 id="ba-title">ماذا يتغيّر بعد 12 أسبوعًا؟</h2><p>قارن بين وضعك الحالي ووضعك بعد المعسكر.</p></div>
+      <div class="cl-ba">
+        <div class="cl-before"><p class="k">قبل المعسكر</p><h3>الوضع الحالي</h3><ul class="list-reset"><li>أساس شبكات بدون تخصص</li><li>إعدادات جدار ناري بالتجربة والخطأ</li><li>لا شهادات في الأمن</li><li>ما تعرف ترتيب شهادات الأمن</li></ul></div>
+        <div class="cl-after"><p class="k">بعد المعسكر</p><h3>الوضع المنتظر</h3><ul class="list-reset"><li>أساس في أمن الشبكات مع Security+</li><li>تطبيق عملي على FortiGate وFortiOS</li><li>أمن الشبكات على منصة Palo Alto</li><li>تحضير لاختبارات 3 شهادات في الأمن</li></ul></div>
       </div>
     </div>
   </section>
 
-  <section class="cg-sec cg-alt" aria-labelledby="faq-title">
-    <div class="container cg-split">
-      <div><p class="cg-k">06 / أسئلة سريعة</p><h2 id="faq-title">إجابات واضحة.</h2></div>
-      <div class="cg-faq"><details><summary>هل الشهادات الرسمية ضمن المعسكر؟</summary><div>المعسكر برنامج تدريب وتحضير لاختبارات CompTIA Security+ وFortinet NSE4 وPalo Alto Network Security Professional. الشهادات الرسمية تصدر من جهاتها المانحة بعد اجتياز اختباراتها، وتحصل من مسارتك على شهادة معتمدة عبر منصة منار. رسوم الاختبارات الدولية تختلف من شهادة لأخرى، <a href="https://api.whatsapp.com/send?phone=966115116066">اسأل فريق مسارتك على واتساب</a> عنها قبل التسجيل.</div></details><details><summary>هل أحتاج المستوى الأول قبل المستوى الثاني؟</summary><div>يحدد فريق مسارتك المستوى المناسب لك قبل التسجيل، <a href="https://api.whatsapp.com/send?phone=966115116066">اسأل فريق مسارتك على واتساب</a>.</div></details><details><summary>هل أستطيع الالتحاق بدورة واحدة فقط؟</summary><div>نعم، كل دورة في المعسكر متاحة كدورة منفصلة، وروابطها في قسم «الدورات في المعسكر».</div></details><details><summary>متى يبدأ المعسكر؟</summary><div>المواعيد تُعلن قريبًا. احجز مقعدك الآن ويصلك تأكيد الموعد قبل البداية.</div></details><details><summary>هل الحضور حضوري أم أونلاين؟</summary><div>حضوري في الرياض أو أونلاين مباشر، وتختار طريقة الحضور عند الحجز.</div></details></div>
+  <section class="cl-sec cl-dark2" aria-labelledby="plan-title">
+    <div class="container">
+      <div class="cl-head"><span class="cl-pill">الخطة الأسبوعية</span><h2 id="plan-title" style="margin-top:14px">ماذا ستتعلّم في <span class="grad">12 أسبوعًا</span>؟</h2><p>3 مراحل متسلسلة، كل مرحلة شهادة كاملة.</p></div>
+      <ol class="cl-tl list-reset"><li><span class="node">1</span><div class="card"><span class="wk">الأسابيع 1–4</span><div class="head"><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="46" height="46" loading="lazy"><h3><bdi dir="ltr">CompTIA Security+</bdi></h3></div><p>تدريب عملي على حماية الشبكات والأنظمة، والتحضير لاختبار Security+ SY0-701.</p><a class="go" href="course-comptia-security-online.html">تفاصيل الدورة</a></div></li><li><span class="node">2</span><div class="card"><span class="wk">الأسابيع 5–8</span><div class="head"><img src="assets/live/assets-images-products-product_images-178-1-1788716455.webp" alt="" width="46" height="46" loading="lazy"><h3><bdi dir="ltr">Fortinet NSE4</bdi></h3></div><p>تدريب عملي على FortiGate وFortiOS 7.6 مع تركيز على الاختبار الرسمي.</p><a class="go" href="course-fortinet-nse4.html">تفاصيل الدورة</a></div></li><li><span class="node">3</span><div class="card"><span class="wk">الأسابيع 9–12</span><div class="head"><img src="assets/live/assets-images-products-product_images-70-1-1788810962.webp" alt="" width="46" height="46" loading="lazy"><h3><bdi dir="ltr">Palo Alto Network Security Professional</bdi></h3></div><p>أمن الشبكات على منصة Palo Alto Networks، والتحضير للشهادة.</p><a class="go" href="course-palo-alto-network-security-professional.html">تفاصيل الدورة</a></div></li></ol>
+      <p class="cl-tl-note">خطة مقترحة، تُعتمد مع إعلان الموعد. المدة 12 أسبوعًا أو أكثر.</p>
     </div>
   </section>
 
-  <section class="cg-sec" id="register" aria-labelledby="reg-title">
-    <div class="container cg-split">
-      <div><p class="cg-k">07 / احجز مقعدك</p><h2 id="reg-title">احجز مقعدك في المعسكر.</h2><p class="cg-muted">عبّئ بياناتك وتنتقل مباشرة إلى صفحة الدفع لتأكيد حجز مقعدك، ويصلك تأكيد الموعد قبل البداية.</p>
-        <p class="cg-muted">تفضّل المحادثة؟ <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل عبر واتساب</a> أو اتصل على <a href="tel:+966920014582" dir="ltr">920014582</a>.</p></div>
-      <form class="cg-form" data-seat="camp-network-2" data-name="معسكر الشبكات – المستوى الثاني" data-img="assets/live/assets-images-products-product_images-27-1-1788715510.webp">
-        <div class="cg-row"><label>الاسم الرباعي<input name="name" autocomplete="name" required></label><label>رقم الجوال<input name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="05XXXXXXXX…" required></label></div>
-        <div class="cg-row"><label>البريد الإلكتروني<input name="email" type="email" autocomplete="email" spellcheck="false" dir="ltr" required></label><label>طريقة الحضور<select name="mode" required><option value="">اختر طريقة الحضور</option><option>حضوري في الرياض</option><option>أونلاين مباشر</option></select></label></div>
+  <section class="cl-sec cl-light" aria-labelledby="certs-title">
+    <div class="container">
+      <div class="cl-head"><span class="cl-pill">الشهادات</span><h2 id="certs-title" style="margin-top:14px">3 شهادات احترافية في معسكر واحد</h2><p>الشهادات الرسمية تصدر من جهاتها المانحة بعد اجتياز اختباراتها.</p></div>
+      <ol class="cl-certs list-reset"><li><span class="num" aria-hidden="true">01</span><span class="lg"><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="64" height="64" loading="lazy"></span><div><p class="t">الشهادة 1</p><h3><bdi dir="ltr">CompTIA Security+</bdi></h3><span class="en" dir="auto">CompTIA · SY0-701</span><p>تدريب عملي على حماية الشبكات والأنظمة، والتحضير لاختبار Security+ SY0-701.</p></div></li><li><span class="num" aria-hidden="true">02</span><span class="lg"><img src="assets/live/assets-images-products-product_images-178-1-1788716455.webp" alt="" width="64" height="64" loading="lazy"></span><div><p class="t">الشهادة 2</p><h3><bdi dir="ltr">Fortinet NSE4</bdi></h3><span class="en" dir="auto">Fortinet · FortiGate وFortiOS 7.6</span><p>تدريب عملي على FortiGate وFortiOS 7.6 مع تركيز على الاختبار الرسمي.</p></div></li><li><span class="num" aria-hidden="true">03</span><span class="lg"><img src="assets/live/assets-images-products-product_images-70-1-1788810962.webp" alt="" width="64" height="64" loading="lazy"></span><div><p class="t">الشهادة 3</p><h3><bdi dir="ltr">Palo Alto Network Security Professional</bdi></h3><span class="en" dir="auto">Palo Alto Networks · Palo Alto Networks</span><p>أمن الشبكات على منصة Palo Alto Networks، والتحضير للشهادة.</p></div></li></ol>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-light" style="padding-top:0" aria-labelledby="method-title">
+    <div class="container">
+      <div class="cl-head"><h2 id="method-title">طريقة التدريب</h2><p>تطبيق عملي ومتابعة حتى يوم الاختبار.</p></div>
+      <ul class="cl-method list-reset"><li><span class="num" aria-hidden="true">1</span><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-badge"/></svg></span><h3>شهادة معتمدة</h3><p>شهادة من مسارتك معتمدة من المؤسسة العامة للتدريب التقني والمهني والمركز الوطني للتعليم الإلكتروني عبر منصة منار.</p></li><li><span class="num" aria-hidden="true">2</span><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-exam"/></svg></span><h3>مركز اختبارات دولية</h3><p>مركز اختبارات دولية معتمد مخصص للمتدربين المسجلين.</p></li><li><span class="num" aria-hidden="true">3</span><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><h3>متابعة المدربين</h3><p>فريق مدربين متخصصين يتابعك خلال المعسكر.</p></li><li><span class="num" aria-hidden="true">4</span><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span><h3>اختبار تجريبي</h3><p>آخر مرحلة في المعسكر محاكاة للاختبار وخطة مراجعة.</p></li></ul>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-dark2" id="fees" aria-labelledby="fees-title">
+    <div class="container">
+      <div class="cl-head"><span class="cl-pill">الرسوم والمواعيد</span><h2 id="fees-title" style="margin-top:14px">احجز مقعدك <span class="grad">الآن</span></h2></div>
+      <div class="cl-fee">
+        <ul class="cl-fee-grid list-reset"><li><small>تاريخ البداية</small><b>تُعلن قريبًا</b></li><li><small>المدة</small><b>12 أسبوعًا أو أكثر</b></li><li><small>الحضور</small><b>الرياض أو أونلاين</b></li></ul>
+        <p class="price">رسوم المعسكر تُعلن قريبًا</p>
+        <p class="seat">رسوم حجز المقعد: <span class="placeholder">[المبلغ]</span></p>
+        <a class="cl-btn" href="#register">احجز مقعدك</a>
+        <p class="cl-pay">الدفع بالبطاقة أو Apple Pay أو بالتقسيط عبر tabby وتمارا.</p>
+        <div class="cl-singles"><p>تفضّل دورة واحدة؟ كل دورة متاحة منفصلة:</p><a href="course-comptia-security-online.html"><img src="assets/live/assets-images-products-product_images-27-1-1788715510.webp" alt="" width="28" height="28" loading="lazy"><bdi dir="ltr">CompTIA Security+</bdi></a><a href="course-fortinet-nse4.html"><img src="assets/live/assets-images-products-product_images-178-1-1788716455.webp" alt="" width="28" height="28" loading="lazy"><bdi dir="ltr">Fortinet NSE4</bdi></a><a href="course-palo-alto-network-security-professional.html"><img src="assets/live/assets-images-products-product_images-70-1-1788810962.webp" alt="" width="28" height="28" loading="lazy"><bdi dir="ltr">Palo Alto Network Security Professional</bdi></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-light" aria-labelledby="who-title">
+    <div class="container">
+      <div class="cl-head"><h2 id="who-title">لمن هذا <span class="grad">المعسكر</span>؟</h2><p>المعسكر لك إذا كنت…</p></div>
+      <ul class="cl-who list-reset"><li>من أنهى المستوى الأول أو لديه أساس في الشبكات</li><li>مهندسو الشبكات الذين يريدون التخصص في أمن الشبكات</li><li>فرق تقنية المعلومات المسؤولة عن الجدران النارية</li></ul>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-dark" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="cl-head"><h2 id="faq-title">أسئلة شائعة</h2></div>
+      <div class="cl-faq"><details><summary>هل الشهادات الرسمية ضمن المعسكر؟</summary><div>المعسكر برنامج تدريب وتحضير لاختبارات CompTIA Security+ وFortinet NSE4 وPalo Alto Network Security Professional. الشهادات الرسمية تصدر من جهاتها المانحة بعد اجتياز اختباراتها، وتحصل من مسارتك على شهادة معتمدة عبر منصة منار. <span class="placeholder">[هل رسوم الاختبارات ضمن رسوم المعسكر؟]</span></div></details><details><summary>هل أحتاج المستوى الأول قبل المستوى الثاني؟</summary><div><span class="placeholder">[شرط الالتحاق بالمستوى الثاني: إنهاء المستوى الأول أو خبرة مكافئة؟]</span></div></details><details><summary>هل أستطيع الالتحاق بدورة واحدة فقط؟</summary><div>نعم، كل دورة في المعسكر متاحة كدورة منفصلة، وروابطها في قسم الرسوم والمواعيد.</div></details><details><summary>متى يبدأ المعسكر؟</summary><div>المواعيد تُعلن قريبًا. احجز مقعدك الآن ويصلك تأكيد الموعد قبل البداية.</div></details><details><summary>هل الحضور حضوري أم أونلاين؟</summary><div>حضوري في الرياض أو أونلاين مباشر، وتختار طريقة الحضور عند الحجز.</div></details></div>
+    </div>
+  </section>
+
+  <section class="cl-sec cl-dark2" id="register" aria-labelledby="reg-title">
+    <div class="container cl-reg">
+      <div><span class="cl-pill">احجز مقعدك</span><h2 id="reg-title">مقعدك في <span class="grad">معسكر الشبكات – المستوى الثاني</span></h2><p class="lead">عبّئ بياناتك وتنتقل مباشرة إلى صفحة الدفع لتأكيد حجز مقعدك، ويصلك تأكيد الموعد قبل البداية.</p>
+        <p class="lead">تفضّل المحادثة؟ <a href="https://api.whatsapp.com/send?phone=966115116066">تواصل عبر واتساب</a> أو اتصل على <a href="tel:+966920014582" dir="ltr">920014582</a>.</p></div>
+      <form class="cl-form" data-seat="camp-network-2" data-name="معسكر الشبكات – المستوى الثاني" data-img="assets/live/assets-images-products-product_images-27-1-1788715510.webp">
+        <div class="cl-row"><label>الاسم الرباعي<input name="name" autocomplete="name" required></label><label>رقم الجوال<input name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="05XXXXXXXX…" required></label></div>
+        <div class="cl-row"><label>البريد الإلكتروني<input name="email" type="email" autocomplete="email" spellcheck="false" dir="ltr" required></label><label>طريقة الحضور<select name="mode" required><option value="">اختر طريقة الحضور</option><option>حضوري في الرياض</option><option>أونلاين مباشر</option></select></label></div>
         <input type="hidden" name="camp" value="معسكر الشبكات – المستوى الثاني">
-        <button class="btn cg-btn" type="submit">المتابعة لدفع حجز المقعد</button>
-        <p class="cg-pay">تُنقل إلى صفحة الدفع الآمنة لإتمام الحجز.</p>
+        <button class="cl-btn" type="submit">المتابعة لدفع حجز المقعد</button>
+        <p class="cl-pay" style="margin:0">تُنقل إلى صفحة الدفع الآمنة لإتمام الحجز.</p>
       </form>
     </div>
   </section>
 
-  <section class="cg-sec cg-alt" aria-labelledby="more-title">
+  <section class="cl-sec cl-dark" aria-labelledby="more-title">
     <div class="container">
-      <p class="cg-k">معسكرات أخرى</p><h2 id="more-title">قد يهمك أيضًا.</h2>
-      <ul class="cg-more list-reset"><li><a href="camp-network-1.html"><img src="assets/live/assets-images-products-product_images-23-1-1791114999.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر الشبكات – المستوى الأول</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li><li><a href="camp-data.html"><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر تحليل البيانات</b><small>3 دورات · 12 أسبوعًا أو أكثر</small></span></a></li><li><a href="camp-pm-1.html"><img src="assets/live/assets-images-products-product_images-36-1-1789740468.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر إدارة المشاريع – المستوى الأول</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li></ul>
-      <p class="cg-all"><a class="btn btn-ghost-light" href="camps.html">كل المعسكرات</a></p>
+      <div class="cl-head"><h2 id="more-title">معسكرات أخرى</h2></div>
+      <ul class="cl-more list-reset"><li><a href="camp-network-1.html"><img src="assets/live/assets-images-products-product_images-23-1-1791114999.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر الشبكات – المستوى الأول</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li><li><a href="camp-data.html"><img src="assets/live/assets-images-products-product_images-207-1-1789044346.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر تحليل البيانات</b><small>3 دورات · 12 أسبوعًا أو أكثر</small></span></a></li><li><a href="camp-pm-1.html"><img src="assets/live/assets-images-products-product_images-36-1-1789740468.webp" alt="" width="56" height="56" loading="lazy"><span><b>معسكر إدارة المشاريع – المستوى الأول</b><small>3 شهادات احترافية · 12 أسبوعًا أو أكثر</small></span></a></li></ul>
+      <p class="cl-all"><a class="cl-ghost" href="camps.html">كل المعسكرات</a></p>
     </div>
   </section>
-  <a class="cg-float" href="#register"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><span>احجز مقعدك</span></a>
+  <a class="cl-float" href="#register"><svg class="i" aria-hidden="true"><use href="#i-cal"/></svg><span>احجز مقعدك</span></a>
   </div>
   <!-- PAGE CONTENT END -->
 </main>
